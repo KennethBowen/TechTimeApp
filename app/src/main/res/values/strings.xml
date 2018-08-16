@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">techtime</string>
+
+    <!-- pay period [CHAR LIMIT=20] -->
+    <string name="category_payPeriod">Pay Period</string>
+
+    <!-- archive [CHAR LIMIT=20] -->
+    <string name="category_archive">Archive</string>
+
 </resources>
