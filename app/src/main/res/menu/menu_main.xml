@@ -6,21 +6,21 @@
 
     <item
         android:id="@+id/labor_rates"
-        android:title="Labor Rates"
+        android:title="@string/menu_labor_rates"
         app:showAsAction="never" />
     <item
     android:id="@+id/edit_pay_period_dates"
-    android:title="Edit Pay Period Dates"
+    android:title="@string/menu_edit_pay_period"
     app:showAsAction="never" />
 
     <item
         android:id="@+id/order_by"
-        android:title="Order By"
+        android:title="@string/menu_order_by"
         app:showAsAction="never" />
 
     <item
         android:id="@+id/end_pay_period"
-        android:title="End Pay Period"
+        android:title="@string/menu_end_pay_period"
         app:showAsAction="never" />
 
 

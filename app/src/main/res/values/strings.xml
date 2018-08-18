@@ -1,10 +1,22 @@
 <resources>
     <string name="app_name">techtime</string>
 
-    <!-- pay period [CHAR LIMIT=20] -->
+    <!-- pay period view pager tab [CHAR LIMIT=20] -->
     <string name="category_payPeriod">Pay Period</string>
 
-    <!-- archive [CHAR LIMIT=20] -->
+    <!-- archive view pager tab [CHAR LIMIT=20] -->
     <string name="category_archive">Archive</string>
+
+    <!-- main menu [CHAR LIMIT=20] -->
+    <string name="menu_labor_rates">Labor Rates</string>
+
+    <!-- main menu [CHAR LIMIT=20] -->
+    <string name="menu_edit_pay_period">Edit Pay Period Dates</string>
+
+    <!-- main menu [CHAR LIMIT=20] -->
+    <string name="menu_order_by">Order By</string>
+
+    <!-- main menu [CHAR LIMIT=20] -->
+    <string name="menu_end_pay_period">End Pay Period</string>
 
 </resources>

@@ -1,8 +1,10 @@
 package com.techtimeapp.techtime;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
+import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
@@ -12,6 +14,7 @@ import android.view.MenuItem;
 import static com.techtimeapp.techtime.R.id.sliding_tabs;
 
 public class MainActivity extends AppCompatActivity {
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,16 +39,53 @@ public class MainActivity extends AppCompatActivity {
         // Set the adapter onto the view pager
         viewPager.setAdapter(adapter);
 
+
         TabLayout tabLayout = (TabLayout) findViewById(sliding_tabs);
         tabLayout.setupWithViewPager(viewPager);
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu options from the res/menu/menu_main.xml file.
         // This adds menu items to the app bar.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
+
+            getMenuInflater().inflate(R.menu.menu_main, menu);
+
         return true;
+    }
+
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // User clicked on a menu option in the app bar overflow menu
+        switch (item.getItemId()) {
+            // Respond to a click on the "Labor Rates" menu option
+            case R.id.labor_rates:
+                Intent intentLabor = new Intent(MainActivity.this, LaborRatesActivity.class);
+                startActivity(intentLabor);
+                return true;
+
+            // Respond to a click on the "Edit Pay Period Dates" menu option
+            case R.id.edit_pay_period_dates:
+                Intent intentEditPayPeriod = new Intent(MainActivity.this, EditPayPeriodActivity.class);
+                startActivity(intentEditPayPeriod);
+                return true;
+
+            // Respond to a click on the "Order By" menu option
+            case R.id.order_by:
+                Intent intentOrderBy = new Intent(MainActivity.this, OrderByActivity.class);
+                startActivity(intentOrderBy);
+                return true;
+
+            // Respond to a click on the "End Pay Period" menu option
+            case R.id.end_pay_period:
+                Intent intentEndPayPeriod = new Intent(MainActivity.this, EndPayPeriodActivity.class);
+                startActivity(intentEndPayPeriod);
+                return true;
+
+        }
+        return super.onOptionsItemSelected(item);
     }
 
 
