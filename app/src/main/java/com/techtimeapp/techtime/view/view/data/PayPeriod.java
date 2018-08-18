@@ -24,8 +24,8 @@ public class PayPeriod {
         return mEndDate;
     }
 
-    public int getNumberOfRepairOrders{
-        mRepairOrders.get(mRepairOrders.size());
+    public int getNumberOfRepairOrders() {
+        return mRepairOrders.size();
     }
 }
 
