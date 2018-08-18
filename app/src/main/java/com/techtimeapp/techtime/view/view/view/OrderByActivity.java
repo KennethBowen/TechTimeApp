@@ -1,7 +1,9 @@
-package com.techtimeapp.techtime;
+package com.techtimeapp.techtime.view.view.view;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+
+import com.techtimeapp.techtime.R;
 
 public class OrderByActivity extends AppCompatActivity {
     @Override

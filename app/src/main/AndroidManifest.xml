@@ -35,7 +35,7 @@
                 android:value=".view.view.view.MainActivity"/>
         </activity>
         <activity
-            android:name=".LaborRatesActivity"
+            android:name=".view.view.view.LaborRatesActivity"
             android:label="@string/menu_labor_rates"
             android:parentActivityName=".MainActivity">
             <!-- Parent activity meta-data to support 4.0 and lower -->
@@ -44,7 +44,7 @@
                 android:value=".MainActivity"/>
         </activity>
         <activity
-            android:name=".EditPayPeriodActivity"
+            android:name=".view.view.view.EditPayPeriodActivity"
             android:label="@string/menu_edit_pay_period"
             android:parentActivityName=".MainActivity">
             <!-- Parent activity meta-data to support 4.0 and lower -->
@@ -53,7 +53,7 @@
                 android:value=".MainActivity"/>
         </activity>
         <activity
-            android:name=".OrderByActivity"
+            android:name=".view.view.view.OrderByActivity"
             android:label="@string/menu_order_by"
             android:parentActivityName=".MainActivity">
             <!-- Parent activity meta-data to support 4.0 and lower -->
