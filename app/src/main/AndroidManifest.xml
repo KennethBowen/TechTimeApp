@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".view.view.view.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -17,22 +17,22 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".PayPeriodActivity"
+            android:name=".view.view.view.PayPeriodActivity"
             android:label="@string/category_payPeriod"
-            android:parentActivityName=".MainActivity">
+            android:parentActivityName=".view.view.view.MainActivity">
             <!-- Parent activity meta-data to support 4.0 and lower -->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity"/>
+                android:value=".view.view.view.MainActivity"/>
         </activity>
         <activity
-            android:name=".ArchiveActivity"
+            android:name=".view.view.view.ArchiveActivity"
             android:label="@string/category_archive"
-            android:parentActivityName=".MainActivity">
+            android:parentActivityName=".view.view.view.MainActivity">
             <!-- Parent activity meta-data to support 4.0 and lower -->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity"/>
+                android:value=".view.view.view.MainActivity"/>
         </activity>
         <activity
             android:name=".LaborRatesActivity"

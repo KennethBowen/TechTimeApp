@@ -1,4 +1,4 @@
-package com.techtimeapp.techtime;
+package com.techtimeapp.techtime.view.view.view;
 
 
 import android.os.Bundle;
@@ -7,14 +7,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.techtimeapp.techtime.R;
 
-public class PayPeriodFragment extends Fragment {
+
+public class ArchiveFragment extends Fragment {
 
 
-    public PayPeriodFragment() {
+    public ArchiveFragment() {
         // Required empty public constructor
     }
-
 
 
 
@@ -22,12 +23,9 @@ public class PayPeriodFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View rootView = inflater.inflate(R.layout.activity_pay_period, container, false);
+        View rootView = inflater.inflate(R.layout.activity_archive, container, false);
         return rootView;
     }
-
-
-
 
 
 }

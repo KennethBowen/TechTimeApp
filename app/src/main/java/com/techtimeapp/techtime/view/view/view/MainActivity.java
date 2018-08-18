@@ -1,4 +1,4 @@
-package com.techtimeapp.techtime;
+package com.techtimeapp.techtime.view.view.view;
 
 
 import android.content.Intent;
@@ -9,7 +9,8 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
-import android.view.MenuItem;
+
+import com.techtimeapp.techtime.R;
 
 import static com.techtimeapp.techtime.R.id.sliding_tabs;
 
