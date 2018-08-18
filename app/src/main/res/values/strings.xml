@@ -19,4 +19,9 @@
     <!-- main menu [CHAR LIMIT=20] -->
     <string name="menu_end_pay_period">End Pay Period</string>
 
+    <!-- Label for editor menu option to save and leave editor [CHAR LIMIT=20] -->
+    <string name="action_save">Save</string>
+
+
+
 </resources>
