@@ -80,8 +80,7 @@ public class MainActivity extends AppCompatActivity {
 
             // Respond to a click on the "End Pay Period" menu option
             case R.id.end_pay_period:
-                Intent intentEndPayPeriod = new Intent(MainActivity.this, EndPayPeriodActivity.class);
-                startActivity(intentEndPayPeriod);
+
                 return true;
 
         }
