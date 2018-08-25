@@ -1,17 +1,400 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context="com.techtimeapp.techtime.view.view.view.LaborRatesActivity"
+    tools:layout_editor_absoluteY="81dp">
+
 
     <TextView
+        android:id="@+id/textViewLaborType"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="LABOR RATES"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/labor_type"
+        android:textColor="@color/tabColor"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.027"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Labor Type" />
+
+    <TextView
+        android:id="@+id/textViewInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/labor_type_info"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.198"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewLaborType"
+        tools:text="Set up the labor rates that apply to you" />
+
+    <EditText
+        android:id="@+id/editBodyRate"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="24dp"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        app:layout_constraintBottom_toBottomOf="@+id/dollarSignBody"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewInfo" />
+
+    <TextView
+        android:id="@+id/dollarSignBody"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:text="$"
+        app:layout_constraintBaseline_toBaselineOf="@+id/editBodyRate"
+        app:layout_constraintEnd_toStartOf="@+id/editBodyRate" />
+
+    <TextView
+        android:id="@+id/rateBody"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:text="@string/rate"
+        app:layout_constraintBaseline_toBaselineOf="@+id/dollarSignBody"
+        app:layout_constraintEnd_toStartOf="@+id/dollarSignBody"
+        tools:text="Rate" />
+
+    <TextView
+        android:id="@+id/textViewBody"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="@string/Body"
+        android:textStyle="bold"
+        app:layout_constraintBaseline_toBaselineOf="@+id/rateBody"
+        app:layout_constraintStart_toStartOf="@+id/guideline3" />
+
+    <EditText
+        android:id="@+id/editMechanicalRate"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        app:layout_constraintBottom_toTopOf="@+id/editInternalRate"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editBodyRate"
+        app:layout_constraintVertical_chainStyle="spread_inside" />
+
+    <TextView
+        android:id="@+id/dollarSignMechanical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:text="$"
+        app:layout_constraintBaseline_toBaselineOf="@+id/editMechanicalRate"
+        app:layout_constraintEnd_toStartOf="@+id/editMechanicalRate" />
+
+    <TextView
+        android:id="@+id/rateMechanical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:text="@string/rate"
+        app:layout_constraintBaseline_toBaselineOf="@+id/dollarSignMechanical"
+        app:layout_constraintEnd_toStartOf="@+id/dollarSignMechanical" />
+
+    <TextView
+        android:id="@+id/textViewMechanical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="@string/Mechanical"
+        android:textStyle="bold"
+        app:layout_constraintBaseline_toBaselineOf="@+id/rateMechanical"
+        app:layout_constraintStart_toStartOf="@+id/guideline3" />
+
+    <EditText
+        android:id="@+id/editInternalRate"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        app:layout_constraintBottom_toTopOf="@+id/editWarrantyRate"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editMechanicalRate" />
+
+    <TextView
+        android:id="@+id/dollarSignInternal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:text="$"
+        app:layout_constraintBaseline_toBaselineOf="@+id/editInternalRate"
+        app:layout_constraintEnd_toStartOf="@+id/editInternalRate" />
+
+    <TextView
+        android:id="@+id/rateInternal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:text="@string/rate"
+        app:layout_constraintBaseline_toBaselineOf="@+id/dollarSignInternal"
+        app:layout_constraintEnd_toStartOf="@+id/dollarSignInternal" />
+
+    <TextView
+        android:id="@+id/textViewInternal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="@string/Internal"
+        android:textStyle="bold"
+        app:layout_constraintBaseline_toBaselineOf="@+id/rateInternal"
+        app:layout_constraintStart_toStartOf="@+id/guideline3" />
+
+    <EditText
+        android:id="@+id/editWarrantyRate"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editInternalRate" />
+
+    <TextView
+        android:id="@+id/dollarSignWarranty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:text="$"
+        app:layout_constraintBaseline_toBaselineOf="@+id/editWarrantyRate"
+        app:layout_constraintEnd_toStartOf="@+id/editWarrantyRate" />
+
+    <TextView
+        android:id="@+id/rateWarranty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:text="@string/rate"
+        app:layout_constraintBaseline_toBaselineOf="@+id/dollarSignWarranty"
+        app:layout_constraintEnd_toStartOf="@+id/dollarSignWarranty" />
+
+    <TextView
+        android:id="@+id/textViewWarranty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="@string/Warranty"
+        android:textStyle="bold"
+        app:layout_constraintBaseline_toBaselineOf="@+id/rateWarranty"
+        app:layout_constraintStart_toStartOf="@+id/guideline3" />
+
+    <EditText
+        android:id="@+id/editRefinishRate"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editWarrantyRate" />
+
+    <TextView
+        android:id="@+id/dollarSignRefinish"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:text="$"
+        app:layout_constraintBaseline_toBaselineOf="@+id/editRefinishRate"
+        app:layout_constraintEnd_toStartOf="@+id/editRefinishRate" />
+
+    <TextView
+        android:id="@+id/rateRefinish"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:text="@string/rate"
+        app:layout_constraintBaseline_toBaselineOf="@+id/dollarSignRefinish"
+        app:layout_constraintEnd_toStartOf="@+id/dollarSignRefinish" />
+
+    <TextView
+        android:id="@+id/textViewRefinish"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="@string/Refinish"
+        android:textStyle="bold"
+        app:layout_constraintBaseline_toBaselineOf="@+id/rateRefinish"
+        app:layout_constraintStart_toStartOf="@+id/guideline3" />
+
+    <EditText
+        android:id="@+id/editGlassRate"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        app:layout_constraintBottom_toTopOf="@+id/editFrameRate"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editRefinishRate" />
+
+    <TextView
+        android:id="@+id/dollarSignGlass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:text="$"
+        app:layout_constraintBaseline_toBaselineOf="@+id/editGlassRate"
+        app:layout_constraintEnd_toStartOf="@+id/editGlassRate" />
+
+    <TextView
+        android:id="@+id/rateGlass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:text="@string/rate"
+        app:layout_constraintBaseline_toBaselineOf="@+id/dollarSignGlass"
+        app:layout_constraintEnd_toStartOf="@+id/dollarSignGlass" />
+
+    <TextView
+        android:id="@+id/textViewGlass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="@string/Glass"
+        android:textStyle="bold"
+        app:layout_constraintBaseline_toBaselineOf="@+id/rateGlass"
+        app:layout_constraintStart_toStartOf="@+id/guideline3" />
+
+    <EditText
+        android:id="@+id/editFrameRate"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        app:layout_constraintBottom_toTopOf="@+id/editAluminumRate"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editGlassRate" />
+
+    <TextView
+        android:id="@+id/dollarSignFrame"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:text="$"
+        app:layout_constraintBaseline_toBaselineOf="@+id/editFrameRate"
+        app:layout_constraintEnd_toStartOf="@+id/editFrameRate" />
+
+    <TextView
+        android:id="@+id/rateFrame"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:text="@string/rate"
+        app:layout_constraintBaseline_toBaselineOf="@+id/dollarSignFrame"
+        app:layout_constraintEnd_toStartOf="@+id/dollarSignFrame" />
+
+    <TextView
+        android:id="@+id/textViewFrame"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="@string/Frame"
+        android:textStyle="bold"
+        app:layout_constraintBaseline_toBaselineOf="@+id/rateFrame"
+        app:layout_constraintStart_toStartOf="@+id/guideline3" />
+
+    <EditText
+        android:id="@+id/editAluminumRate"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editFrameRate" />
+
+    <TextView
+        android:id="@+id/dollarSignAluminum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:text="$"
+        app:layout_constraintBaseline_toBaselineOf="@+id/editAluminumRate"
+        app:layout_constraintEnd_toStartOf="@+id/editAluminumRate" />
+
+    <TextView
+        android:id="@+id/rateAluminum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:text="@string/rate"
+        app:layout_constraintBaseline_toBaselineOf="@+id/dollarSignAluminum"
+        app:layout_constraintEnd_toStartOf="@+id/dollarSignAluminum" />
+
+    <TextView
+        android:id="@+id/textViewAluminum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="@string/Aluminum"
+        android:textStyle="bold"
+        app:layout_constraintBaseline_toBaselineOf="@+id/rateAluminum"
+        app:layout_constraintStart_toStartOf="@+id/guideline3" />
+
+    <EditText
+        android:id="@+id/editOtherRate"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editAluminumRate" />
+
+    <TextView
+        android:id="@+id/dollarSignOther"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:text="$"
+        app:layout_constraintBaseline_toBaselineOf="@+id/editOtherRate"
+        app:layout_constraintEnd_toStartOf="@+id/editOtherRate" />
+
+    <TextView
+        android:id="@+id/rateOther"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:text="@string/rate"
+        app:layout_constraintBaseline_toBaselineOf="@+id/dollarSignOther"
+        app:layout_constraintEnd_toStartOf="@+id/dollarSignOther" />
+
+    <TextView
+        android:id="@+id/textViewOther"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="@string/Other"
+        android:textStyle="bold"
+        app:layout_constraintBaseline_toBaselineOf="@+id/rateOther"
+        app:layout_constraintStart_toStartOf="@+id/guideline3" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="20dp" />
+
 
 </android.support.constraint.ConstraintLayout>

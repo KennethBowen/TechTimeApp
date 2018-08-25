@@ -6,5 +6,11 @@
     <!-- Primary dark color of the app (shown in the status bar) -->
     <color name="colorPrimaryDark">#23303D</color>
 
-    <color name="colorAccent">#FF4081</color>
+    <!--  color of the button (shown in the pay period activity) -->
+    <color name="buttonColor">#364c62</color>
+
+    <!--  color of the tabIndicator (shown in the view pager) -->
+    <color name="tabColor">#486783</color>
+
+    <color name="colorAccent">#486783</color>
 </resources>

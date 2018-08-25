@@ -2,6 +2,7 @@ package com.techtimeapp.techtime.view.view.view;
 
 
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
@@ -20,6 +21,11 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        // Set the content of the activity to use the activity_main.xml layout file
+        setContentView(R.layout.activity_main);
+
+        //allows the activity to remain in portrait only
+        this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
         //action bar techtime name logic
         ActionBar actionBar = getSupportActionBar();
@@ -27,9 +33,6 @@ public class MainActivity extends AppCompatActivity {
         actionBar.setLogo(R.drawable.techtime_name);
         actionBar.setDisplayUseLogoEnabled(true);
         actionBar.setDisplayShowTitleEnabled(false);
-
-        // Set the content of the activity to use the activity_main.xml layout file
-        setContentView(R.layout.activity_main);
 
         // Find the view pager that will allow the user to swipe between fragments
         ViewPager viewPager = (ViewPager) findViewById(R.id.viewpager);

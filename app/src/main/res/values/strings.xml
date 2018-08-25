@@ -19,8 +19,47 @@
     <!-- main menu [CHAR LIMIT=20] -->
     <string name="menu_end_pay_period">End Pay Period</string>
 
-    <!-- Label for editor menu option to save and leave editor [CHAR LIMIT=20] -->
+    <!-- Label to save and leave editor for labor, edit pay period and order by [CHAR LIMIT=20] -->
     <string name="action_save">Save</string>
+
+    <!-- pay period activity button to add repair order [CHAR LIMIT=20] -->
+    <string name="add_repair_order">Add repair order</string>
+
+    <!-- textView top of labor rates activity  [CHAR LIMIT=20] -->
+    <string name="labor_type">Labor Type</string>
+
+    <!-- textView top of labor rates activity  [CHAR LIMIT=20] -->
+    <string name="labor_type_info">Set up the labor rates that apply to you</string>
+
+    <!-- textView for the word Rate in labor rate activity  [CHAR LIMIT=20] -->
+    <string name="rate">Rate</string>
+
+    <!-- textView for the word Body in labor rate activity  [CHAR LIMIT=20] -->
+    <string name="Body">Body</string>
+
+    <!-- textView for the word Mechanical in labor rate activity  [CHAR LIMIT=20] -->
+    <string name="Mechanical">Mechanical</string>
+
+    <!-- textView for the word Internal in labor rate activity  [CHAR LIMIT=20] -->
+    <string name="Internal">Internal</string>
+
+    <!-- textView for the word Warranty in labor rate activity  [CHAR LIMIT=20] -->
+    <string name="Warranty">Warranty</string>
+
+    <!-- textView for the word Refinish in labor rate activity  [CHAR LIMIT=20] -->
+    <string name="Refinish">Refinish</string>
+
+    <!-- textView for the word Glass in labor rate activity  [CHAR LIMIT=20] -->
+    <string name="Glass">Glass</string>
+
+    <!-- textView for the word Frame in labor rate activity  [CHAR LIMIT=20] -->
+    <string name="Frame">Frame</string>
+
+    <!-- textView for the word Aluminum in labor rate activity  [CHAR LIMIT=20] -->
+    <string name="Aluminum">Aluminum</string>
+
+    <!-- textView for the word Other in labor rate activity  [CHAR LIMIT=20] -->
+    <string name="Other">Other</string>
 
 
 

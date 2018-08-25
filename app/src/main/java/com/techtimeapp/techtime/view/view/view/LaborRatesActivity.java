@@ -1,6 +1,7 @@
 package com.techtimeapp.techtime.view.view.view;
 
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
@@ -13,6 +14,8 @@ public class LaborRatesActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_labor_rates);
+        //allows the activity to remain in portrait only
+        this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
     }
 
     @Override
@@ -30,8 +33,9 @@ public class LaborRatesActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         // User clicked on a menu option in the app bar overflow menu
         switch (item.getItemId()) {
-            // Respond to a click on the "Labor Rates" menu option
+            // Respond to a click on the check mark option
             case R.id.action_save:
+
                 // Exit activity
                 finish();
                 return true;
