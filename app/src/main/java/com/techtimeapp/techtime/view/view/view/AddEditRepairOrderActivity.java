@@ -5,30 +5,16 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
 
 import com.techtimeapp.techtime.R;
 
-public class OrderByActivity extends AppCompatActivity {
-
-    RadioGroup rg;
-    RadioButton rb;
-
+public class AddEditRepairOrderActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_order_by);
+        setContentView(R.layout.activity_add_edit_repair_order);
         //allows the activity to remain in portrait only
         this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-
-        rg = (RadioGroup) findViewById(R.id.radioGroup);
-    }
-
-    public void rbClick(View v){
-        int radioButtonId = rg.getCheckedRadioButtonId();
-        rb = (RadioButton) findViewById(radioButtonId);
     }
 
     @Override
@@ -36,7 +22,7 @@ public class OrderByActivity extends AppCompatActivity {
         // Inflate the menu options from the res/menu/menu_main.xml file.
         // This adds menu items to the app bar.
 
-        getMenuInflater().inflate(R.menu.menu_order_by, menu);
+        getMenuInflater().inflate(R.menu.menu_add_edit_repair_order, menu);
 
         return true;
     }
@@ -58,4 +44,5 @@ public class OrderByActivity extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+
 }

@@ -23,7 +23,16 @@
     <string name="action_save">Save</string>
 
     <!-- pay period activity button to add repair order [CHAR LIMIT=20] -->
-    <string name="add_repair_order">Add repair order</string>
+    <string name="add_repair_order">Add Repair Order</string>
+
+    <!-- label for total hours pay period activity  [CHAR LIMIT=20] -->
+    <string name="totalHoursLabel">Total Hours</string>
+
+    <!-- label for total gross pay period activity  [CHAR LIMIT=20] -->
+    <string name="totalGrossLabel">Total Gross</string>
+
+    <!-- label for total repair order pay period activity  [CHAR LIMIT=20] -->
+    <string name="totalRepairOrderLabel">Repair Orders</string>
 
     <!-- textView top of labor rates activity  [CHAR LIMIT=20] -->
     <string name="labor_type">Labor Type</string>
@@ -61,6 +70,65 @@
     <!-- textView for the word Other in labor rate activity  [CHAR LIMIT=20] -->
     <string name="Other">Other</string>
 
+    <!-- textView for the text Order By activity purpose  -->
+    <string name="orderByAbout">Display the pay period to your preference</string>
+
+    <!-- Radio button for the Ascending Order By activity  [CHAR LIMIT=20] -->
+    <string name="Ascending">Ascending</string>
+
+    <!-- Radio button for the Ascending Order By activity  [CHAR LIMIT=20] -->
+    <string name="Descending">Descending</string>
+
+    <!-- Radio button for the Ascending Order By activity  [CHAR LIMIT=20] -->
+    <string name="DateOrder">Date</string>
+
+    <!-- textView for the text Order By activity purpose  -->
+    <string name="AscendingInfo">Repair order numbers listed least to greatest</string>
+
+    <!-- textView for the text Order By activity purpose  -->
+    <string name="DescendingInfo">Repair order numbers listed greatest to least</string>
+
+    <!-- textView for the text Order By activity purpose  -->
+    <string name="DateOrderInfo">Repair order dates listed earliest to most current</string>
+
+    <!-- textView for the text Add edit repair order activity  -->
+    <string name="required_Info">All fields in blue are required</string>
+
+    <!-- textView for the text Add edit repair order activity  -->
+    <string name="repair_number">Repair Order</string>
+
+    <!-- textView for the text Add edit repair order activity  -->
+    <string name="Writer">Writer</string>
+
+    <!-- textView for the text Add edit repair order activity  -->
+    <string name="Customer">Customer :</string>
+
+    <!-- textView for the text Add edit repair order activity  -->
+    <string name="Insurance">Insurance Co :</string>
+
+    <!-- textView for the text Add edit repair order activity  -->
+    <string name="Vehicle_title">Vehicle</string>
+
+    <!-- textView for the text Add edit repair order activity  -->
+    <string name="Make">Make :</string>
+
+    <!-- textView for the text Add edit repair order activity  -->
+    <string name="Model">Model :</string>
+
+    <!-- textView for the text Add edit repair order activity  -->
+    <string name="Year">Year :</string>
+
+    <!-- textView for the text Add edit repair order activity  -->
+    <string name="Mileage">Mileage :</string>
+
+    <!-- textView for the text Add edit repair order activity  -->
+    <string name="VIN">VIN :</string>
+
+    <!-- textView for the text Add edit repair order activity  -->
+    <string name="Color">Color :</string>
+
+    <!-- textView for the text Add edit repair order activity  -->
+    <string name="License">License :</string>
 
 
 </resources>

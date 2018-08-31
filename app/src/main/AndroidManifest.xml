@@ -61,6 +61,15 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".view.view.view.MainActivity"/>
         </activity>
+        <activity
+            android:name=".view.view.view.AddEditRepairOrderActivity"
+            android:label="@string/add_repair_order"
+            android:parentActivityName=".view.view.view.MainActivity">
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".view.view.view.MainActivity"/>
+        </activity>
 
     </application>
 

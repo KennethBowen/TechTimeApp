@@ -1,5 +1,6 @@
 package com.techtimeapp.techtime.view.view.view;
 
+
 import android.content.pm.ActivityInfo;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -19,6 +20,7 @@ public class PayPeriodActivity extends AppCompatActivity {
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.container, new PayPeriodFragment())
                 .commit();
+
 
     }
 }

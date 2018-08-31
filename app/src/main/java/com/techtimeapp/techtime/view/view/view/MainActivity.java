@@ -46,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
 
         TabLayout tabLayout = (TabLayout) findViewById(sliding_tabs);
         tabLayout.setupWithViewPager(viewPager);
+
     }
 
 
