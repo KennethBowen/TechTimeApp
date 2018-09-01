@@ -1,6 +1,7 @@
 package com.techtimeapp.techtime.view.view.view;
 
 
+import android.arch.persistence.room.Room;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
@@ -12,11 +13,14 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.techtimeapp.techtime.R;
+import com.techtimeapp.techtime.view.view.data.AppDatabase;
 
 import static com.techtimeapp.techtime.R.id.sliding_tabs;
 
 public class MainActivity extends AppCompatActivity {
 
+    AppDatabase db = Room.databaseBuilder(getApplicationContext(),
+            AppDatabase.class, "appDB").build();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

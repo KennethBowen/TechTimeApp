@@ -1,13 +1,25 @@
 package com.techtimeapp.techtime.view.view.data;
 
+
+import android.arch.persistence.room.ColumnInfo;
+import android.arch.persistence.room.Entity;
+
 import java.util.ArrayList;
 import java.util.Date;
 
+@Entity
 public class PayPeriod {
-    private ArrayList<RepairOrder> mRepairOrders;
-    private Date mStartDate;
-    private Date mEndDate;
-    private int mNumberOfRepairOrders;
+    @ColumnInfo(name = "repair_order_list")
+    public ArrayList<RepairOrder> mRepairOrders;
+
+    @ColumnInfo(name = "Start_Date")
+    public Date mStartDate;
+
+    @ColumnInfo(name = "End_Date")
+    public Date mEndDate;
+
+    @ColumnInfo(name = "Number_of_Repair_Orders")
+    public int mNumberOfRepairOrders;
 
     public PayPeriod(ArrayList<RepairOrder> repairOrders, Date startDate, Date endDate, int numberOfRepairOrders) {
         mRepairOrders = repairOrders;

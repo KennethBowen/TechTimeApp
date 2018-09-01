@@ -1,25 +1,50 @@
 package com.techtimeapp.techtime.view.view.data;
 
+import android.arch.persistence.room.ColumnInfo;
+import android.arch.persistence.room.Entity;
+import android.arch.persistence.room.PrimaryKey;
+
 import java.util.Date;
 
+@Entity
 public class RepairOrder {
-    private int mRepairOrderNumber;
-    private String mWriter;
-    private String mCustomer;
-    private Date mDate;
-    private LaborRate mLaborRate;
-    private Vehicle mVehicle;
-    private double mHours;
-    private double mGross;
+    @PrimaryKey(autoGenerate = true)
+    public int mUid;
 
-    public RepairOrder(int repairOrderNumber, String writer, Date date, LaborRate laborRate) {
+    @ColumnInfo(name = "Repair_Order_number")
+    public int mRepairOrderNumber;
+
+    @ColumnInfo(name = "Writer")
+    public String mWriter;
+
+    @ColumnInfo(name = "Customer")
+    public String mCustomer;
+
+    @ColumnInfo(name = "Date")
+    public Date mDate;
+
+    @ColumnInfo(name = "Labor_Rate")
+    public LaborRate mLaborRate;
+
+    @ColumnInfo(name = "Vehicle")
+    public Vehicle mVehicle;
+
+    @ColumnInfo(name = "Hours")
+    public double mHours;
+
+    @ColumnInfo(name = "Gross")
+    public double mGross;
+
+    public RepairOrder(int Uid, int repairOrderNumber, String writer, Date date, LaborRate laborRate) {
+        mUid = Uid;
         mRepairOrderNumber = repairOrderNumber;
         mWriter = writer;
         mDate = date;
         mLaborRate = laborRate;
     }
 
-    public RepairOrder(int repairOrderNumber, String writer, Date date,  String customer, LaborRate laborRate, Vehicle vehicle, double hours, double gross) {
+    public RepairOrder(int Uid, int repairOrderNumber, String writer, Date date,  String customer, LaborRate laborRate, Vehicle vehicle, double hours, double gross) {
+        mUid = Uid;
         mRepairOrderNumber = repairOrderNumber;
         mWriter = writer;
         mDate = date;
