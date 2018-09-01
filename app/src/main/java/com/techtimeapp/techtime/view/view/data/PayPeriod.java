@@ -10,16 +10,16 @@ import java.util.Date;
 @Entity
 public class PayPeriod {
     @ColumnInfo(name = "repair_order_list")
-    private ArrayList<RepairOrder> mRepairOrders;
+    public ArrayList<RepairOrder> mRepairOrders;
 
     @ColumnInfo(name = "Start_Date")
-    private Date mStartDate;
+    public Date mStartDate;
 
     @ColumnInfo(name = "End_Date")
-    private Date mEndDate;
+    public Date mEndDate;
 
     @ColumnInfo(name = "Number_of_Repair_Orders")
-    private int mNumberOfRepairOrders;
+    public int mNumberOfRepairOrders;
 
     public PayPeriod(ArrayList<RepairOrder> repairOrders, Date startDate, Date endDate, int numberOfRepairOrders) {
         mRepairOrders = repairOrders;

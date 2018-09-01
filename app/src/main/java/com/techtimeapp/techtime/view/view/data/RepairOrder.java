@@ -8,32 +8,32 @@ import java.util.Date;
 
 @Entity
 public class RepairOrder {
-    @PrimaryKey
-    private int mUid;
+    @PrimaryKey(autoGenerate = true)
+    public int mUid;
 
     @ColumnInfo(name = "Repair_Order_number")
-    private int mRepairOrderNumber;
+    public int mRepairOrderNumber;
 
     @ColumnInfo(name = "Writer")
-    private String mWriter;
+    public String mWriter;
 
     @ColumnInfo(name = "Customer")
-    private String mCustomer;
+    public String mCustomer;
 
     @ColumnInfo(name = "Date")
-    private Date mDate;
+    public Date mDate;
 
     @ColumnInfo(name = "Labor_Rate")
-    private LaborRate mLaborRate;
+    public LaborRate mLaborRate;
 
     @ColumnInfo(name = "Vehicle")
-    private Vehicle mVehicle;
+    public Vehicle mVehicle;
 
     @ColumnInfo(name = "Hours")
-    private double mHours;
+    public double mHours;
 
     @ColumnInfo(name = "Gross")
-    private double mGross;
+    public double mGross;
 
     public RepairOrder(int Uid, int repairOrderNumber, String writer, Date date, LaborRate laborRate) {
         mUid = Uid;
