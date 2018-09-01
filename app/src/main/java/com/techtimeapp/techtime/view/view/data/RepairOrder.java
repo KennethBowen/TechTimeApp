@@ -6,33 +6,32 @@ import android.arch.persistence.room.PrimaryKey;
 
 import java.util.Date;
 
-@Entity
+
 public class RepairOrder {
-    @PrimaryKey(autoGenerate = true)
+
     public int mUid;
 
-    @ColumnInfo(name = "Repair_Order_number")
+
     public int mRepairOrderNumber;
 
-    @ColumnInfo(name = "Writer")
+
     public String mWriter;
 
-    @ColumnInfo(name = "Customer")
     public String mCustomer;
 
-    @ColumnInfo(name = "Date")
+
     public Date mDate;
 
-    @ColumnInfo(name = "Labor_Rate")
+
     public LaborRate mLaborRate;
 
-    @ColumnInfo(name = "Vehicle")
+
     public Vehicle mVehicle;
 
-    @ColumnInfo(name = "Hours")
+
     public double mHours;
 
-    @ColumnInfo(name = "Gross")
+
     public double mGross;
 
     public RepairOrder(int Uid, int repairOrderNumber, String writer, Date date, LaborRate laborRate) {

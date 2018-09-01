@@ -13,14 +13,12 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.techtimeapp.techtime.R;
-import com.techtimeapp.techtime.view.view.data.AppDatabase;
+
 
 import static com.techtimeapp.techtime.R.id.sliding_tabs;
 
 public class MainActivity extends AppCompatActivity {
 
-    AppDatabase db = Room.databaseBuilder(getApplicationContext(),
-            AppDatabase.class, "appDB").build();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
