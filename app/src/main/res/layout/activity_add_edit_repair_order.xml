@@ -1,285 +1,339 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.techtimeapp.techtime.view.view.view.AddEditRepairOrderActivity">
+    tools:context="com.techtimeapp.techtime.view.view.view.AddEditRepairOrderActivity"
+    tools:layout_editor_absoluteY="81dp">
 
-
-    <TextView
-        android:id="@+id/textViewRequiredFields"
-        android:layout_width="wrap_content"
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
-        android:text="@string/required_Info"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:paddingBottom="20dp">
 
-    <EditText
-        android:id="@+id/editTextRepairOrderNumber"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginTop="16dp"
-        android:ems="10"
-        android:inputType="numberSigned"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/guideline2"
-        app:layout_constraintTop_toBottomOf="@+id/textViewRequiredFields" />
+            <TextView
+                android:id="@+id/textViewRequiredFields"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/required_Info"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/textViewHash"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginTop="8dp"
-        android:text="#"
-        app:layout_constraintBottom_toBottomOf="@+id/editTextRepairOrderNumber"
-        app:layout_constraintEnd_toStartOf="@+id/guideline2"
-        app:layout_constraintTop_toTopOf="@+id/editTextRepairOrderNumber" />
+            <EditText
+                android:id="@+id/editTextRepairOrderNumber"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginTop="16dp"
+                android:ems="10"
+                android:inputType="numberSigned"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/guideline2"
+                app:layout_constraintTop_toBottomOf="@+id/textViewRequiredFields" />
 
-    <TextView
-        android:id="@+id/textViewRepairNumber"
-        android:layout_width="wrap_content"
-        android:layout_height="17dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginTop="8dp"
-        android:text="@string/repair_number"
-        android:textColor="@color/colorAccent"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/editTextRepairOrderNumber"
-        app:layout_constraintEnd_toStartOf="@+id/textViewHash"
-        app:layout_constraintTop_toTopOf="@+id/editTextRepairOrderNumber" />
+            <TextView
+                android:id="@+id/textViewHash"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp"
+                android:text="#"
+                app:layout_constraintBottom_toBottomOf="@+id/editTextRepairOrderNumber"
+                app:layout_constraintEnd_toStartOf="@+id/guideline2"
+                app:layout_constraintTop_toTopOf="@+id/editTextRepairOrderNumber" />
 
-    <EditText
-        android:id="@+id/editTextWriter"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:ems="10"
-        android:inputType="textCapWords"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/guideline"
-        app:layout_constraintTop_toBottomOf="@+id/editTextRepairOrderNumber" />
+            <TextView
+                android:id="@+id/textViewRepairNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="17dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/repair_number"
+                android:textColor="@color/colorAccent"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/editTextRepairOrderNumber"
+                app:layout_constraintEnd_toStartOf="@+id/textViewHash"
+                app:layout_constraintTop_toTopOf="@+id/editTextRepairOrderNumber" />
 
-    <android.support.constraint.Guideline
-        android:id="@+id/guideline"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.30833334" />
+            <EditText
+                android:id="@+id/editTextWriter"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:ems="10"
+                android:inputType="textCapWords"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/guideline"
+                app:layout_constraintTop_toBottomOf="@+id/editTextRepairOrderNumber" />
 
-    <TextView
-        android:id="@+id/textViewWriter"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="3dp"
-        android:layout_marginTop="8dp"
-        android:text="@string/Writer"
-        android:textColor="@color/colorAccent"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/editTextWriter"
-        app:layout_constraintEnd_toStartOf="@+id/textView9"
-        app:layout_constraintTop_toTopOf="@+id/editTextWriter" />
+            <android.support.constraint.Guideline
+                android:id="@+id/guideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.30833334" />
 
-    <TextView
-        android:id="@+id/textView9"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginTop="8dp"
-        android:text=":"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/editTextWriter"
-        app:layout_constraintEnd_toStartOf="@+id/guideline"
-        app:layout_constraintTop_toTopOf="@+id/editTextWriter" />
+            <TextView
+                android:id="@+id/textViewWriter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="3dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/Writer"
+                android:textColor="@color/colorAccent"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/editTextWriter"
+                app:layout_constraintEnd_toStartOf="@+id/textView9"
+                app:layout_constraintTop_toTopOf="@+id/editTextWriter" />
 
-    <android.support.constraint.Guideline
-        android:id="@+id/guideline2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.4027778" />
+            <TextView
+                android:id="@+id/textView9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp"
+                android:text=":"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/editTextWriter"
+                app:layout_constraintEnd_toStartOf="@+id/guideline"
+                app:layout_constraintTop_toTopOf="@+id/editTextWriter" />
 
-    <EditText
-        android:id="@+id/editTextCustomer"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:ems="10"
-        android:inputType="textCapWords"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/guideline"
-        app:layout_constraintTop_toBottomOf="@+id/editTextWriter" />
+            <android.support.constraint.Guideline
+                android:id="@+id/guideline2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.4027778" />
 
-    <TextView
-        android:id="@+id/textViewCustomer"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginTop="8dp"
-        android:text="@string/Customer"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/editTextCustomer"
-        app:layout_constraintEnd_toStartOf="@+id/editTextCustomer"
-        app:layout_constraintTop_toTopOf="@+id/editTextCustomer" />
+            <EditText
+                android:id="@+id/editTextCustomer"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:ems="10"
+                android:inputType="textCapWords"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/guideline"
+                app:layout_constraintTop_toBottomOf="@+id/editTextWriter" />
 
-    <EditText
-        android:id="@+id/editTextInsuranceCo"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:ems="10"
-        android:inputType="textCapWords"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/guideline"
-        app:layout_constraintTop_toBottomOf="@+id/editTextCustomer" />
+            <TextView
+                android:id="@+id/textViewCustomer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/Customer"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/editTextCustomer"
+                app:layout_constraintEnd_toStartOf="@+id/editTextCustomer"
+                app:layout_constraintTop_toTopOf="@+id/editTextCustomer" />
 
-    <TextView
-        android:id="@+id/textViewInsuranceCo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginTop="8dp"
-        android:text="@string/Insurance"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/editTextInsuranceCo"
-        app:layout_constraintEnd_toStartOf="@+id/guideline"
-        app:layout_constraintTop_toTopOf="@+id/editTextInsuranceCo" />
+            <EditText
+                android:id="@+id/editTextInsuranceCo"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:ems="10"
+                android:inputType="textCapWords"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/guideline"
+                app:layout_constraintTop_toBottomOf="@+id/editTextCustomer" />
 
-    <TextView
-        android:id="@+id/textViewVehicle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="24dp"
-        android:layout_marginTop="8dp"
-        android:text="@string/Vehicle_title"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/guideline"
-        app:layout_constraintTop_toBottomOf="@+id/editTextInsuranceCo" />
+            <TextView
+                android:id="@+id/textViewInsuranceCo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/Insurance"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/editTextInsuranceCo"
+                app:layout_constraintEnd_toStartOf="@+id/guideline"
+                app:layout_constraintTop_toTopOf="@+id/editTextInsuranceCo" />
 
-    <EditText
-        android:id="@+id/editTextMake"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginTop="8dp"
-        android:ems="10"
-        android:inputType="textCapWords"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/guideline"
-        app:layout_constraintTop_toBottomOf="@+id/textViewVehicle" />
+            <TextView
+                android:id="@+id/textViewVehicle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="24dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/Vehicle_title"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@+id/guideline"
+                app:layout_constraintTop_toBottomOf="@+id/editTextInsuranceCo" />
 
-    <TextView
-        android:id="@+id/textViewMake"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginTop="8dp"
-        android:text="@string/Make"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/editTextMake"
-        app:layout_constraintEnd_toStartOf="@+id/editTextMake"
-        app:layout_constraintTop_toTopOf="@+id/editTextMake" />
+            <EditText
+                android:id="@+id/editTextMake"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginTop="8dp"
+                android:ems="10"
+                android:inputType="textCapWords"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/guideline"
+                app:layout_constraintTop_toBottomOf="@+id/textViewVehicle" />
 
-    <EditText
-        android:id="@+id/editTextModel"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:ems="10"
-        android:inputType="textCapWords"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/guideline"
-        app:layout_constraintTop_toBottomOf="@+id/editTextMake" />
+            <TextView
+                android:id="@+id/textViewMake"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/Make"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/editTextMake"
+                app:layout_constraintEnd_toStartOf="@+id/editTextMake"
+                app:layout_constraintTop_toTopOf="@+id/editTextMake" />
 
-    <TextView
-        android:id="@+id/textViewModel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginTop="8dp"
-        android:text="@string/Model"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/editTextModel"
-        app:layout_constraintEnd_toStartOf="@+id/editTextModel"
-        app:layout_constraintTop_toTopOf="@+id/editTextModel" />
+            <EditText
+                android:id="@+id/editTextModel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:ems="10"
+                android:inputType="textCapWords"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/guideline"
+                app:layout_constraintTop_toBottomOf="@+id/editTextMake" />
 
-    <EditText
-        android:id="@+id/editTextYear"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:ems="10"
-        android:inputType="number"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/guideline"
-        app:layout_constraintTop_toBottomOf="@+id/editTextModel" />
+            <TextView
+                android:id="@+id/textViewModel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/Model"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/editTextModel"
+                app:layout_constraintEnd_toStartOf="@+id/editTextModel"
+                app:layout_constraintTop_toTopOf="@+id/editTextModel" />
 
-    <TextView
-        android:id="@+id/textViewYear"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginTop="8dp"
-        android:text="@string/Year"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/editTextYear"
-        app:layout_constraintEnd_toStartOf="@+id/editTextYear"
-        app:layout_constraintTop_toTopOf="@+id/editTextYear" />
+            <EditText
+                android:id="@+id/editTextYear"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:ems="10"
+                android:inputType="number"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/guideline"
+                app:layout_constraintTop_toBottomOf="@+id/editTextModel" />
 
-    <EditText
-        android:id="@+id/editTextMileage"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:ems="10"
-        android:inputType="number"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/guideline"
-        app:layout_constraintTop_toBottomOf="@+id/editTextYear" />
+            <TextView
+                android:id="@+id/textViewYear"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/Year"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/editTextYear"
+                app:layout_constraintEnd_toStartOf="@+id/editTextYear"
+                app:layout_constraintTop_toTopOf="@+id/editTextYear" />
 
-    <TextView
-        android:id="@+id/textViewMileage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginTop="8dp"
-        android:text="@string/Mileage"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/editTextMileage"
-        app:layout_constraintEnd_toStartOf="@+id/guideline"
-        app:layout_constraintTop_toTopOf="@+id/editTextMileage" />
+            <EditText
+                android:id="@+id/editTextMileage"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:ems="10"
+                android:inputType="number"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/guideline"
+                app:layout_constraintTop_toBottomOf="@+id/editTextYear" />
 
-    <EditText
-        android:id="@+id/editTextVIN"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:ems="10"
-        android:inputType="textCapCharacters"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/guideline"
-        app:layout_constraintTop_toBottomOf="@+id/editTextMileage" />
+            <TextView
+                android:id="@+id/textViewMileage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/Mileage"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/editTextMileage"
+                app:layout_constraintEnd_toStartOf="@+id/guideline"
+                app:layout_constraintTop_toTopOf="@+id/editTextMileage" />
 
-    <TextView
-        android:id="@+id/textView13"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginTop="8dp"
-        android:text="@string/VIN"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/editTextVIN"
-        app:layout_constraintEnd_toStartOf="@+id/guideline"
-        app:layout_constraintTop_toTopOf="@+id/editTextVIN" />
+            <EditText
+                android:id="@+id/editTextVIN"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:ems="10"
+                android:inputType="textCapCharacters"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/guideline"
+                app:layout_constraintTop_toBottomOf="@+id/editTextMileage" />
+
+            <TextView
+                android:id="@+id/textView13"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/VIN"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/editTextVIN"
+                app:layout_constraintEnd_toStartOf="@+id/guideline"
+                app:layout_constraintTop_toTopOf="@+id/editTextVIN" />
+
+        <EditText
+            android:id="@+id/editTextColor"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:ems="10"
+            android:inputType="textCapWords"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/guideline"
+            app:layout_constraintTop_toBottomOf="@+id/editTextVIN" />
+
+        <TextView
+            android:id="@+id/textViewColor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/Color"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/editTextColor"
+            app:layout_constraintEnd_toStartOf="@+id/editTextColor"
+            app:layout_constraintTop_toBottomOf="@+id/editTextColor"
+            app:layout_constraintTop_toTopOf="@+id/editTextColor" />
+
+        <EditText
+            android:id="@+id/editTextLicense"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/guideline"
+            app:layout_constraintTop_toBottomOf="@+id/editTextColor" />
+
+        <TextView
+            android:id="@+id/textViewLicense"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/License"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/editTextLicense"
+            app:layout_constraintEnd_toStartOf="@+id/editTextLicense"
+            app:layout_constraintTop_toTopOf="@+id/editTextLicense" />
 
 
-</android.support.constraint.ConstraintLayout>
+    </android.support.constraint.ConstraintLayout>
+
+</ScrollView>
