@@ -35,7 +35,7 @@
                 android:value=".view.view.view.MainActivity"/>
         </activity>
         <activity
-            android:name=".view.view.view.LaborRatesActivity"
+            android:name=".view.view.logic.LaborRatesActivity"
             android:label="@string/menu_labor_rates"
             android:parentActivityName=".view.view.view.MainActivity">
             <!-- Parent activity meta-data to support 4.0 and lower -->
@@ -62,7 +62,7 @@
                 android:value=".view.view.view.MainActivity"/>
         </activity>
         <activity
-            android:name=".view.view.view.AddEditRepairOrderActivity"
+            android:name=".view.view.logic.AddEditRepairOrderActivity"
             android:label="@string/add_repair_order"
             android:parentActivityName=".view.view.view.MainActivity">
             <!-- Parent activity meta-data to support 4.0 and lower -->

@@ -1,4 +1,5 @@
-package com.techtimeapp.techtime.view.view.view;
+package com.techtimeapp.techtime.view.view.logic;
+
 
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
@@ -8,11 +9,11 @@ import android.view.MenuItem;
 
 import com.techtimeapp.techtime.R;
 
-public class AddEditRepairOrderActivity extends AppCompatActivity {
+public class LaborRatesActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add_edit_repair_order);
+        setContentView(R.layout.activity_labor_rates);
         //allows the activity to remain in portrait only
         this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
     }
@@ -22,7 +23,7 @@ public class AddEditRepairOrderActivity extends AppCompatActivity {
         // Inflate the menu options from the res/menu/menu_main.xml file.
         // This adds menu items to the app bar.
 
-        getMenuInflater().inflate(R.menu.menu_add_edit_repair_order, menu);
+        getMenuInflater().inflate(R.menu.menu_labor_rates, menu);
 
         return true;
     }
@@ -44,5 +45,4 @@ public class AddEditRepairOrderActivity extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
-
 }

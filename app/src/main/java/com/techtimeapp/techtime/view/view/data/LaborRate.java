@@ -8,9 +8,10 @@ public class LaborRate {
     private double mRefinish = 0;
     private double mGlass = 0;
     private double mFrame = 0;
+    private double mAluminum = 0;
     private double mOther = 0;
 
-    public LaborRate(double body, double mechanical, double internal, double warranty, double refinish, double glass, double frame, double other) {
+    public LaborRate(double body, double mechanical, double internal, double warranty, double refinish, double glass, double frame, double aluminum, double other) {
 
         mBody = body;
         mMechanical = mechanical;
@@ -19,6 +20,7 @@ public class LaborRate {
         mRefinish = refinish;
         mGlass = glass;
         mFrame = frame;
+        mAluminum = aluminum;
         mOther = other;
     }
 
@@ -76,6 +78,14 @@ public class LaborRate {
 
     public void setFrame(double frame) {
         mFrame = frame;
+    }
+
+    public double getmAluminum(){
+        return mAluminum;
+    }
+
+    public void setmAluminum(double aluminum){
+        mAluminum = aluminum;
     }
 
     public double getOther() {

@@ -3,8 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.techtimeapp.techtime.view.view.view.AddEditRepairOrderActivity"
+    android:layout_height="wrap_content"
+    tools:context="com.techtimeapp.techtime.view.view.logic.AddEditRepairOrderActivity"
     tools:layout_editor_absoluteY="81dp">
 
     <android.support.constraint.ConstraintLayout
@@ -12,279 +12,279 @@
         android:layout_height="wrap_content"
         android:paddingBottom="20dp">
 
-            <TextView
-                android:id="@+id/textViewRequiredFields"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="16dp"
-                android:text="@string/required_Info"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/textViewRequiredFields"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/required_Info"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-            <EditText
-                android:id="@+id/editTextRepairOrderNumber"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
-                android:layout_marginTop="16dp"
-                android:ems="10"
-                android:inputType="numberSigned"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="@+id/guideline2"
-                app:layout_constraintTop_toBottomOf="@+id/textViewRequiredFields" />
+        <EditText
+            android:id="@+id/editTextRepairOrderNumber"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginTop="16dp"
+            android:ems="10"
+            android:inputType="numberSigned"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/guideline2"
+            app:layout_constraintTop_toBottomOf="@+id/textViewRequiredFields" />
 
-            <TextView
-                android:id="@+id/textViewHash"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:layout_marginTop="8dp"
-                android:text="#"
-                app:layout_constraintBottom_toBottomOf="@+id/editTextRepairOrderNumber"
-                app:layout_constraintEnd_toStartOf="@+id/guideline2"
-                app:layout_constraintTop_toTopOf="@+id/editTextRepairOrderNumber" />
+        <TextView
+            android:id="@+id/textViewHash"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
+            android:text="#"
+            app:layout_constraintBottom_toBottomOf="@+id/editTextRepairOrderNumber"
+            app:layout_constraintEnd_toStartOf="@+id/guideline2"
+            app:layout_constraintTop_toTopOf="@+id/editTextRepairOrderNumber" />
 
-            <TextView
-                android:id="@+id/textViewRepairNumber"
-                android:layout_width="wrap_content"
-                android:layout_height="17dp"
-                android:layout_marginBottom="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginTop="8dp"
-                android:text="@string/repair_number"
-                android:textColor="@color/colorAccent"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="@+id/editTextRepairOrderNumber"
-                app:layout_constraintEnd_toStartOf="@+id/textViewHash"
-                app:layout_constraintTop_toTopOf="@+id/editTextRepairOrderNumber" />
+        <TextView
+            android:id="@+id/textViewRepairNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="17dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/repair_number"
+            android:textColor="@color/colorAccent"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/editTextRepairOrderNumber"
+            app:layout_constraintEnd_toStartOf="@+id/textViewHash"
+            app:layout_constraintTop_toTopOf="@+id/editTextRepairOrderNumber" />
 
-            <EditText
-                android:id="@+id/editTextWriter"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
-                android:ems="10"
-                android:inputType="textCapWords"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="@+id/guideline"
-                app:layout_constraintTop_toBottomOf="@+id/editTextRepairOrderNumber" />
+        <EditText
+            android:id="@+id/editTextWriter"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:ems="10"
+            android:inputType="textCapWords"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/guideline"
+            app:layout_constraintTop_toBottomOf="@+id/editTextRepairOrderNumber" />
 
-            <android.support.constraint.Guideline
-                android:id="@+id/guideline"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                app:layout_constraintGuide_percent="0.30833334" />
+        <android.support.constraint.Guideline
+            android:id="@+id/guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="104dp" />
 
-            <TextView
-                android:id="@+id/textViewWriter"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:layout_marginEnd="3dp"
-                android:layout_marginTop="8dp"
-                android:text="@string/Writer"
-                android:textColor="@color/colorAccent"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="@+id/editTextWriter"
-                app:layout_constraintEnd_toStartOf="@+id/textView9"
-                app:layout_constraintTop_toTopOf="@+id/editTextWriter" />
+        <TextView
+            android:id="@+id/textViewWriter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="3dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/Writer"
+            android:textColor="@color/colorAccent"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/editTextWriter"
+            app:layout_constraintEnd_toStartOf="@+id/textView9"
+            app:layout_constraintTop_toTopOf="@+id/editTextWriter" />
 
-            <TextView
-                android:id="@+id/textView9"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:layout_marginTop="8dp"
-                android:text=":"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="@+id/editTextWriter"
-                app:layout_constraintEnd_toStartOf="@+id/guideline"
-                app:layout_constraintTop_toTopOf="@+id/editTextWriter" />
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
+            android:text=":"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/editTextWriter"
+            app:layout_constraintEnd_toStartOf="@+id/guideline"
+            app:layout_constraintTop_toTopOf="@+id/editTextWriter" />
 
-            <android.support.constraint.Guideline
-                android:id="@+id/guideline2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                app:layout_constraintGuide_percent="0.4027778" />
+        <android.support.constraint.Guideline
+            android:id="@+id/guideline2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="145dp" />
 
-            <EditText
-                android:id="@+id/editTextCustomer"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
-                android:ems="10"
-                android:inputType="textCapWords"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="@+id/guideline"
-                app:layout_constraintTop_toBottomOf="@+id/editTextWriter" />
+        <EditText
+            android:id="@+id/editTextCustomer"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:ems="10"
+            android:inputType="textCapWords"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/guideline"
+            app:layout_constraintTop_toBottomOf="@+id/editTextWriter" />
 
-            <TextView
-                android:id="@+id/textViewCustomer"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:layout_marginTop="8dp"
-                android:text="@string/Customer"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="@+id/editTextCustomer"
-                app:layout_constraintEnd_toStartOf="@+id/editTextCustomer"
-                app:layout_constraintTop_toTopOf="@+id/editTextCustomer" />
+        <TextView
+            android:id="@+id/textViewCustomer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/Customer"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/editTextCustomer"
+            app:layout_constraintEnd_toStartOf="@+id/editTextCustomer"
+            app:layout_constraintTop_toTopOf="@+id/editTextCustomer" />
 
-            <EditText
-                android:id="@+id/editTextInsuranceCo"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
-                android:ems="10"
-                android:inputType="textCapWords"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="@+id/guideline"
-                app:layout_constraintTop_toBottomOf="@+id/editTextCustomer" />
+        <EditText
+            android:id="@+id/editTextInsuranceCo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:ems="10"
+            android:inputType="textCapWords"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/guideline"
+            app:layout_constraintTop_toBottomOf="@+id/editTextCustomer" />
 
-            <TextView
-                android:id="@+id/textViewInsuranceCo"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:layout_marginTop="8dp"
-                android:text="@string/Insurance"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="@+id/editTextInsuranceCo"
-                app:layout_constraintEnd_toStartOf="@+id/guideline"
-                app:layout_constraintTop_toTopOf="@+id/editTextInsuranceCo" />
+        <TextView
+            android:id="@+id/textViewInsuranceCo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/Insurance"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/editTextInsuranceCo"
+            app:layout_constraintEnd_toStartOf="@+id/guideline"
+            app:layout_constraintTop_toTopOf="@+id/editTextInsuranceCo" />
 
-            <TextView
-                android:id="@+id/textViewVehicle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="24dp"
-                android:layout_marginTop="8dp"
-                android:text="@string/Vehicle_title"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toStartOf="@+id/guideline"
-                app:layout_constraintTop_toBottomOf="@+id/editTextInsuranceCo" />
+        <TextView
+            android:id="@+id/textViewVehicle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="24dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/Vehicle_title"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/guideline"
+            app:layout_constraintTop_toBottomOf="@+id/editTextInsuranceCo" />
 
-            <EditText
-                android:id="@+id/editTextMake"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
-                android:layout_marginTop="8dp"
-                android:ems="10"
-                android:inputType="textCapWords"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="@+id/guideline"
-                app:layout_constraintTop_toBottomOf="@+id/textViewVehicle" />
+        <EditText
+            android:id="@+id/editTextMake"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginTop="8dp"
+            android:ems="10"
+            android:inputType="textCapWords"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/guideline"
+            app:layout_constraintTop_toBottomOf="@+id/textViewVehicle" />
 
-            <TextView
-                android:id="@+id/textViewMake"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:layout_marginTop="8dp"
-                android:text="@string/Make"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="@+id/editTextMake"
-                app:layout_constraintEnd_toStartOf="@+id/editTextMake"
-                app:layout_constraintTop_toTopOf="@+id/editTextMake" />
+        <TextView
+            android:id="@+id/textViewMake"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/Make"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/editTextMake"
+            app:layout_constraintEnd_toStartOf="@+id/editTextMake"
+            app:layout_constraintTop_toTopOf="@+id/editTextMake" />
 
-            <EditText
-                android:id="@+id/editTextModel"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
-                android:ems="10"
-                android:inputType="textCapWords"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="@+id/guideline"
-                app:layout_constraintTop_toBottomOf="@+id/editTextMake" />
+        <EditText
+            android:id="@+id/editTextModel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:ems="10"
+            android:inputType="textCapWords"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/guideline"
+            app:layout_constraintTop_toBottomOf="@+id/editTextMake" />
 
-            <TextView
-                android:id="@+id/textViewModel"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:layout_marginTop="8dp"
-                android:text="@string/Model"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="@+id/editTextModel"
-                app:layout_constraintEnd_toStartOf="@+id/editTextModel"
-                app:layout_constraintTop_toTopOf="@+id/editTextModel" />
+        <TextView
+            android:id="@+id/textViewModel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/Model"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/editTextModel"
+            app:layout_constraintEnd_toStartOf="@+id/editTextModel"
+            app:layout_constraintTop_toTopOf="@+id/editTextModel" />
 
-            <EditText
-                android:id="@+id/editTextYear"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
-                android:ems="10"
-                android:inputType="number"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="@+id/guideline"
-                app:layout_constraintTop_toBottomOf="@+id/editTextModel" />
+        <EditText
+            android:id="@+id/editTextYear"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:ems="10"
+            android:inputType="number"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/guideline"
+            app:layout_constraintTop_toBottomOf="@+id/editTextModel" />
 
-            <TextView
-                android:id="@+id/textViewYear"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:layout_marginTop="8dp"
-                android:text="@string/Year"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="@+id/editTextYear"
-                app:layout_constraintEnd_toStartOf="@+id/editTextYear"
-                app:layout_constraintTop_toTopOf="@+id/editTextYear" />
+        <TextView
+            android:id="@+id/textViewYear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/Year"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/editTextYear"
+            app:layout_constraintEnd_toStartOf="@+id/editTextYear"
+            app:layout_constraintTop_toTopOf="@+id/editTextYear" />
 
-            <EditText
-                android:id="@+id/editTextMileage"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
-                android:ems="10"
-                android:inputType="number"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="@+id/guideline"
-                app:layout_constraintTop_toBottomOf="@+id/editTextYear" />
+        <EditText
+            android:id="@+id/editTextMileage"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:ems="10"
+            android:inputType="number"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/guideline"
+            app:layout_constraintTop_toBottomOf="@+id/editTextYear" />
 
-            <TextView
-                android:id="@+id/textViewMileage"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:layout_marginTop="8dp"
-                android:text="@string/Mileage"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="@+id/editTextMileage"
-                app:layout_constraintEnd_toStartOf="@+id/guideline"
-                app:layout_constraintTop_toTopOf="@+id/editTextMileage" />
+        <TextView
+            android:id="@+id/textViewMileage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/Mileage"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/editTextMileage"
+            app:layout_constraintEnd_toStartOf="@+id/guideline"
+            app:layout_constraintTop_toTopOf="@+id/editTextMileage" />
 
-            <EditText
-                android:id="@+id/editTextVIN"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
-                android:ems="10"
-                android:inputType="textCapCharacters"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="@+id/guideline"
-                app:layout_constraintTop_toBottomOf="@+id/editTextMileage" />
+        <EditText
+            android:id="@+id/editTextVIN"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:ems="10"
+            android:inputType="textCapCharacters"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/guideline"
+            app:layout_constraintTop_toBottomOf="@+id/editTextMileage" />
 
-            <TextView
-                android:id="@+id/textView13"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:layout_marginTop="8dp"
-                android:text="@string/VIN"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="@+id/editTextVIN"
-                app:layout_constraintEnd_toStartOf="@+id/guideline"
-                app:layout_constraintTop_toTopOf="@+id/editTextVIN" />
+        <TextView
+            android:id="@+id/textView13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/VIN"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/editTextVIN"
+            app:layout_constraintEnd_toStartOf="@+id/guideline"
+            app:layout_constraintTop_toTopOf="@+id/editTextVIN" />
 
         <EditText
             android:id="@+id/editTextColor"
@@ -316,7 +316,7 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
             android:ems="10"
-            android:inputType="textPersonName"
+            android:inputType="textCapCharacters"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/guideline"
             app:layout_constraintTop_toBottomOf="@+id/editTextColor" />
@@ -332,6 +332,494 @@
             app:layout_constraintBottom_toBottomOf="@+id/editTextLicense"
             app:layout_constraintEnd_toStartOf="@+id/editTextLicense"
             app:layout_constraintTop_toTopOf="@+id/editTextLicense" />
+
+        <TextView
+            android:id="@+id/textViewLaborType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/labor_type"
+            android:textColor="@color/colorAccent"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/guideline2"
+            app:layout_constraintTop_toBottomOf="@+id/editTextLicense" />
+
+        <Spinner
+            android:id="@+id/spinner_labor_type_one"
+            android:visibility="gone"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
+            android:spinnerMode="dropdown"
+            app:layout_constraintBottom_toBottomOf="@+id/editTextHours_one"
+            app:layout_constraintEnd_toStartOf="@+id/textViewHours_one"
+            app:layout_constraintTop_toTopOf="@+id/editTextHours_one" />
+
+        <TextView
+            android:id="@+id/textViewHours_one"
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="3dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/Hours"
+            android:textColor="@color/colorAccent"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/editTextHours_one"
+            app:layout_constraintEnd_toStartOf="@+id/textView_one"
+            app:layout_constraintTop_toTopOf="@+id/editTextHours_one" />
+
+        <TextView
+            android:id="@+id/textView_one"
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
+            android:text=":"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/editTextHours_one"
+            app:layout_constraintEnd_toStartOf="@+id/guideline4"
+            app:layout_constraintTop_toTopOf="@+id/editTextHours_one" />
+
+        <EditText
+            android:id="@+id/editTextHours_one"
+            android:visibility="gone"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginTop="8dp"
+            android:ems="10"
+            android:inputType="numberDecimal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/guideline4"
+            app:layout_constraintTop_toBottomOf="@+id/textViewLaborType" />
+
+        <android.support.constraint.Guideline
+            android:id="@+id/guideline4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="233dp" />
+
+        <EditText
+            android:id="@+id/editTextHours_two"
+            android:visibility="gone"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:ems="10"
+            android:inputType="numberDecimal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/guideline4"
+            app:layout_constraintTop_toBottomOf="@+id/editTextHours_one" />
+
+        <TextView
+            android:id="@+id/textView_two"
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
+            android:text=":"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/editTextHours_two"
+            app:layout_constraintEnd_toStartOf="@+id/guideline4"
+            app:layout_constraintTop_toTopOf="@+id/editTextHours_two" />
+
+        <TextView
+            android:id="@+id/textViewHours_two"
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="3dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/Hours"
+            android:textColor="@color/colorAccent"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/editTextHours_two"
+            app:layout_constraintEnd_toStartOf="@+id/textView_two"
+            app:layout_constraintTop_toTopOf="@+id/editTextHours_two" />
+
+        <Spinner
+            android:id="@+id/spinner_labor_type_two"
+            android:visibility="gone"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/editTextHours_two"
+            app:layout_constraintEnd_toStartOf="@+id/textViewHours_two"
+            app:layout_constraintTop_toTopOf="@+id/editTextHours_two" />
+
+        <EditText
+            android:id="@+id/editTextHours_three"
+            android:visibility="gone"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:ems="10"
+            android:inputType="numberDecimal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/guideline4"
+            app:layout_constraintTop_toBottomOf="@+id/editTextHours_two" />
+
+        <TextView
+            android:id="@+id/textView_three"
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
+            android:text=":"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/editTextHours_three"
+            app:layout_constraintEnd_toStartOf="@+id/guideline4"
+            app:layout_constraintTop_toTopOf="@+id/editTextHours_three" />
+
+        <TextView
+            android:id="@+id/textViewHours_three"
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="3dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/Hours"
+            android:textColor="@color/colorAccent"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/editTextHours_three"
+            app:layout_constraintEnd_toStartOf="@+id/textView_three"
+            app:layout_constraintTop_toTopOf="@+id/editTextHours_three" />
+
+        <Spinner
+            android:id="@+id/spinner_labor_type_three"
+            android:visibility="gone"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/editTextHours_three"
+            app:layout_constraintEnd_toStartOf="@+id/textViewHours_three"
+            app:layout_constraintTop_toTopOf="@+id/editTextHours_three" />
+
+        <EditText
+            android:id="@+id/editTextHours_four"
+            android:visibility="gone"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:ems="10"
+            android:inputType="numberDecimal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.508"
+            app:layout_constraintStart_toStartOf="@+id/guideline4"
+            app:layout_constraintTop_toBottomOf="@+id/editTextHours_three" />
+
+        <TextView
+            android:id="@+id/textView_four"
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
+            android:text=":"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/editTextHours_four"
+            app:layout_constraintEnd_toStartOf="@+id/guideline4"
+            app:layout_constraintTop_toTopOf="@+id/editTextHours_four" />
+
+        <TextView
+            android:id="@+id/textViewHours_four"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="3dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/Hours"
+            android:textColor="@color/colorAccent"
+            android:textStyle="bold"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/editTextHours_four"
+            app:layout_constraintEnd_toStartOf="@+id/textView_four"
+            app:layout_constraintTop_toTopOf="@+id/editTextHours_four" />
+
+        <Spinner
+            android:id="@+id/spinner_labor_type_four"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/editTextHours_four"
+            app:layout_constraintEnd_toStartOf="@+id/textViewHours_four"
+            app:layout_constraintTop_toTopOf="@+id/editTextHours_four" />
+
+        <EditText
+            android:id="@+id/editTextHours_five"
+            android:visibility="gone"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:ems="10"
+            android:inputType="numberDecimal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.508"
+            app:layout_constraintStart_toStartOf="@+id/guideline4"
+            app:layout_constraintTop_toBottomOf="@+id/editTextHours_four" />
+
+        <TextView
+            android:id="@+id/textView_five"
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
+            android:text=":"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/editTextHours_five"
+            app:layout_constraintEnd_toStartOf="@+id/guideline4"
+            app:layout_constraintTop_toTopOf="@+id/editTextHours_five" />
+
+        <TextView
+            android:id="@+id/textViewHours_five"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="3dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/Hours"
+            android:textColor="@color/colorAccent"
+            android:textStyle="bold"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/editTextHours_five"
+            app:layout_constraintEnd_toStartOf="@+id/textView_five"
+            app:layout_constraintTop_toTopOf="@+id/editTextHours_five" />
+
+        <Spinner
+            android:id="@+id/spinner_labor_type_five"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/editTextHours_five"
+            app:layout_constraintEnd_toStartOf="@+id/textViewHours_five"
+            app:layout_constraintTop_toTopOf="@+id/editTextHours_five" />
+
+        <EditText
+            android:id="@+id/editTextHours_six"
+            android:visibility="gone"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:ems="10"
+            android:inputType="numberDecimal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.508"
+            app:layout_constraintStart_toStartOf="@+id/guideline4"
+            app:layout_constraintTop_toBottomOf="@+id/editTextHours_five" />
+
+        <TextView
+            android:id="@+id/textView_six"
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
+            android:text=":"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/editTextHours_six"
+            app:layout_constraintEnd_toStartOf="@+id/guideline4"
+            app:layout_constraintTop_toTopOf="@+id/editTextHours_six" />
+
+        <TextView
+            android:id="@+id/textViewHours_six"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="3dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/Hours"
+            android:textColor="@color/colorAccent"
+            android:textStyle="bold"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/editTextHours_six"
+            app:layout_constraintEnd_toStartOf="@+id/textView_six"
+            app:layout_constraintTop_toTopOf="@+id/editTextHours_six" />
+
+        <Spinner
+            android:id="@+id/spinner_labor_type_six"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/editTextHours_six"
+            app:layout_constraintEnd_toStartOf="@+id/textViewHours_six"
+            app:layout_constraintTop_toTopOf="@+id/editTextHours_six" />
+
+        <EditText
+            android:id="@+id/editTextHours_seven"
+            android:visibility="gone"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:ems="10"
+            android:inputType="numberDecimal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.508"
+            app:layout_constraintStart_toStartOf="@+id/guideline4"
+            app:layout_constraintTop_toBottomOf="@+id/editTextHours_six" />
+
+        <TextView
+            android:id="@+id/textView_seven"
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
+            android:text=":"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/editTextHours_seven"
+            app:layout_constraintEnd_toStartOf="@+id/guideline4"
+            app:layout_constraintTop_toTopOf="@+id/editTextHours_seven" />
+
+        <TextView
+            android:id="@+id/textViewHours_seven"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="3dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/Hours"
+            android:textColor="@color/colorAccent"
+            android:textStyle="bold"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/editTextHours_seven"
+            app:layout_constraintEnd_toStartOf="@+id/textView_seven"
+            app:layout_constraintTop_toTopOf="@+id/editTextHours_seven" />
+
+        <Spinner
+            android:id="@+id/spinner_labor_type_seven"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/editTextHours_seven"
+            app:layout_constraintEnd_toStartOf="@+id/textViewHours_seven"
+            app:layout_constraintTop_toTopOf="@+id/editTextHours_seven" />
+
+        <EditText
+            android:id="@+id/editTextHours_eight"
+            android:visibility="gone"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:ems="10"
+            android:inputType="numberDecimal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.508"
+            app:layout_constraintStart_toStartOf="@+id/guideline4"
+            app:layout_constraintTop_toBottomOf="@+id/editTextHours_seven" />
+
+        <TextView
+            android:id="@+id/textView_eight"
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
+            android:text=":"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/editTextHours_eight"
+            app:layout_constraintEnd_toStartOf="@+id/guideline4"
+            app:layout_constraintTop_toTopOf="@+id/editTextHours_eight" />
+
+        <TextView
+            android:id="@+id/textViewHours_eight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="3dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/Hours"
+            android:textColor="@color/colorAccent"
+            android:textStyle="bold"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/editTextHours_eight"
+            app:layout_constraintEnd_toStartOf="@+id/textView_eight"
+            app:layout_constraintTop_toTopOf="@+id/editTextHours_eight" />
+
+        <Spinner
+            android:id="@+id/spinner_labor_type_eight"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/editTextHours_eight"
+            app:layout_constraintEnd_toStartOf="@+id/textViewHours_eight"
+            app:layout_constraintTop_toTopOf="@+id/editTextHours_eight" />
+
+        <EditText
+            android:id="@+id/editTextHours_nine"
+            android:visibility="gone"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:ems="10"
+            android:inputType="numberDecimal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.508"
+            app:layout_constraintStart_toStartOf="@+id/guideline4"
+            app:layout_constraintTop_toBottomOf="@+id/editTextHours_eight" />
+
+        <TextView
+            android:id="@+id/textView_nine"
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
+            android:text=":"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/editTextHours_nine"
+            app:layout_constraintEnd_toStartOf="@+id/guideline4"
+            app:layout_constraintTop_toTopOf="@+id/editTextHours_nine" />
+
+        <TextView
+            android:id="@+id/textViewHours_nine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="3dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/Hours"
+            android:textColor="@color/colorAccent"
+            android:textStyle="bold"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/editTextHours_nine"
+            app:layout_constraintEnd_toStartOf="@+id/textView_nine"
+            app:layout_constraintTop_toTopOf="@+id/editTextHours_nine" />
+
+        <Spinner
+            android:id="@+id/spinner_labor_type_nine"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/editTextHours_nine"
+            app:layout_constraintEnd_toStartOf="@+id/textViewHours_nine"
+            app:layout_constraintTop_toTopOf="@+id/editTextHours_nine" />
 
 
     </android.support.constraint.ConstraintLayout>

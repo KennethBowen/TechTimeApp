@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- These are the options displayed in the gender drop-down Spinner -->
+    <string-array name="array_Labor_options">
+        <item>@string/add_labor</item>
+        <item>@string/Body</item>
+        <item>@string/Mechanical</item>
+        <item>@string/Internal</item>
+        <item>@string/Warranty</item>
+        <item>@string/Refinish</item>
+        <item>@string/Glass</item>
+        <item>@string/Frame</item>
+        <item>@string/Aluminum</item>
+        <item>@string/Other</item>
+    </string-array>
+</resources>

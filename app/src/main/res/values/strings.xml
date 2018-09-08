@@ -70,6 +70,9 @@
     <!-- textView for the word Other in labor rate activity  [CHAR LIMIT=20] -->
     <string name="Other">Other</string>
 
+    <!-- only used in the add edit repair order activity  [CHAR LIMIT=20] -->
+    <string name="add_labor">Add Labor</string>
+
     <!-- textView for the text Order By activity purpose  -->
     <string name="orderByAbout">Display the pay period to your preference</string>
 
@@ -92,7 +95,7 @@
     <string name="DateOrderInfo">Repair order dates listed earliest to most current</string>
 
     <!-- textView for the text Add edit repair order activity  -->
-    <string name="required_Info">All fields in blue are required</string>
+    <string name="required_Info">Only the fields in blue are required</string>
 
     <!-- textView for the text Add edit repair order activity  -->
     <string name="repair_number">Repair Order</string>
@@ -129,6 +132,9 @@
 
     <!-- textView for the text Add edit repair order activity  -->
     <string name="License">License :</string>
+
+    <!-- textView for the text Add edit repair order activity  -->
+    <string name="Hours">Hours</string>
 
 
 </resources>
