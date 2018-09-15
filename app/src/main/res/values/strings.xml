@@ -43,6 +43,9 @@
     <!-- textView for the word Rate in labor rate activity  [CHAR LIMIT=20] -->
     <string name="rate">Rate</string>
 
+    <!-- only used in the add edit repair order activity  [CHAR LIMIT=20] -->
+    <string name="add_labor">Add Labor</string>
+
     <!-- textView for the word Body in labor rate activity  [CHAR LIMIT=20] -->
     <string name="Body">Body</string>
 
@@ -70,8 +73,6 @@
     <!-- textView for the word Other in labor rate activity  [CHAR LIMIT=20] -->
     <string name="Other">Other</string>
 
-    <!-- only used in the add edit repair order activity  [CHAR LIMIT=20] -->
-    <string name="add_labor">Add Labor</string>
 
     <!-- textView for the text Order By activity purpose  -->
     <string name="orderByAbout">Display the pay period to your preference</string>
