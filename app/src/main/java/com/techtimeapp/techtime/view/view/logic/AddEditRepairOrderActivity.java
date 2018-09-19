@@ -1,9 +1,8 @@
 package com.techtimeapp.techtime.view.view.logic;
 
 
-import android.content.ContentValues;
+
 import android.content.pm.ActivityInfo;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
@@ -21,7 +20,7 @@ import java.util.List;
 
 public class AddEditRepairOrderActivity extends AppCompatActivity {
 
-    /** EditText field to enter the labor Type */
+    //spinner object
     private Spinner mLaborSpinnerOne, mLaborSpinnerTwo, mLaborSpinnerThree, mLaborSpinnerFour, mLaborSpinnerFive,
             mLaborSpinnerSix, mLaborSpinnerSeven, mLaborSpinnerEight, mLaborSpinnerNine;
 
@@ -73,6 +72,7 @@ public class AddEditRepairOrderActivity extends AppCompatActivity {
         //allows the activity to remain in portrait only
         this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
+        // list that will hold the labor type potions for the spinners
         laborType = new ArrayList<String>();
         laborType.add("Add Labor");
         laborType.add("Body");
@@ -85,7 +85,7 @@ public class AddEditRepairOrderActivity extends AppCompatActivity {
         laborType.add("Aluminum");
         laborType.add("Other");
 
-
+        //ArrayAdapter nothing more to be said
         laborSpinnerAdapter = new ArrayAdapter(this,android.R.layout.simple_spinner_item, laborType);
         laborSpinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
@@ -97,43 +97,55 @@ public class AddEditRepairOrderActivity extends AppCompatActivity {
 
 
     /**
-     * Setup the dropdown spinner that allows the user to select the labor type.
+     * Setup the dropdown spinner * ONE * that allows the user to select the labor type.
      */
     private void setupSpinnerOne() {
 
+        // spinner one object
         mLaborSpinnerOne = findViewById(R.id.spinner_labor_type_one);
 
         // Apply the adapter to the spinner
         mLaborSpinnerOne.setAdapter(laborSpinnerAdapter);
 
+
+        //the hours that would belong to the selected labor type
         View mEditHoursOne = findViewById(R.id.editTextHours_one);
+        //variables to view items that belong with spinner one
         final TextView mTextHoursOne = findViewById(R.id.textViewHours_one);
         View mColonOne = findViewById(R.id.textView_one);
 
+        // view items that belong with spinner two that can be set to GONE within this method
         final View mEditHoursTwo = findViewById(R.id.editTextHours_two);
         final TextView mTextHoursTwo = findViewById(R.id.textViewHours_two);
         final View mColonTwo = findViewById(R.id.textView_two);
 
+        //set the view items that belong to spinner one VISIBLE
         mLaborSpinnerOne.setVisibility(View.VISIBLE);
         mEditHoursOne.setVisibility(View.VISIBLE);
         mTextHoursOne.setVisibility(View.VISIBLE);
         mColonOne.setVisibility(View.VISIBLE);
 
+        // setOnItemSelectedListener for Spinner one for item selections
         mLaborSpinnerOne.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                // holds the String value of the position selected from the spinner
                 String selection = (String) parent.getItemAtPosition(position);
+
                 if(position > 0) {
                     if (spinCount == 0) {
+                        // passes the string values of labor type selected to setLaborHiddenOne
                         setLaborHiddenOne(selection);
                         setupSpinnerTwo();
                         spinCount++;
                     } else {
+                        // passes the string values of labor type selected to setLaborHiddenOne
                         setLaborHiddenOne(selection);
                     }
                 } else if (laborOneSelected != null){
                     laborType.add(laborOneSelected);
                     laborOneSelected = null;
+                    //sets the hours text back to grey
                     mTextHoursOne.setTextColor(getResources().getColor(android.R.color.tab_indicator_text));
                     if(laborOneSelected == null && laborTwoSelected == null){
                         mLaborSpinnerTwo.setVisibility(View.GONE);
@@ -156,12 +168,16 @@ public class AddEditRepairOrderActivity extends AppCompatActivity {
 
     // will hide selected labor types that are in use
     private void setLaborHiddenOne(String selection){
+        //so the hours text view will be able to be set blue
         TextView mTextHoursOne = findViewById(R.id.textViewHours_one);
         int accentBlue = getResources().getColor(R.color.colorAccent);
 
         if(laborOneSelected == null){
+            // assigns the string value to the laborOneSelected
             laborOneSelected = selection;
+            //removes the string value from the list of set up labor types that can be used
             laborType.remove(selection);
+            //sets the hours text to blue
             mTextHoursOne.setTextColor(accentBlue);
         } if (laborOneSelected !=null){
                 laborType.add(laborOneSelected);
@@ -184,9 +200,9 @@ public class AddEditRepairOrderActivity extends AppCompatActivity {
         // Apply the adapter to the spinner
         mLaborSpinnerTwo.setAdapter(laborSpinnerAdapter);
 
-        View mEditHoursTwo = findViewById(R.id.editTextHours_two);
+        final View mEditHoursTwo = findViewById(R.id.editTextHours_two);
         final TextView mTextHoursTwo = findViewById(R.id.textViewHours_two);
-        View mColonTwo = findViewById(R.id.textView_two);
+        final View mColonTwo = findViewById(R.id.textView_two);
 
         final View mEditHoursThree = findViewById(R.id.editTextHours_three);
         final TextView mTextHoursThree = findViewById(R.id.textViewHours_three);
@@ -221,6 +237,13 @@ public class AddEditRepairOrderActivity extends AppCompatActivity {
                         mTextHoursThree.setVisibility(View.GONE);
                         mColonThree.setVisibility(View.GONE);
                         spinCount --;
+                        if(laborOneSelected == null){
+                            mLaborSpinnerTwo.setVisibility(View.GONE);
+                            mEditHoursTwo.setVisibility(View.GONE);
+                            mTextHoursTwo.setVisibility(View.GONE);
+                            mColonTwo.setVisibility(View.GONE);
+                            spinCount --;
+                        }
                     }
                 }
 

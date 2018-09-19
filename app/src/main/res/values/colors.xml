@@ -12,5 +12,8 @@
     <!--  color of the tabIndicator (shown in the view pager) -->
     <color name="tabColor">#486783</color>
 
+    <!--  color of the green money baby (shown in the view pager) -->
+    <color name="thatMeanGreen">#2e7c1b</color>
+
     <color name="colorAccent">#486783</color>
 </resources>

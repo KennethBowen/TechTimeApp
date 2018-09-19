@@ -1,0 +1,628 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.techtimeapp.techtime.view.view.view.RepairOrderActivity">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="20dp">
+
+    <TextView
+        android:id="@+id/repairOrderNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:text=""
+        android:textColor="@color/colorAccent"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="44dp" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="25dp" />
+
+    <TextView
+        android:id="@+id/labelWriter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/Writer_repair_order"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/guideline5"
+        app:layout_constraintTop_toBottomOf="@+id/repairOrderNumber" />
+
+    <TextView
+        android:id="@+id/repairOrderWriter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        app:layout_constraintBaseline_toBaselineOf="@+id/labelWriter"
+        app:layout_constraintEnd_toStartOf="@+id/guideline6" />
+
+    <TextView
+        android:id="@+id/labelDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/Date_repair_order"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/guideline5"
+        app:layout_constraintTop_toBottomOf="@+id/labelWriter" />
+
+    <TextView
+        android:id="@+id/repairOrderDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        app:layout_constraintBaseline_toBaselineOf="@+id/labelDate"
+        app:layout_constraintEnd_toStartOf="@+id/guideline6" />
+
+    <TextView
+        android:id="@+id/labelCustomer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/Customer_repair_order"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/guideline5"
+        app:layout_constraintTop_toBottomOf="@+id/labelDate" />
+
+    <TextView
+        android:id="@+id/repairOrderCustomer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        app:layout_constraintBaseline_toBaselineOf="@+id/labelCustomer"
+        app:layout_constraintEnd_toStartOf="@+id/guideline6" />
+
+    <TextView
+        android:id="@+id/labelInsurance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/Insurance_repair_order"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/guideline5"
+        app:layout_constraintTop_toBottomOf="@+id/labelCustomer" />
+
+    <TextView
+        android:id="@+id/repairOrderInsurance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        app:layout_constraintBaseline_toBaselineOf="@+id/labelInsurance"
+        app:layout_constraintEnd_toStartOf="@+id/guideline6" />
+
+    <TextView
+        android:id="@+id/labelVehicle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/Vehicle_title"
+        android:textColor="@color/colorAccent"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/labelInsurance" />
+
+    <TextView
+        android:id="@+id/labelMake"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/Make_repair_order"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/guideline5"
+        app:layout_constraintTop_toBottomOf="@+id/labelVehicle" />
+
+    <TextView
+        android:id="@+id/repairOrderMake"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        app:layout_constraintBaseline_toBaselineOf="@+id/labelMake"
+        app:layout_constraintEnd_toStartOf="@+id/guideline6" />
+
+    <TextView
+        android:id="@+id/labelModel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/Model_repair_order"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/guideline5"
+        app:layout_constraintTop_toBottomOf="@+id/labelMake" />
+
+    <TextView
+        android:id="@+id/repairOrderModel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        app:layout_constraintBaseline_toBaselineOf="@+id/labelModel"
+        app:layout_constraintEnd_toStartOf="@+id/guideline6" />
+
+    <TextView
+        android:id="@+id/labelYear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/Year_repair_order"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/guideline5"
+        app:layout_constraintTop_toBottomOf="@+id/labelModel" />
+
+    <TextView
+        android:id="@+id/repairOrderYear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        app:layout_constraintBaseline_toBaselineOf="@+id/labelYear"
+        app:layout_constraintEnd_toStartOf="@+id/guideline6" />
+
+    <TextView
+        android:id="@+id/labelMileage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/Mileage_repair_order"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/guideline5"
+        app:layout_constraintTop_toBottomOf="@+id/labelYear" />
+
+    <TextView
+        android:id="@+id/repairOrderMileage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        app:layout_constraintBaseline_toBaselineOf="@+id/labelMileage"
+        app:layout_constraintEnd_toStartOf="@+id/guideline6" />
+
+    <TextView
+        android:id="@+id/labelVIN"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/VIN_repair_order"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/guideline5"
+        app:layout_constraintTop_toBottomOf="@+id/labelMileage" />
+
+    <TextView
+        android:id="@+id/repairOrderVIN"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        app:layout_constraintBaseline_toBaselineOf="@+id/labelVIN"
+        app:layout_constraintEnd_toStartOf="@+id/guideline6" />
+
+    <TextView
+        android:id="@+id/labelColor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/Color_repair_order"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/guideline5"
+        app:layout_constraintTop_toBottomOf="@+id/labelVIN" />
+
+    <TextView
+        android:id="@+id/repairOrderColor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        app:layout_constraintBaseline_toBaselineOf="@+id/labelColor"
+        app:layout_constraintEnd_toStartOf="@+id/guideline6" />
+
+    <TextView
+        android:id="@+id/labelLicense"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/License_repair_order"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/guideline5"
+        app:layout_constraintTop_toBottomOf="@+id/labelColor" />
+
+    <TextView
+        android:id="@+id/repairOrderLicense"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        app:layout_constraintBaseline_toBaselineOf="@+id/labelLicense"
+        app:layout_constraintEnd_toStartOf="@+id/guideline6" />
+
+    <TextView
+        android:id="@+id/labelLaborType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/labor_type"
+        android:textColor="@color/colorAccent"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/labelLicense" />
+
+    <TextView
+        android:id="@+id/labelHours"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:text="@string/Hours"
+        android:textColor="@color/colorAccent"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/labelLaborType"
+        app:layout_constraintEnd_toStartOf="@+id/labelGross"
+        app:layout_constraintStart_toEndOf="@+id/labelLaborType"
+        app:layout_constraintTop_toTopOf="@+id/labelLaborType"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/labelGross"
+        android:layout_width="wrap_content"
+        android:layout_height="16dp"
+        android:text="@string/Gross"
+        android:textColor="@color/colorAccent"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/labelHours"
+        app:layout_constraintEnd_toStartOf="@+id/guideline6"
+        app:layout_constraintTop_toTopOf="@+id/labelHours" />
+
+    <TextView
+        android:id="@+id/laborTypeOne"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text=""
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="@+id/guideline5"
+        app:layout_constraintTop_toBottomOf="@+id/labelLaborType" />
+
+    <TextView
+        android:id="@+id/laborHoursOne"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:text=""
+        android:visibility="gone"
+        app:layout_constraintBaseline_toBaselineOf="@+id/laborTypeOne"
+        app:layout_constraintEnd_toEndOf="@+id/labelHours"
+        app:layout_constraintStart_toStartOf="@+id/labelHours" />
+
+    <TextView
+        android:id="@+id/laborGrossOne"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:visibility="gone"
+        android:textStyle="bold"
+        android:textColor="@color/thatMeanGreen"
+        app:layout_constraintBaseline_toBaselineOf="@+id/laborHoursOne"
+        app:layout_constraintEnd_toStartOf="@+id/guideline6" />
+
+    <TextView
+        android:id="@+id/laborTypeTwo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text=""
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="@+id/guideline5"
+        app:layout_constraintTop_toBottomOf="@+id/laborTypeOne" />
+
+        <TextView
+            android:id="@+id/laborHoursTwo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:text=""
+            android:visibility="gone"
+            app:layout_constraintBaseline_toBaselineOf="@+id/laborTypeTwo"
+            app:layout_constraintEnd_toEndOf="@+id/labelHours"
+            app:layout_constraintStart_toStartOf="@+id/labelHours" />
+
+    <TextView
+        android:id="@+id/laborGrossTwo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:visibility="gone"
+        android:textStyle="bold"
+        android:textColor="@color/thatMeanGreen"
+        app:layout_constraintBaseline_toBaselineOf="@+id/laborHoursTwo"
+        app:layout_constraintEnd_toStartOf="@+id/guideline6" />
+
+        <TextView
+            android:id="@+id/laborTypeThree"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text=""
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="@+id/guideline5"
+            app:layout_constraintTop_toBottomOf="@+id/laborTypeTwo" />
+
+        <TextView
+            android:id="@+id/laborHoursThree"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:text=""
+            android:visibility="gone"
+            app:layout_constraintBaseline_toBaselineOf="@+id/laborTypeThree"
+            app:layout_constraintEnd_toEndOf="@+id/labelHours"
+            app:layout_constraintStart_toStartOf="@+id/labelHours" />
+
+        <TextView
+            android:id="@+id/laborGrossThree"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:visibility="gone"
+            android:textColor="@color/thatMeanGreen"
+            android:textStyle="bold"
+            app:layout_constraintBaseline_toBaselineOf="@+id/laborHoursThree"
+            app:layout_constraintEnd_toStartOf="@+id/guideline6" />
+
+        <TextView
+            android:id="@+id/laborTypeFour"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text=""
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="@+id/guideline5"
+            app:layout_constraintTop_toBottomOf="@+id/laborTypeThree" />
+
+        <TextView
+            android:id="@+id/laborHoursFour"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:text=""
+            android:visibility="gone"
+            app:layout_constraintBaseline_toBaselineOf="@+id/laborTypeFour"
+            app:layout_constraintEnd_toEndOf="@+id/labelHours"
+            app:layout_constraintStart_toStartOf="@+id/labelHours" />
+
+        <TextView
+            android:id="@+id/laborGrossFour"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:visibility="gone"
+            android:textColor="@color/thatMeanGreen"
+            android:textStyle="bold"
+            app:layout_constraintBaseline_toBaselineOf="@+id/laborHoursFour"
+            app:layout_constraintEnd_toStartOf="@+id/guideline6" />
+
+        <TextView
+            android:id="@+id/laborTypeFive"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text=""
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="@+id/guideline5"
+            app:layout_constraintTop_toBottomOf="@+id/laborTypeFour" />
+
+        <TextView
+            android:id="@+id/laborHoursFive"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:text=""
+            android:visibility="gone"
+            app:layout_constraintBaseline_toBaselineOf="@+id/laborTypeFive"
+            app:layout_constraintEnd_toEndOf="@+id/labelHours"
+            app:layout_constraintStart_toStartOf="@+id/labelHours" />
+
+        <TextView
+            android:id="@+id/laborGrossFive"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:visibility="gone"
+            android:textColor="@color/thatMeanGreen"
+            android:textStyle="bold"
+            app:layout_constraintBaseline_toBaselineOf="@+id/laborHoursFive"
+            app:layout_constraintEnd_toStartOf="@+id/guideline6" />
+
+        <TextView
+            android:id="@+id/laborTypeSix"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text=""
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="@+id/guideline5"
+            app:layout_constraintTop_toBottomOf="@+id/laborTypeFive" />
+
+        <TextView
+            android:id="@+id/laborHoursSix"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:text=""
+            android:visibility="gone"
+            app:layout_constraintBaseline_toBaselineOf="@+id/laborTypeSix"
+            app:layout_constraintEnd_toEndOf="@+id/labelHours"
+            app:layout_constraintStart_toStartOf="@+id/labelHours" />
+
+        <TextView
+            android:id="@+id/laborGrossSix"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:visibility="gone"
+            android:textColor="@color/thatMeanGreen"
+            android:textStyle="bold"
+            app:layout_constraintBaseline_toBaselineOf="@+id/laborHoursSix"
+            app:layout_constraintEnd_toStartOf="@+id/guideline6" />
+
+        <TextView
+            android:id="@+id/laborTypeSeven"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text=""
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="@+id/guideline5"
+            app:layout_constraintTop_toBottomOf="@+id/laborTypeSix" />
+
+        <TextView
+            android:id="@+id/laborHoursSeven"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:text=""
+            android:visibility="gone"
+            app:layout_constraintBaseline_toBaselineOf="@+id/laborTypeSeven"
+            app:layout_constraintEnd_toEndOf="@+id/labelHours"
+            app:layout_constraintStart_toStartOf="@+id/labelHours" />
+
+        <TextView
+            android:id="@+id/laborGrossSeven"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:visibility="gone"
+            android:textColor="@color/thatMeanGreen"
+            android:textStyle="bold"
+            app:layout_constraintBaseline_toBaselineOf="@+id/laborHoursSeven"
+            app:layout_constraintEnd_toStartOf="@+id/guideline6" />
+
+        <TextView
+            android:id="@+id/laborTypeEight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text=""
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="@+id/guideline5"
+            app:layout_constraintTop_toBottomOf="@+id/laborTypeSeven" />
+
+        <TextView
+            android:id="@+id/laborHoursEight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:text=""
+            android:visibility="gone"
+            app:layout_constraintBaseline_toBaselineOf="@+id/laborTypeEight"
+            app:layout_constraintEnd_toEndOf="@+id/labelHours"
+            app:layout_constraintStart_toStartOf="@+id/labelHours" />
+
+        <TextView
+            android:id="@+id/laborGrossEight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:visibility="gone"
+            android:textColor="@color/thatMeanGreen"
+            android:textStyle="bold"
+            app:layout_constraintBaseline_toBaselineOf="@+id/laborHoursEight"
+            app:layout_constraintEnd_toStartOf="@+id/guideline6" />
+
+        <TextView
+            android:id="@+id/laborTypeNine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text=""
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="@+id/guideline5"
+            app:layout_constraintTop_toBottomOf="@+id/laborTypeEight" />
+
+        <TextView
+            android:id="@+id/laborHoursNine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:text=""
+            android:visibility="gone"
+            app:layout_constraintBaseline_toBaselineOf="@+id/laborTypeNine"
+            app:layout_constraintEnd_toEndOf="@+id/labelHours"
+            app:layout_constraintStart_toStartOf="@+id/labelHours" />
+
+        <TextView
+            android:id="@+id/laborGrossNine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:visibility="gone"
+            android:textColor="@color/thatMeanGreen"
+            android:textStyle="bold"
+            app:layout_constraintBaseline_toBaselineOf="@+id/laborHoursNine"
+            app:layout_constraintEnd_toStartOf="@+id/guideline6" />
+
+        <View
+            android:id="@+id/divider2"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="20dp"
+            android:background="?android:attr/listDivider"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/laborTypeNine" />
+
+        <TextView
+            android:id="@+id/labelGrossTotal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/totalGrossLabel"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/colorAccent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/divider2" />
+
+        <TextView
+            android:id="@+id/laborGrossTotal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="24dp"
+            android:text=""
+            android:textSize="18sp"
+            android:textColor="@color/thatMeanGreen"
+            android:textStyle="bold"
+            app:layout_constraintBaseline_toBaselineOf="@+id/labelGrossTotal"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    </android.support.constraint.ConstraintLayout>
+
+
+</ScrollView>

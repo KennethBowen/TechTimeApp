@@ -88,6 +88,10 @@ public class MainActivity extends AppCompatActivity {
             // Respond to a click on the "End Pay Period" menu option
             case R.id.end_pay_period:
 
+                //!!!!!THIS IS JUST A TEMPORARY INTENT TO SEE THE REPAIR ORDER ACTIVITY!!!!
+                Intent intentRepairOrder = new Intent(MainActivity.this, RepairOrderActivity.class);
+                startActivity(intentRepairOrder);
+
                 return true;
 
         }

@@ -22,6 +22,12 @@
     <!-- Label to save and leave editor for labor, edit pay period and order by [CHAR LIMIT=20] -->
     <string name="action_save">Save</string>
 
+    <!-- Label to edit repair order in the edit repair order activity menu  [CHAR LIMIT=20] -->
+    <string name="action_edit">Edit</string>
+
+    !-- Label to delete repair order in the edit repair order activity menu  [CHAR LIMIT=20] -->
+    <string name="action_delete">Delete</string>
+
     <!-- pay period activity button to add repair order [CHAR LIMIT=20] -->
     <string name="add_repair_order">Add Repair Order</string>
 
@@ -72,7 +78,6 @@
 
     <!-- textView for the word Other in labor rate activity  [CHAR LIMIT=20] -->
     <string name="Other">Other</string>
-
 
     <!-- textView for the text Order By activity purpose  -->
     <string name="orderByAbout">Display the pay period to your preference</string>
@@ -133,6 +138,42 @@
 
     <!-- textView for the text Add edit repair order activity  -->
     <string name="License">License :</string>
+
+    <!-- textView for the text Add edit repair order activity  -->
+    <string name="Writer_repair_order">Writer :</string>
+
+    <!-- textView for the text repair order activity  -->
+    <string name="Date_repair_order">Date :</string>
+
+    <!-- textView for the text Add edit repair order activity  -->
+    <string name="Customer_repair_order">Customer :</string>
+
+    <!-- textView for the text repair order activity  -->
+    <string name="Insurance_repair_order">Insurance Co :</string>
+
+    <!-- textView for the text repair order activity  -->
+    <string name="Make_repair_order">Make :</string>
+
+    <!-- textView for the text repair order activity  -->
+    <string name="Model_repair_order">Model :</string>
+
+    <!-- textView for the text repair order activity  -->
+    <string name="Year_repair_order">Year :</string>
+
+    <!-- textView for the text repair order activity  -->
+    <string name="Mileage_repair_order">Mileage :</string>
+
+    <!-- textView for the text repair order activity  -->
+    <string name="VIN_repair_order">VIN :</string>
+
+    <!-- textView for the text repair order activity  -->
+    <string name="Color_repair_order">Color :</string>
+
+    <!-- textView for the text repair order activity  -->
+    <string name="License_repair_order">License :</string>
+
+    <!-- textView for the text repair order activity  -->
+    <string name="Gross">Gross</string>
 
     <!-- textView for the text Add edit repair order activity  -->
     <string name="Hours">Hours</string>
