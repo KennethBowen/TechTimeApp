@@ -14,7 +14,6 @@ import android.view.MenuItem;
 import com.techtimeapp.techtime.R;
 import com.techtimeapp.techtime.view.view.logic.LaborRatesActivity;
 
-
 import static com.techtimeapp.techtime.R.id.sliding_tabs;
 
 public class MainActivity extends AppCompatActivity {
@@ -89,8 +88,20 @@ public class MainActivity extends AppCompatActivity {
             case R.id.end_pay_period:
 
                 //!!!!!THIS IS JUST A TEMPORARY INTENT TO SEE THE REPAIR ORDER ACTIVITY!!!!
-                Intent intentRepairOrder = new Intent(MainActivity.this, RepairOrderActivity.class);
-                startActivity(intentRepairOrder);
+                //Intent intentRepairOrder = new Intent(MainActivity.this, RepairOrderActivity.class);
+                //startActivity(intentRepairOrder);
+
+                //!!!!!THIS IS JUST A TEMPORARY INTENT TO SEE THE EMPTY PAY PERIOD ACTIVITY!!!!
+                //Intent intentRepairOrder = new Intent(MainActivity.this, EmptyPayPeriodActivity.class);
+                //startActivity(intentRepairOrder);
+
+                //!!!!!THIS IS JUST A TEMPORARY INTENT TO SEE THE EMPTY ARCHIVE ACTIVITY!!!!
+                //Intent intentEmptyArchive = new Intent(MainActivity.this, EmptyArchiveActivity.class);
+                //startActivity(intentEmptyArchive);
+
+                //!!!!!THIS IS JUST A TEMPORARY INTENT TO SEE THE ARCHIVED PAY PERIOD ACTIVITY!!!!
+                Intent intentArchivedPayPeriod = new Intent(MainActivity.this, ArchivedPayPeriodActivity.class);
+                startActivity(intentArchivedPayPeriod);
 
                 return true;
 

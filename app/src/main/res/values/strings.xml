@@ -178,5 +178,45 @@
     <!-- textView for the text Add edit repair order activity  -->
     <string name="Hours">Hours</string>
 
+    <!-- textView for the text edit pay period dates activity  -->
+    <string name="Current_label">Current Pay Period</string>
+
+    <!-- textView for the text edit pay period dates activity  -->
+    <string name="what_to_do_label">Select the fields you would like to adjust</string>
+
+    <!-- textView for the text edit pay period dates activity  -->
+    <string name="start_date">Start Date</string>
+
+    <!-- textView for the text edit pay period dates activity  -->
+    <string name="end_date">End Date</string>
+
+    <!-- label for the text empty pay period dates activity  -->
+    <string name="empty_pay_period">Empty Pay Period</string>
+
+    <!-- textView for the text empty pay period dates activity  -->
+    <string name="no_active_pay_period">No Active Pay Period</string>
+
+    <!-- textView for the text empty pay period dates activity  -->
+    <string name="empty_pay_period_info">Get started by adding the start and end date of your pay period</string>
+
+    <!-- button for the text empty pay period dates activity  -->
+    <string name="start_pay_period">Start Pay period</string>
+
+    <!-- label for the text empty archive activity  -->
+    <string name="empty_archive_label">Empty Archive</string>
+
+    <!-- textView for the text empty archive activity  -->
+    <string name="empty_archive">Archive</string>
+
+    <!-- textView for the text empty archive activity  -->
+    <string name="empty_archive_info">Past pay periods will be stored here</string>
+
+    <!-- label for the text archived pay period activity  -->
+    <string name="label_archived_pay_period">Archived Pay Period</string>
+
+    <!-- dash for the text archived pay period activity  -->
+    <string name="dash">-</string>
+
+
 
 </resources>

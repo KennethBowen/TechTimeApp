@@ -79,6 +79,33 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".view.view.view.MainActivity"/>
         </activity>
+        <activity
+            android:name=".view.view.view.EmptyPayPeriodActivity"
+            android:label="@string/empty_pay_period"
+            android:parentActivityName=".view.view.view.MainActivity">
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".view.view.view.MainActivity"/>
+        </activity>
+        <activity
+            android:name=".view.view.view.EmptyArchiveActivity"
+            android:label="@string/empty_archive_label"
+            android:parentActivityName=".view.view.view.MainActivity">
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".view.view.view.MainActivity"/>
+        </activity>
+        <activity
+            android:name=".view.view.view.ArchivedPayPeriodActivity"
+            android:label="@string/label_archived_pay_period"
+            android:parentActivityName=".view.view.view.MainActivity">
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".view.view.view.MainActivity"/>
+        </activity>
 
     </application>
 
