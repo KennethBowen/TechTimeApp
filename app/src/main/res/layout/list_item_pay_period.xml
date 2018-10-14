@@ -13,6 +13,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
         android:text=""
+        android:textStyle="bold"
         android:background="@drawable/ripple_circle_button"
         android:textColor="@android:color/darker_gray"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -26,6 +27,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text=""
+        android:textSize="15sp"
         android:textColor="@android:color/black"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/hoursButtonListItem"
@@ -38,6 +40,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginBottom="8dp"
         android:text=""
+        android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="@+id/hoursButtonListItem"
         app:layout_constraintStart_toEndOf="@+id/hoursButtonListItem"
         app:layout_constraintTop_toBottomOf="@+id/repairOrderNumberListItem" />
@@ -48,6 +51,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:text=""
+        android:textSize="12sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/repairOrderNumberListItem"
         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -57,6 +61,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:text=""
+        android:textStyle="bold"
         android:textColor="@color/thatMeanGreen"
         app:layout_constraintBaseline_toBaselineOf="@+id/repairOrderWriterListItem"
         app:layout_constraintEnd_toEndOf="parent" />
