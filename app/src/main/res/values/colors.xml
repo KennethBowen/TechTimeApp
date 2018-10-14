@@ -16,4 +16,7 @@
     <color name="thatMeanGreen">#2e7c1b</color>
 
     <color name="colorAccent">#486783</color>
+
+    <!--  color of the grey ripple in the hours button (shown in the payPeriodFragment) -->
+    <color name="greyRipple">#F0EEEE</color>
 </resources>

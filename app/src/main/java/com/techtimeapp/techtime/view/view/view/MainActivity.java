@@ -103,6 +103,7 @@ public class MainActivity extends AppCompatActivity {
                 Intent intentArchivedPayPeriod = new Intent(MainActivity.this, ArchivedPayPeriodActivity.class);
                 startActivity(intentArchivedPayPeriod);
 
+
                 return true;
 
         }
