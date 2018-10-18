@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/archive_start_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:text=""
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/archive_dash"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="-"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        app:layout_constraintBottom_toBottomOf="@+id/archive_start_date"
+        app:layout_constraintStart_toEndOf="@+id/archive_start_date"
+        app:layout_constraintTop_toTopOf="@+id/archive_start_date" />
+
+    <TextView
+        android:id="@+id/archive_end_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text=""
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        app:layout_constraintBottom_toBottomOf="@+id/archive_dash"
+        app:layout_constraintStart_toEndOf="@+id/archive_dash"
+        app:layout_constraintTop_toTopOf="@+id/archive_dash" />
+
+    <View
+        android:id="@+id/divider3"
+        android:layout_width="210dp"
+        android:layout_height="2dp"
+        android:layout_marginTop="4dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintEnd_toEndOf="@+id/archive_end_date"
+        app:layout_constraintStart_toStartOf="@+id/archive_start_date"
+        app:layout_constraintTop_toBottomOf="@+id/archive_dash" />
+
+    <TextView
+        android:id="@+id/archive_total_hours"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text=""
+        app:layout_constraintStart_toStartOf="@+id/archive_start_date"
+        app:layout_constraintTop_toBottomOf="@+id/divider3" />
+
+    <TextView
+        android:id="@+id/archive_total_repair_orders"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="8dp"
+        android:text=""
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/archive_dash"
+        app:layout_constraintStart_toStartOf="@+id/archive_dash"
+        app:layout_constraintTop_toBottomOf="@+id/divider3" />
+
+    <TextView
+        android:id="@+id/archive_gross"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text=""
+        android:textColor="@color/thatMeanGreen"
+        app:layout_constraintEnd_toEndOf="@+id/archive_end_date"
+        app:layout_constraintTop_toBottomOf="@+id/divider3" />
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/ripple_archive_trash"
+        app:layout_constraintBottom_toBottomOf="@+id/archive_gross"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/divider3"
+        app:layout_constraintTop_toTopOf="@+id/archive_end_date"
+        app:srcCompat="@drawable/ic_delete_archive" />
+
+
+</android.support.constraint.ConstraintLayout>
