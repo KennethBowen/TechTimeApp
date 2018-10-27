@@ -31,6 +31,7 @@ public class PayPeriodFragment extends Fragment {
 
         Button addRepairOrder = rootView.findViewById(R.id.add_repair_order);
 
+
         // onClick listener for add repair order button
         addRepairOrder.setOnClickListener(new View.OnClickListener() {
             @Override

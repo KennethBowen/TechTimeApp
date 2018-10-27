@@ -19,4 +19,7 @@
 
     <!--  color of the grey ripple in the hours button (shown in the payPeriodFragment) -->
     <color name="greyRipple">#F0EEEE</color>
+
+    <!--  color of the grey for labor rates when empty  (shown in the LaborRatesActivity) -->
+    <color name="greyRates">#666666</color>
 </resources>

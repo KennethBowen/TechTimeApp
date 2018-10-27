@@ -1,15 +1,15 @@
 package com.techtimeapp.techtime.view.view.data;
 
 public class LaborRate {
-    private double mBody = 0;
-    private double mMechanical = 0;
-    private double mInternal = 0;
-    private double mWarranty = 0;
-    private double mRefinish = 0;
-    private double mGlass = 0;
-    private double mFrame = 0;
-    private double mAluminum = 0;
-    private double mOther = 0;
+    private double mBody ;
+    private double mMechanical ;
+    private double mInternal ;
+    private double mWarranty ;
+    private double mRefinish ;
+    private double mGlass ;
+    private double mFrame ;
+    private double mAluminum ;
+    private double mOther ;
 
     public LaborRate(double body, double mechanical, double internal, double warranty, double refinish, double glass, double frame, double aluminum, double other) {
 
@@ -80,11 +80,11 @@ public class LaborRate {
         mFrame = frame;
     }
 
-    public double getmAluminum(){
+    public double getAluminum(){
         return mAluminum;
     }
 
-    public void setmAluminum(double aluminum){
+    public void setAluminum(double aluminum){
         mAluminum = aluminum;
     }
 
