@@ -42,7 +42,7 @@ public class LaborRatesActivity extends AppCompatActivity {
     private double warrantyRate ;
     private double refinishRate ;
     private double glassRate ;
-    private double frameRate = 23;
+    private double frameRate =23;
     private double aluminumRate ;
     private double otherRate ;
 
@@ -389,7 +389,7 @@ public class LaborRatesActivity extends AppCompatActivity {
     //if none of the labor rate contain a value
     public void checkVacancy(String from){
 
-        if(1 > bodyRate + mechanicalRate + internalRate + warrantyRate + refinishRate + glassRate + frameRate + aluminumRate + otherRate){
+        if(0 == bodyRate + mechanicalRate + internalRate + warrantyRate + refinishRate + glassRate + frameRate + aluminumRate + otherRate){
 
                 Toast.makeText(this, "Please set your labor rates.", Toast.LENGTH_LONG).show();
 

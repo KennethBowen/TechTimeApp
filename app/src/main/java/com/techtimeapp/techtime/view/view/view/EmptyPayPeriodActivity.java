@@ -19,6 +19,7 @@ import java.util.Objects;
 
 public class EmptyPayPeriodActivity extends AppCompatActivity implements View.OnClickListener {
 
+
     //start date seen on activity
     private Button mStartDate;
     //end date seen on activity
