@@ -30,7 +30,7 @@ public class ArchiveFragment extends Fragment {
         // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.activity_archive, container, false);
 
-        RecyclerView recyclerView = rootView.findViewById(R.id.recyclerViewArchive);
+        View listView = rootView.findViewById(R.id.listViewArchive);
 
 
 

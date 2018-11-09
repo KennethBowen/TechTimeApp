@@ -91,17 +91,10 @@ public class MainActivity extends AppCompatActivity {
                 //Intent intentRepairOrder = new Intent(MainActivity.this, RepairOrderActivity.class);
                 //startActivity(intentRepairOrder);
 
-                //!!!!!THIS IS JUST A TEMPORARY INTENT TO SEE THE EMPTY PAY PERIOD ACTIVITY!!!!
-                Intent intentRepairOrder = new Intent(MainActivity.this, EmptyPayPeriodActivity.class);
-                startActivity(intentRepairOrder);
-
-                //!!!!!THIS IS JUST A TEMPORARY INTENT TO SEE THE EMPTY ARCHIVE ACTIVITY!!!!
-                //Intent intentEmptyArchive = new Intent(MainActivity.this, EmptyArchiveActivity.class);
-                //startActivity(intentEmptyArchive);
 
                 //!!!!!THIS IS JUST A TEMPORARY INTENT TO SEE THE ARCHIVED PAY PERIOD ACTIVITY!!!!
-                //Intent intentArchivedPayPeriod = new Intent(MainActivity.this, ArchivedPayPeriodActivity.class);
-                //startActivity(intentArchivedPayPeriod);
+                Intent intentArchivedPayPeriod = new Intent(MainActivity.this, ArchivedPayPeriodActivity.class);
+                startActivity(intentArchivedPayPeriod);
 
 
                 return true;

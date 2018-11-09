@@ -100,8 +100,8 @@ tools:context="com.techtimeapp.techtime.view.view.view.PayPeriodActivity">
     app:layout_constraintTop_toBottomOf="@+id/totalRepairOrderLabel" />
 
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/recyclerViewPayPeriod"
+    <ListView
+        android:id="@+id/listViewPayPeriod"
         android:visibility="gone"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -111,6 +111,8 @@ tools:context="com.techtimeapp.techtime.view.view.view.PayPeriodActivity">
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/divider"
         app:layout_constraintVertical_bias="1.0" />
+
+
 
 
 <Button
@@ -137,6 +139,7 @@ tools:context="com.techtimeapp.techtime.view.view.view.PayPeriodActivity">
 
     <TextView
         android:id="@+id/textViewPayPeriodEmpty"
+        android:visibility="visible"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -153,6 +156,7 @@ tools:context="com.techtimeapp.techtime.view.view.view.PayPeriodActivity">
 
     <TextView
         android:id="@+id/textViewInfo"
+        android:visibility="visible"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -166,6 +170,7 @@ tools:context="com.techtimeapp.techtime.view.view.view.PayPeriodActivity">
 
     <TextView
         android:id="@+id/textViewStart"
+        android:visibility="visible"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -177,7 +182,8 @@ tools:context="com.techtimeapp.techtime.view.view.view.PayPeriodActivity">
         app:layout_constraintTop_toBottomOf="@+id/textViewInfo" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/textViewEnd"
+        android:visibility="visible"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="32dp"
@@ -189,6 +195,7 @@ tools:context="com.techtimeapp.techtime.view.view.view.PayPeriodActivity">
 
     <Button
         android:id="@+id/startDateButton"
+        android:visibility="visible"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
@@ -201,19 +208,21 @@ tools:context="com.techtimeapp.techtime.view.view.view.PayPeriodActivity">
 
     <Button
         android:id="@+id/endDateButton"
+        android:visibility="visible"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
         android:background="@drawable/ripple_date_picker"
         android:padding="5dp"
         android:text=""
-        app:layout_constraintEnd_toEndOf="@+id/textView3"
-        app:layout_constraintStart_toStartOf="@+id/textView3"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+        app:layout_constraintEnd_toEndOf="@+id/textViewEnd"
+        app:layout_constraintStart_toStartOf="@+id/textViewEnd"
+        app:layout_constraintTop_toBottomOf="@+id/textViewEnd" />
 
 
     <Button
         android:id="@+id/startPayPeriod"
+        android:visibility="visible"
         style="@style/Widget.AppCompat.Button.Borderless"
         android:layout_width="0dp"
         android:layout_height="wrap_content"

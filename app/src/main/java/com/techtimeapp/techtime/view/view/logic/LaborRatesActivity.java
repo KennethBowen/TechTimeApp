@@ -6,6 +6,7 @@ import android.content.pm.ActivityInfo;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.EditText;
@@ -391,14 +392,18 @@ public class LaborRatesActivity extends AppCompatActivity {
 
         if(0 == bodyRate + mechanicalRate + internalRate + warrantyRate + refinishRate + glassRate + frameRate + aluminumRate + otherRate){
 
-                Toast.makeText(this, "Please set your labor rates.", Toast.LENGTH_LONG).show();
+            Toast setLaborToast = Toast.makeText(this, "Please set your labor rates.", Toast.LENGTH_LONG);
+            setLaborToast.setGravity(Gravity.BOTTOM, 0,400);
+            setLaborToast.show();
 
         } else if (from.contains("save")) {
 
             // Exit activity
             finish();
 
-            Toast.makeText(this, "Saved.", Toast.LENGTH_LONG).show();
+            Toast savedToast = Toast.makeText(this, "Saved", Toast.LENGTH_LONG);
+            savedToast.setGravity(Gravity.BOTTOM, 0,400);
+            savedToast.show();
         }
     }
 
