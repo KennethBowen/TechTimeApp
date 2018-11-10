@@ -4,6 +4,7 @@ import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.PrimaryKey;
 
+import java.time.Year;
 import java.util.Date;
 
 
@@ -11,102 +12,255 @@ public class RepairOrder {
 
     public int mUid;
 
-
     public int mRepairOrderNumber;
-
 
     public String mWriter;
 
     public String mCustomer;
 
-
     public Date mDate;
-
 
     public LaborRate mLaborRate;
 
-
-    public Vehicle mVehicle;
-
-
     public double mHours;
-
 
     public double mGross;
 
-    public RepairOrder(int Uid, int repairOrderNumber, String writer, Date date, LaborRate laborRate) {
-        mUid = Uid;
-        mRepairOrderNumber = repairOrderNumber;
-        mWriter = writer;
-        mDate = date;
-        mLaborRate = laborRate;
+    private String mMake;
+
+    private String mModel;
+
+    private String mYear;
+
+    private int mMileage;
+
+    private  String mVIN;
+
+    private String color;
+
+    private String mLicense;
+
+    public RepairOrder(int mUid, int mRepairOrderNumber, String mWriter, String mCustomer, Date mDate, LaborRate mLaborRate, double mHours, double mGross, String mMake, String mModel, String mYear, int mMileage, String mVIN, String color, String mLicense) {
+        this.mUid = mUid;
+        this.mRepairOrderNumber = mRepairOrderNumber;
+        this.mWriter = mWriter;
+        this.mCustomer = mCustomer;
+        this.mDate = mDate;
+        this.mLaborRate = mLaborRate;
+        this.mHours = mHours;
+        this.mGross = mGross;
+        this.mMake = mMake;
+        this.mModel = mModel;
+        this.mYear = mYear;
+        this.mMileage = mMileage;
+        this.mVIN = mVIN;
+        this.color = color;
+        this.mLicense = mLicense;
     }
 
-    public RepairOrder(int Uid, int repairOrderNumber, String writer, Date date,  String customer, LaborRate laborRate, Vehicle vehicle, double hours, double gross) {
-        mUid = Uid;
-        mRepairOrderNumber = repairOrderNumber;
-        mWriter = writer;
-        mDate = date;
-        mCustomer = customer;
-        mLaborRate = laborRate;
-        mVehicle = vehicle;
-        mHours = hours;
-        mGross = gross;
+    public RepairOrder(int mUid, int mRepairOrderNumber, String mWriter, String mCustomer, Date mDate, LaborRate mLaborRate, double mHours, double mGross) {
+        this.mUid = mUid;
+        this.mRepairOrderNumber = mRepairOrderNumber;
+        this.mWriter = mWriter;
+        this.mCustomer = mCustomer;
+        this.mDate = mDate;
+        this.mLaborRate = mLaborRate;
+        this.mHours = mHours;
+        this.mGross = mGross;
     }
 
-    public int getRepairOrderNumber() {
+    public RepairOrder(int mUid, int mRepairOrderNumber, String mWriter, String mCustomer, Date mDate, LaborRate mLaborRate, double mHours, double mGross, String mMake, String mModel) {
+        this.mUid = mUid;
+        this.mRepairOrderNumber = mRepairOrderNumber;
+        this.mWriter = mWriter;
+        this.mCustomer = mCustomer;
+        this.mDate = mDate;
+        this.mLaborRate = mLaborRate;
+        this.mHours = mHours;
+        this.mGross = mGross;
+        this.mMake = mMake;
+        this.mModel = mModel;
+    }
+
+    public RepairOrder(int mUid, int mRepairOrderNumber, String mWriter, String mCustomer, Date mDate, LaborRate mLaborRate, double mHours, double mGross, String mMake, String mModel, String mYear) {
+        this.mUid = mUid;
+        this.mRepairOrderNumber = mRepairOrderNumber;
+        this.mWriter = mWriter;
+        this.mCustomer = mCustomer;
+        this.mDate = mDate;
+        this.mLaborRate = mLaborRate;
+        this.mHours = mHours;
+        this.mGross = mGross;
+        this.mMake = mMake;
+        this.mModel = mModel;
+        this.mYear = mYear;
+    }
+
+    public RepairOrder(int mUid, int mRepairOrderNumber, String mWriter, String mCustomer, Date mDate, LaborRate mLaborRate, double mHours, double mGross, String mMake, String mModel, String mYear, int mMileage) {
+        this.mUid = mUid;
+        this.mRepairOrderNumber = mRepairOrderNumber;
+        this.mWriter = mWriter;
+        this.mCustomer = mCustomer;
+        this.mDate = mDate;
+        this.mLaborRate = mLaborRate;
+        this.mHours = mHours;
+        this.mGross = mGross;
+        this.mMake = mMake;
+        this.mModel = mModel;
+        this.mYear = mYear;
+        this.mMileage = mMileage;
+    }
+
+    public RepairOrder(int mUid, int mRepairOrderNumber, String mWriter, String mCustomer, Date mDate, LaborRate mLaborRate, double mHours, double mGross, String mMake, String mModel, String mYear, int mMileage, String mVIN) {
+        this.mUid = mUid;
+        this.mRepairOrderNumber = mRepairOrderNumber;
+        this.mWriter = mWriter;
+        this.mCustomer = mCustomer;
+        this.mDate = mDate;
+        this.mLaborRate = mLaborRate;
+        this.mHours = mHours;
+        this.mGross = mGross;
+        this.mMake = mMake;
+        this.mModel = mModel;
+        this.mYear = mYear;
+        this.mMileage = mMileage;
+        this.mVIN = mVIN;
+    }
+
+    public RepairOrder(int mUid, int mRepairOrderNumber, String mWriter, String mCustomer, Date mDate, LaborRate mLaborRate, double mHours, double mGross, String mMake, String mModel, String mYear, int mMileage, String mVIN, String color) {
+        this.mUid = mUid;
+        this.mRepairOrderNumber = mRepairOrderNumber;
+        this.mWriter = mWriter;
+        this.mCustomer = mCustomer;
+        this.mDate = mDate;
+        this.mLaborRate = mLaborRate;
+        this.mHours = mHours;
+        this.mGross = mGross;
+        this.mMake = mMake;
+        this.mModel = mModel;
+        this.mYear = mYear;
+        this.mMileage = mMileage;
+        this.mVIN = mVIN;
+        this.color = color;
+    }
+
+    public int getmUid() {
+        return mUid;
+    }
+
+    public void setmUid(int mUid) {
+        this.mUid = mUid;
+    }
+
+    public int getmRepairOrderNumber() {
         return mRepairOrderNumber;
     }
 
-    public void setRepairOrderNumber(int repairOrderNumber) {
-        mRepairOrderNumber = repairOrderNumber;
+    public void setmRepairOrderNumber(int mRepairOrderNumber) {
+        this.mRepairOrderNumber = mRepairOrderNumber;
     }
 
-    public String getWriter() {
+    public String getmWriter() {
         return mWriter;
     }
 
-    public void setWriter(String writer) {
-        mWriter = writer;
+    public void setmWriter(String mWriter) {
+        this.mWriter = mWriter;
     }
 
-    public String getCustomer() {
+    public String getmCustomer() {
         return mCustomer;
     }
 
-    public void setCustomer(String customer) {
-        mCustomer = customer;
+    public void setmCustomer(String mCustomer) {
+        this.mCustomer = mCustomer;
     }
 
-    public LaborRate getLaborRate() {
+    public Date getmDate() {
+        return mDate;
+    }
+
+    public void setmDate(Date mDate) {
+        this.mDate = mDate;
+    }
+
+    public LaborRate getmLaborRate() {
         return mLaborRate;
     }
 
-    public void setLaborRate(LaborRate laborRate) {
-        mLaborRate = laborRate;
+    public void setmLaborRate(LaborRate mLaborRate) {
+        this.mLaborRate = mLaborRate;
     }
 
-    public Vehicle getVehicle() {
-        return mVehicle;
-    }
-
-    public void setVehicle(Vehicle vehicle) {
-        mVehicle = vehicle;
-    }
-
-    public double getHours() {
+    public double getmHours() {
         return mHours;
     }
 
-    public void setHours(double hours) {
-        mHours = hours;
+    public void setmHours(double mHours) {
+        this.mHours = mHours;
     }
 
-    public double getGross() {
+    public double getmGross() {
         return mGross;
     }
 
-    public void setGross(double gross) {
-        mGross = gross;
+    public void setmGross(double mGross) {
+        this.mGross = mGross;
+    }
+
+    public String getmMake() {
+        return mMake;
+    }
+
+    public void setmMake(String mMake) {
+        this.mMake = mMake;
+    }
+
+    public String getmModel() {
+        return mModel;
+    }
+
+    public void setmModel(String mModel) {
+        this.mModel = mModel;
+    }
+
+    public String getmYear() {
+        return mYear;
+    }
+
+    public void setmYear(String mYear) {
+        this.mYear = mYear;
+    }
+
+    public int getmMileage() {
+        return mMileage;
+    }
+
+    public void setmMileage(int mMileage) {
+        this.mMileage = mMileage;
+    }
+
+    public String getmVIN() {
+        return mVIN;
+    }
+
+    public void setmVIN(String mVIN) {
+        this.mVIN = mVIN;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    public String getmLicense() {
+        return mLicense;
+    }
+
+    public void setmLicense(String mLicense) {
+        this.mLicense = mLicense;
     }
 }
