@@ -148,6 +148,9 @@ public class PayPeriodFragment extends Fragment implements View.OnClickListener 
         Calendar dateToday = Calendar.getInstance();
         Date date = dateToday.getTime();
 
+        String endDateString = DateFormat.getDateInstance(DateFormat.DEFAULT).format(eDate.getTime());
+        String currentDateString = DateFormat.getDateInstance(DateFormat.DEFAULT).format(dateToday.getTime());
+
 
 
 
@@ -159,13 +162,15 @@ public class PayPeriodFragment extends Fragment implements View.OnClickListener 
             dateEarlyToast.setGravity(Gravity.BOTTOM, 0,400);
             dateEarlyToast.show();
 
-        }else if(eDate.after(sDate) || eDate.equals(sDate)) {
+        } else if(sDate.after(date)){
 
-            if(sDate.after(date)){
-                Toast futureToast = Toast.makeText(getActivity(), "START DATE can only be today's date or earlier", Toast.LENGTH_LONG);
-                futureToast.setGravity(Gravity.BOTTOM, 0,400);
-                futureToast.show();
-            } else {
+            Toast futureToast = Toast.makeText(getActivity(), "START DATE cannot be later than toady's date", Toast.LENGTH_LONG);
+            futureToast.setGravity(Gravity.BOTTOM, 0,400);
+            futureToast.show();
+
+        } else if (eDate.before(date)) {
+
+            if(endDateString.equals(currentDateString)){
                 noActive.setVisibility(View.GONE);
                 whatToDo.setVisibility(View.GONE);
                 startText.setVisibility(View.GONE);
@@ -180,10 +185,28 @@ public class PayPeriodFragment extends Fragment implements View.OnClickListener 
                 Toast startedToast = Toast.makeText(getActivity(), "New pay period started", Toast.LENGTH_LONG);
                 startedToast.setGravity(Gravity.CENTER_HORIZONTAL, 0,0);
                 startedToast.show();
+            } else {
+                Toast dateEarlyToast = Toast.makeText(getActivity(), "END DATE cannot be earlier than today's date", Toast.LENGTH_LONG);
+                dateEarlyToast.setGravity(Gravity.BOTTOM, 0, 400);
+                dateEarlyToast.show();
             }
 
+        } else if(eDate.after(sDate) || eDate.equals(sDate)) {
 
+                noActive.setVisibility(View.GONE);
+                whatToDo.setVisibility(View.GONE);
+                startText.setVisibility(View.GONE);
+                endText.setVisibility(View.GONE);
+                mStartDate.setVisibility(View.GONE);
+                mEndDate.setVisibility(View.GONE);
+                startPayPeriodButton.setVisibility(View.GONE);
 
+                addRepairOrder.setVisibility(View.VISIBLE);
+                listView.setVisibility(View.VISIBLE);
+
+                Toast startedToast = Toast.makeText(getActivity(), "New pay period started", Toast.LENGTH_LONG);
+                startedToast.setGravity(Gravity.CENTER_HORIZONTAL, 0,0);
+                startedToast.show();
         }
 
     }
