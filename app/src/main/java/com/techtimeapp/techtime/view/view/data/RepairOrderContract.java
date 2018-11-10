@@ -37,7 +37,7 @@ public final class RepairOrderContract {
         public static final String CONTENT_ITEM_TYPE =
                 ContentResolver.CURSOR_ITEM_BASE_TYPE + "/" + CONTENT_AUTHORITY + "/" + PATH_REPAIR_ORDERS;
 
-        //base column for database to uniquely identify pets
+        //base column for database to uniquely identify ROS
         public static final String _ID = BaseColumns._ID;
 
         //Column names
