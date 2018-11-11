@@ -5,21 +5,23 @@ import java.util.Date;
 
 public class RepairOrder {
 
-    public int mUid;
+    private int mUid;
 
-    public int mRepairOrderNumber;
+    private int mRepairOrderNumber;
 
-    public String mWriter;
+    private String mWriter;
 
-    public String mCustomer;
+    private String mCustomer;
 
-    public Date mDate;
+    private Date mDate;
 
-    public LaborRate mLaborRate;
+    private LaborRate mLaborRate;
 
-    public double mHours;
+    private String mInsuranceCO;
 
-    public double mGross;
+    private double mHours;
+
+    private double mGross;
 
     private String mMake;
 
@@ -35,7 +37,7 @@ public class RepairOrder {
 
     private String mLicense;
 
-    public RepairOrder(int mUid, int mRepairOrderNumber, String mWriter, String mCustomer, Date mDate, LaborRate mLaborRate, double mHours, double mGross, String mMake, String mModel, String mYear, int mMileage, String mVIN, String color, String mLicense) {
+    public RepairOrder(int mUid, int mRepairOrderNumber, String mWriter, String mCustomer, Date mDate, LaborRate mLaborRate, String mInsuranceCO, double mHours, double mGross, String mMake, String mModel, String mYear, int mMileage, String mVIN, String color, String mLicense) {
         this.mUid = mUid;
         this.mRepairOrderNumber = mRepairOrderNumber;
         this.mWriter = mWriter;
@@ -53,7 +55,7 @@ public class RepairOrder {
         this.mLicense = mLicense;
     }
 
-    public RepairOrder(int mUid, int mRepairOrderNumber, String mWriter, String mCustomer, Date mDate, LaborRate mLaborRate, double mHours, double mGross) {
+    public RepairOrder(int mUid, int mRepairOrderNumber, String mWriter, String mCustomer, Date mDate, LaborRate mLaborRate, String mInsuranceCO, double mHours, double mGross) {
         this.mUid = mUid;
         this.mRepairOrderNumber = mRepairOrderNumber;
         this.mWriter = mWriter;
@@ -64,7 +66,7 @@ public class RepairOrder {
         this.mGross = mGross;
     }
 
-    public RepairOrder(int mUid, int mRepairOrderNumber, String mWriter, String mCustomer, Date mDate, LaborRate mLaborRate, double mHours, double mGross, String mMake, String mModel) {
+    public RepairOrder(int mUid, int mRepairOrderNumber, String mWriter, String mCustomer, Date mDate, LaborRate mLaborRate, String mInsuranceCO, double mHours, double mGross, String mMake, String mModel) {
         this.mUid = mUid;
         this.mRepairOrderNumber = mRepairOrderNumber;
         this.mWriter = mWriter;
@@ -77,7 +79,7 @@ public class RepairOrder {
         this.mModel = mModel;
     }
 
-    public RepairOrder(int mUid, int mRepairOrderNumber, String mWriter, String mCustomer, Date mDate, LaborRate mLaborRate, double mHours, double mGross, String mMake, String mModel, String mYear) {
+    public RepairOrder(int mUid, int mRepairOrderNumber, String mWriter, String mCustomer, Date mDate, LaborRate mLaborRate, String mInsuranceCO, double mHours, double mGross, String mMake, String mModel, String mYear) {
         this.mUid = mUid;
         this.mRepairOrderNumber = mRepairOrderNumber;
         this.mWriter = mWriter;
@@ -91,7 +93,7 @@ public class RepairOrder {
         this.mYear = mYear;
     }
 
-    public RepairOrder(int mUid, int mRepairOrderNumber, String mWriter, String mCustomer, Date mDate, LaborRate mLaborRate, double mHours, double mGross, String mMake, String mModel, String mYear, int mMileage) {
+    public RepairOrder(int mUid, int mRepairOrderNumber, String mWriter, String mCustomer, Date mDate, LaborRate mLaborRate, String mInsuranceCO, double mHours, double mGross, String mMake, String mModel, String mYear, int mMileage) {
         this.mUid = mUid;
         this.mRepairOrderNumber = mRepairOrderNumber;
         this.mWriter = mWriter;
@@ -106,7 +108,7 @@ public class RepairOrder {
         this.mMileage = mMileage;
     }
 
-    public RepairOrder(int mUid, int mRepairOrderNumber, String mWriter, String mCustomer, Date mDate, LaborRate mLaborRate, double mHours, double mGross, String mMake, String mModel, String mYear, int mMileage, String mVIN) {
+    public RepairOrder(int mUid, int mRepairOrderNumber, String mWriter, String mCustomer, Date mDate, LaborRate mLaborRate, String mInsuranceCO, double mHours, double mGross, String mMake, String mModel, String mYear, int mMileage, String mVIN) {
         this.mUid = mUid;
         this.mRepairOrderNumber = mRepairOrderNumber;
         this.mWriter = mWriter;
@@ -122,7 +124,7 @@ public class RepairOrder {
         this.mVIN = mVIN;
     }
 
-    public RepairOrder(int mUid, int mRepairOrderNumber, String mWriter, String mCustomer, Date mDate, LaborRate mLaborRate, double mHours, double mGross, String mMake, String mModel, String mYear, int mMileage, String mVIN, String color) {
+    public RepairOrder(int mUid, int mRepairOrderNumber, String mWriter, String mCustomer, Date mDate, LaborRate mLaborRate, String mInsuranceCO,  double mHours, double mGross, String mMake, String mModel, String mYear, int mMileage, String mVIN, String color) {
         this.mUid = mUid;
         this.mRepairOrderNumber = mRepairOrderNumber;
         this.mWriter = mWriter;
@@ -145,6 +147,14 @@ public class RepairOrder {
 
     public void setmUid(int mUid) {
         this.mUid = mUid;
+    }
+
+    public String getmInsuranceCO() {
+        return mInsuranceCO;
+    }
+
+    public void setmInsuranceCO(String mInsuranceCO) {
+        this.mInsuranceCO = mInsuranceCO;
     }
 
     public int getmRepairOrderNumber() {
