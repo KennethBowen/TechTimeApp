@@ -44,6 +44,7 @@ public class RepairOrder {
         this.mCustomer = mCustomer;
         this.mDate = mDate;
         this.mLaborRate = mLaborRate;
+        this.mInsuranceCO = mInsuranceCO;
         this.mHours = mHours;
         this.mGross = mGross;
         this.mMake = mMake;
@@ -62,6 +63,7 @@ public class RepairOrder {
         this.mCustomer = mCustomer;
         this.mDate = mDate;
         this.mLaborRate = mLaborRate;
+        this.mInsuranceCO = mInsuranceCO;
         this.mHours = mHours;
         this.mGross = mGross;
     }
@@ -73,6 +75,7 @@ public class RepairOrder {
         this.mCustomer = mCustomer;
         this.mDate = mDate;
         this.mLaborRate = mLaborRate;
+        this.mInsuranceCO = mInsuranceCO;
         this.mHours = mHours;
         this.mGross = mGross;
         this.mMake = mMake;
@@ -86,6 +89,7 @@ public class RepairOrder {
         this.mCustomer = mCustomer;
         this.mDate = mDate;
         this.mLaborRate = mLaborRate;
+        this.mInsuranceCO = mInsuranceCO;
         this.mHours = mHours;
         this.mGross = mGross;
         this.mMake = mMake;
@@ -100,6 +104,7 @@ public class RepairOrder {
         this.mCustomer = mCustomer;
         this.mDate = mDate;
         this.mLaborRate = mLaborRate;
+        this.mInsuranceCO = mInsuranceCO;
         this.mHours = mHours;
         this.mGross = mGross;
         this.mMake = mMake;
@@ -115,6 +120,7 @@ public class RepairOrder {
         this.mCustomer = mCustomer;
         this.mDate = mDate;
         this.mLaborRate = mLaborRate;
+        this.mInsuranceCO = mInsuranceCO;
         this.mHours = mHours;
         this.mGross = mGross;
         this.mMake = mMake;
@@ -131,6 +137,7 @@ public class RepairOrder {
         this.mCustomer = mCustomer;
         this.mDate = mDate;
         this.mLaborRate = mLaborRate;
+        this.mInsuranceCO = mInsuranceCO;
         this.mHours = mHours;
         this.mGross = mGross;
         this.mMake = mMake;
