@@ -152,8 +152,6 @@ public class PayPeriodFragment extends Fragment implements View.OnClickListener 
         String currentDateString = DateFormat.getDateInstance(DateFormat.DEFAULT).format(dateToday.getTime());
 
 
-
-
         //control flow statement to check dates then set views VISIBLE to GONE and vice versa
         // and set toast messages
         if(eDate.before(sDate)){

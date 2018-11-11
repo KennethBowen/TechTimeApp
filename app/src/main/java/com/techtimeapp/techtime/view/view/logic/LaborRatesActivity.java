@@ -199,15 +199,15 @@ public class LaborRatesActivity extends AppCompatActivity {
     public void saveLaborRates() {
 
         //this list holds the String value from the user input to then be parsed to double
-        String bodyInput = body.getText().toString();
-        String mechanicalInput = mechanical.getText().toString();
-        String internalInput = internal.getText().toString();
-        String warrantyInput = warranty.getText().toString();
-        String refinishInput = refinish.getText().toString();
-        String glassInput = glass.getText().toString();
-        String frameInput = frame.getText().toString();
-        String aluminumInput = aluminum.getText().toString();
-        String otherInput = other.getText().toString();
+        String bodyInput = body.getText().toString().trim();
+        String mechanicalInput = mechanical.getText().toString().trim();
+        String internalInput = internal.getText().toString().trim();
+        String warrantyInput = warranty.getText().toString().trim();
+        String refinishInput = refinish.getText().toString().trim();
+        String glassInput = glass.getText().toString().trim();
+        String frameInput = frame.getText().toString().trim();
+        String aluminumInput = aluminum.getText().toString().trim();
+        String otherInput = other.getText().toString().trim();
 
         //colors block to gather the colors need for rates
         int rateBlue = getResources().getColor(R.color.colorAccent);
