@@ -37,15 +37,15 @@ public class LaborRatesActivity extends AppCompatActivity {
     private EditText other ;
 
     //this list holds double value for labor rate
-    private double bodyRate = 19;
-    private double mechanicalRate = 22.50;
-    private double internalRate = 15;
-    private double warrantyRate ;
-    private double refinishRate ;
-    private double glassRate ;
-    private double frameRate =23;
-    private double aluminumRate ;
-    private double otherRate ;
+    public double bodyRate ;
+    public double mechanicalRate ;
+    public double internalRate ;
+    public double warrantyRate ;
+    public double refinishRate ;
+    public double glassRate ;
+    public double frameRate ;
+    public double aluminumRate ;
+    public double otherRate ;
 
 
 
@@ -392,7 +392,7 @@ public class LaborRatesActivity extends AppCompatActivity {
 
         if(0 == bodyRate + mechanicalRate + internalRate + warrantyRate + refinishRate + glassRate + frameRate + aluminumRate + otherRate){
 
-            Toast setLaborToast = Toast.makeText(this, "Please set your labor rates.", Toast.LENGTH_LONG);
+            Toast setLaborToast = Toast.makeText(this, "Please set your labor rates", Toast.LENGTH_LONG);
             setLaborToast.setGravity(Gravity.BOTTOM, 0,400);
             setLaborToast.show();
 

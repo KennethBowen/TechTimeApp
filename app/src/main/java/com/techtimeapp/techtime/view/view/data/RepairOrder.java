@@ -38,6 +38,7 @@ public class RepairOrder {
 
     private String mLicense;
 
+
     public RepairOrder(int mUid, int mRepairOrderNumber, String mWriter, String mCustomer, Date mDate, LaborRate mLaborRate, String mInsuranceCO, double mHours, double mGross, String mMake, String mModel, String mYear, int mMileage, String mVIN, String color, String mLicense) {
         this.mUid = mUid;
         this.mRepairOrderNumber = mRepairOrderNumber;
@@ -45,6 +46,7 @@ public class RepairOrder {
         this.mCustomer = mCustomer;
         this.mDate = mDate;
         this.mLaborRate = mLaborRate;
+        this.mInsuranceCO = mInsuranceCO;
         this.mHours = mHours;
         this.mGross = mGross;
         this.mMake = mMake;
@@ -63,6 +65,7 @@ public class RepairOrder {
         this.mCustomer = mCustomer;
         this.mDate = mDate;
         this.mLaborRate = mLaborRate;
+        this.mInsuranceCO = mInsuranceCO;
         this.mHours = mHours;
         this.mGross = mGross;
     }
@@ -74,6 +77,7 @@ public class RepairOrder {
         this.mCustomer = mCustomer;
         this.mDate = mDate;
         this.mLaborRate = mLaborRate;
+        this.mInsuranceCO = mInsuranceCO;
         this.mHours = mHours;
         this.mGross = mGross;
         this.mMake = mMake;
@@ -87,6 +91,7 @@ public class RepairOrder {
         this.mCustomer = mCustomer;
         this.mDate = mDate;
         this.mLaborRate = mLaborRate;
+        this.mInsuranceCO = mInsuranceCO;
         this.mHours = mHours;
         this.mGross = mGross;
         this.mMake = mMake;
@@ -101,6 +106,7 @@ public class RepairOrder {
         this.mCustomer = mCustomer;
         this.mDate = mDate;
         this.mLaborRate = mLaborRate;
+        this.mInsuranceCO = mInsuranceCO;
         this.mHours = mHours;
         this.mGross = mGross;
         this.mMake = mMake;
@@ -116,6 +122,7 @@ public class RepairOrder {
         this.mCustomer = mCustomer;
         this.mDate = mDate;
         this.mLaborRate = mLaborRate;
+        this.mInsuranceCO = mInsuranceCO;
         this.mHours = mHours;
         this.mGross = mGross;
         this.mMake = mMake;
@@ -132,6 +139,7 @@ public class RepairOrder {
         this.mCustomer = mCustomer;
         this.mDate = mDate;
         this.mLaborRate = mLaborRate;
+        this.mInsuranceCO = mInsuranceCO;
         this.mHours = mHours;
         this.mGross = mGross;
         this.mMake = mMake;

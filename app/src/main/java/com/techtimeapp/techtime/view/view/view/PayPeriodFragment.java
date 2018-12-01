@@ -12,6 +12,8 @@ import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
 import android.view.Gravity;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -20,6 +22,7 @@ import android.widget.Toast;
 
 import com.techtimeapp.techtime.R;
 import com.techtimeapp.techtime.view.view.logic.AddEditRepairOrderActivity;
+import com.techtimeapp.techtime.view.view.logic.LaborRatesActivity;
 
 
 import java.text.DateFormat;
@@ -37,14 +40,17 @@ public class PayPeriodFragment extends Fragment implements View.OnClickListener 
     //end date seen on activity
     public Button mEndDate;
 
-    //start pay period button for the pay period is active
-    Button startPayPeriodButton;
+    //start pay period button
+    public Button startPayPeriodButton;
 
-    //add repair order button for the pay period is active
-    Button addRepairOrder;
+    //add repair order button for when the pay period is active
+    public Button addRepairOrder;
 
     // inner call for the calender dial log object
     private DateDialogFragment mDateDialogFragment;
+
+    //holds the value to if an pay period is not active
+    public boolean hasNoActivePayPeriod = true;
 
 
 
@@ -77,6 +83,9 @@ public class PayPeriodFragment extends Fragment implements View.OnClickListener 
 
         mDateDialogFragment = new DateDialogFragment();
 
+        //enables the use of menu held in MainActivity
+        setHasOptionsMenu(true);
+
         mStartDate.setOnClickListener(this);
         mEndDate.setOnClickListener(this);
 
@@ -85,8 +94,7 @@ public class PayPeriodFragment extends Fragment implements View.OnClickListener 
         addRepairOrder.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), AddEditRepairOrderActivity.class);
-                startActivity(intent);
+                addRepairOrder();
             }
         });
 
@@ -111,8 +119,38 @@ public class PayPeriodFragment extends Fragment implements View.OnClickListener 
             }
         });
 
-
         return rootView;
+    }
+
+
+    //this is called after the add repair order button has been clicked
+    //to check if the labor rates have been set.
+    public void addRepairOrder(){
+
+        LaborRatesActivity laborRatesActivity = new LaborRatesActivity();
+
+        //holds the values of the labor rates from the LaborRateActivity
+        double bodyRate = laborRatesActivity.bodyRate;
+        double mechanicalRate = laborRatesActivity.mechanicalRate;
+        double internalRate = laborRatesActivity.internalRate;
+        double warrantyRate = laborRatesActivity.warrantyRate;
+        double refinishRate = laborRatesActivity.refinishRate;
+        double glassRate = laborRatesActivity.glassRate;
+        double frameRate = laborRatesActivity.frameRate;
+        double aluminumRate = laborRatesActivity.aluminumRate;
+        double otherRate = laborRatesActivity.otherRate;
+
+        //this variable holds the sum of all the labor rates
+        double laborRatesSum = bodyRate + mechanicalRate + internalRate + warrantyRate + refinishRate + glassRate + frameRate + aluminumRate + otherRate;
+
+        if(laborRatesSum > 0) {
+            Intent intent = new Intent(getActivity(), AddEditRepairOrderActivity.class);
+            startActivity(intent);
+        } else {
+            Toast setLabor = Toast.makeText(getActivity(), "Please set your labor rates", Toast.LENGTH_LONG);
+            setLabor.setGravity(Gravity.BOTTOM, 0,400);
+            setLabor.show();
+        }
     }
 
 
@@ -128,6 +166,7 @@ public class PayPeriodFragment extends Fragment implements View.OnClickListener 
         mStartDate = rootView.findViewById(R.id.startDateButton);
         mEndDate = rootView.findViewById(R.id.endDateButton);
         startPayPeriodButton = rootView.findViewById(R.id.startPayPeriod);
+
 
         //this block finds all the views that will be set to VISIBLE
         addRepairOrder = rootView.findViewById(R.id.add_repair_order);
@@ -180,6 +219,9 @@ public class PayPeriodFragment extends Fragment implements View.OnClickListener 
                 addRepairOrder.setVisibility(View.VISIBLE);
                 listView.setVisibility(View.VISIBLE);
 
+                //changes the status to if pay period is active
+                hasNoActivePayPeriod = false;
+
                 Toast startedToast = Toast.makeText(getActivity(), "New pay period started", Toast.LENGTH_LONG);
                 startedToast.setGravity(Gravity.CENTER_HORIZONTAL, 0,0);
                 startedToast.show();
@@ -202,6 +244,9 @@ public class PayPeriodFragment extends Fragment implements View.OnClickListener 
                 addRepairOrder.setVisibility(View.VISIBLE);
                 listView.setVisibility(View.VISIBLE);
 
+                //changes the status to if pay period is active
+                hasNoActivePayPeriod = false;
+
                 Toast startedToast = Toast.makeText(getActivity(), "New pay period started", Toast.LENGTH_LONG);
                 startedToast.setGravity(Gravity.CENTER_HORIZONTAL, 0,0);
                 startedToast.show();
@@ -222,6 +267,33 @@ public class PayPeriodFragment extends Fragment implements View.OnClickListener 
             mDateDialogFragment.setFlag(PayPeriodFragment.DateDialogFragment.FLAG_END_DATE);
             mDateDialogFragment.show(getChildFragmentManager(), "datePicker");
         }
+    }
+
+
+
+    //to disable and enable menu items based on active pay period
+    @Override
+    public void onPrepareOptionsMenu (Menu menu) {
+
+        if(hasNoActivePayPeriod) {
+            menu.getItem(1).setEnabled(false);
+            menu.getItem(3).setEnabled(false);
+        } else {
+            menu.getItem(1).setEnabled(true);
+            menu.getItem(3).setEnabled(true);
+        }
+
+
+    }
+
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        // Inflate the menu options from the res/menu/menu_main.xml file.
+        // This adds menu items to the app bar.
+
+        inflater.inflate(R.menu.menu_main, menu);
+
+
     }
 
 

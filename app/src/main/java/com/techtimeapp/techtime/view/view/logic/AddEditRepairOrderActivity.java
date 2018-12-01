@@ -14,6 +14,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.techtimeapp.techtime.R;
+import com.techtimeapp.techtime.view.view.data.RepairOrder;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,7 +29,7 @@ public class AddEditRepairOrderActivity extends AppCompatActivity {
     private int spinCount = 0;
 
     // declare object to hold data values
-    private ArrayAdapter laborSpinnerAdapter;
+    private ArrayAdapter<String> laborSpinnerAdapter;
 
     //stores labor types that will be used from already set up labor types
     private List<String> laborType;
@@ -73,7 +74,10 @@ public class AddEditRepairOrderActivity extends AppCompatActivity {
         this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
         // list that will hold the labor type potions for the spinners
-        laborType = new ArrayList<String>();
+        //*************IDEA NOTES MAYBE USE FOR EACH LOOP TO ADD ACTIVE LABOR TYPES FROM DATA*************
+        //*************BECAUSE WE DON'T WANT TO ADD LABOR TYPES TO THE LIST AS AN OPTION IF **************
+        //*************LABOR TYPE HASN'T BEEN SET ********************************************************
+        laborType = new ArrayList<>();
         laborType.add("Add Labor");
         laborType.add("Body");
         laborType.add("Mechanical");
@@ -86,7 +90,7 @@ public class AddEditRepairOrderActivity extends AppCompatActivity {
         laborType.add("Other");
 
         //ArrayAdapter nothing more to be said
-        laborSpinnerAdapter = new ArrayAdapter(this,android.R.layout.simple_spinner_item, laborType);
+        laborSpinnerAdapter = new ArrayAdapter<>(this,android.R.layout.simple_spinner_item, laborType);
         laborSpinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
 

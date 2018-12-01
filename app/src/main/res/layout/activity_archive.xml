@@ -21,6 +21,7 @@
     <ImageView
         android:id="@+id/imageView"
         android:visibility="visible"
+        android:elevation="2dp"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="8dp"
@@ -30,7 +31,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_archive"
+        app:srcCompat="@drawable/archive_shadow"
         tools:ignore="VectorDrawableCompat"/>
 
     <TextView
