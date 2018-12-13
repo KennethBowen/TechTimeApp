@@ -14,6 +14,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.techtimeapp.techtime.R;
+import com.techtimeapp.techtime.view.view.data.LaborRateHelper;
 import com.techtimeapp.techtime.view.view.data.RepairOrder;
 
 import java.util.ArrayList;
@@ -73,21 +74,8 @@ public class AddEditRepairOrderActivity extends AppCompatActivity {
         //allows the activity to remain in portrait only
         this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
-        // list that will hold the labor type potions for the spinners
-        //*************IDEA NOTES MAYBE USE FOR EACH LOOP TO ADD ACTIVE LABOR TYPES FROM DATA*************
-        //*************BECAUSE WE DON'T WANT TO ADD LABOR TYPES TO THE LIST AS AN OPTION IF **************
-        //*************LABOR TYPE HASN'T BEEN SET ********************************************************
-        laborType = new ArrayList<>();
-        laborType.add("Add Labor");
-        laborType.add("Body");
-        laborType.add("Mechanical");
-        laborType.add("Internal");
-        laborType.add("Warranty");
-        laborType.add("Refinish");
-        laborType.add("Glass");
-        laborType.add("Frame");
-        laborType.add("Aluminum");
-        laborType.add("Other");
+        //method that will add the labor types that are active to spinners
+        setLaborTypeOptionsArrayList();
 
         //ArrayAdapter nothing more to be said
         laborSpinnerAdapter = new ArrayAdapter<>(this,android.R.layout.simple_spinner_item, laborType);
@@ -97,6 +85,65 @@ public class AddEditRepairOrderActivity extends AppCompatActivity {
         setupSpinnerOne();
     }
 
+
+    //this method is called right when the activity is created to
+    //query the db to set up the options spinner with active labor types
+    private void setLaborTypeOptionsArrayList(){
+
+        LaborRateHelper laborRateHelper = new LaborRateHelper(this);
+
+
+        //holds the string values from LaborRateHelper
+        String bodyString = laborRateHelper.getBodyData();
+        String mechanicalString = laborRateHelper.getMechanicalData();
+        String internalString = laborRateHelper.getInternalData();
+        String warrantyString = laborRateHelper.getWarrantyData();
+        String refinishString = laborRateHelper.getRefinishData();
+        String glassString = laborRateHelper.getGlassData();
+        String frameString = laborRateHelper.getFrameData();
+        String aluminumString = laborRateHelper.getAluminumData();
+        String otherString = laborRateHelper.getOtherData();
+
+        laborType = new ArrayList<>();
+        laborType.add("Add Labor");
+
+        if(!bodyString.equals("0.0")){
+            laborType.add("Body");
+        }
+
+        if(!mechanicalString.equals("0.0")){
+            laborType.add("Mechanical");
+        }
+
+        if(!internalString.equals("0.0")){
+            laborType.add("Internal");
+        }
+
+        if(!warrantyString.equals("0.0")){
+            laborType.add("Warranty");
+        }
+
+        if(!refinishString.equals("0.0")){
+            laborType.add("Refinish");
+        }
+
+        if(!glassString.equals("0.0")){
+            laborType.add("Glass");
+        }
+
+        if(!frameString.equals("0.0")){
+            laborType.add("Frame");
+        }
+
+        if(!aluminumString.equals("0.0")){
+            laborType.add("Aluminum");
+        }
+
+        if(!otherString.equals("0.0")){
+            laborType.add("Other");
+        }
+
+    }
 
 
 

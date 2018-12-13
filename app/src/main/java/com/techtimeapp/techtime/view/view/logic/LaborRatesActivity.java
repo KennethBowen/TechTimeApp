@@ -1,8 +1,10 @@
 package com.techtimeapp.techtime.view.view.logic;
 
 
+import android.content.ContentValues;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.database.Cursor;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -15,6 +17,7 @@ import android.widget.Toast;
 
 import com.techtimeapp.techtime.R;
 import com.techtimeapp.techtime.view.view.data.LaborRate;
+import com.techtimeapp.techtime.view.view.data.LaborRateHelper;
 import com.techtimeapp.techtime.view.view.view.MainActivity;
 
 import java.text.DecimalFormat;
@@ -24,6 +27,8 @@ public class LaborRatesActivity extends AppCompatActivity {
 
     //LaborRate object
     private LaborRate laborRates;
+
+    LaborRateHelper laborRateHelper;
 
     //list of labor types found by id
     private EditText body ;
@@ -48,7 +53,6 @@ public class LaborRatesActivity extends AppCompatActivity {
     public double otherRate ;
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,12 +60,136 @@ public class LaborRatesActivity extends AppCompatActivity {
         //allows the activity to remain in portrait only
         this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
+        setFromData();
 
         //LaborRate object
         laborRates = new LaborRate(bodyRate, mechanicalRate, internalRate, warrantyRate, refinishRate, glassRate, frameRate, aluminumRate, otherRate);
 
         //calls stored laborRates values to display
         displayLaborRates();
+
+    }
+
+
+    public void setFromData(){
+
+        laborRateHelper = new LaborRateHelper(this);
+
+        String bodyString = laborRateHelper.getBodyData();
+        if (bodyString.isEmpty()){
+            bodyRate = Double.valueOf("0.0");
+
+            //add body to data base
+            String body = String.valueOf(bodyRate);
+            laborRateHelper.addBodyData(body);
+
+        }else {
+            bodyRate = Double.valueOf(bodyString);
+        }
+
+
+        String mechanicalString = laborRateHelper.getMechanicalData();
+        if (mechanicalString == null){
+            mechanicalRate = Double.valueOf("0.0");
+
+            //add mechanical to data base
+            String mechanical = String.valueOf(mechanicalRate);
+            laborRateHelper.addMechanicalData(mechanical);
+
+        }else {
+            mechanicalRate = Double.valueOf(mechanicalString);
+        }
+
+
+        String internalString = laborRateHelper.getInternalData();
+        if (internalString == null){
+            internalRate = Double.valueOf("0.0");
+
+            //add internal to data base
+            String internal = String.valueOf(internalRate);
+            laborRateHelper.addInternalData(internal);
+
+        }else {
+            internalRate = Double.valueOf(internalString);
+        }
+
+
+        String warrantyString = laborRateHelper.getWarrantyData();
+        if (warrantyString == null){
+            warrantyRate = Double.valueOf("0.0");
+
+            //add warranty to data base
+            String warranty = String.valueOf(warrantyRate);
+            laborRateHelper.addWarrantyData(warranty);
+
+        }else {
+            warrantyRate = Double.valueOf(warrantyString);
+        }
+
+
+        String refinishString = laborRateHelper.getRefinishData();
+        if (refinishString == null){
+            refinishRate = Double.valueOf("0.0");
+
+            //add refinish to data base
+            String refinish = String.valueOf(refinishRate);
+            laborRateHelper.addRefinishData(refinish);
+
+        }else {
+            refinishRate = Double.valueOf(refinishString);
+        }
+
+        String glassString = laborRateHelper.getGlassData();
+        if (glassString == null){
+            glassRate = Double.valueOf("0.0");
+
+            //add glass to data base
+            String glass = String.valueOf(glassRate);
+            laborRateHelper.addGlassData(glass);
+
+        }else {
+            glassRate = Double.valueOf(glassString);
+        }
+
+
+        String frameString = laborRateHelper.getFrameData();
+        if (frameString == null){
+            frameRate = Double.valueOf("0.0");
+
+            //add frame to data base
+            String frame = String.valueOf(frameRate);
+            laborRateHelper.addFrameData(frame);
+
+        }else {
+            frameRate = Double.valueOf(frameString);
+        }
+
+
+        String aluminumString = laborRateHelper.getAluminumData();
+        if (aluminumString == null){
+            aluminumRate = Double.valueOf("0.0");
+
+            //add aluminum to data base
+            String aluminum = String.valueOf(aluminumRate);
+            laborRateHelper.addAluminumData(aluminum);
+
+        }else {
+            aluminumRate = Double.valueOf(aluminumString);
+        }
+
+
+        String otherString = laborRateHelper.getOtherData();
+        if (otherString == null){
+            otherRate = Double.valueOf("0.0");
+
+            //add other to data base
+            String other = String.valueOf(otherRate);
+            laborRateHelper.addOtherData(other);
+
+        }else {
+            otherRate = Double.valueOf(otherString);
+        }
+
 
     }
 
@@ -231,8 +359,12 @@ public class LaborRatesActivity extends AppCompatActivity {
 
         //if block for body labor rate
         if (bodyInput.isEmpty()){
-            bodyRate = 0;
+            bodyRate = 0.0;
             laborRates.setBody(bodyRate);
+
+            //update body to data base
+            String bodyString = String.valueOf(bodyRate);
+            laborRateHelper.updateBodyData(bodyString);
 
             //set the Rate for body grey
             rateTextViewBody.setTextColor(rateGray);
@@ -242,6 +374,10 @@ public class LaborRatesActivity extends AppCompatActivity {
             bodyRate = Double.parseDouble(bodyInput);
             laborRates.setBody(bodyRate);
 
+            //update body to data base
+            String bodyString = String.valueOf(bodyRate);
+            laborRateHelper.updateBodyData(bodyString);
+
             //set the Rate for body blue
             rateTextViewBody.setTextColor(rateBlue);
             rateTextViewBody.setTypeface(boldTypeface);
@@ -249,8 +385,12 @@ public class LaborRatesActivity extends AppCompatActivity {
 
         //if block for mechanical labor rate
         if (mechanicalInput.isEmpty()){
-            mechanicalRate = 0;
+            mechanicalRate = 0.0;
             laborRates.setMechanical(mechanicalRate);
+
+            //update mechanical to data base
+            String mechanicalString = String.valueOf(mechanicalRate);
+            laborRateHelper.updateMechanicalData(mechanicalString);
 
             //set the Rate for Mechanical grey
             rateTextViewMechanical.setTextColor(rateGray);
@@ -259,6 +399,10 @@ public class LaborRatesActivity extends AppCompatActivity {
             mechanicalRate = Double.parseDouble(mechanicalInput);
             laborRates.setMechanical(mechanicalRate);
 
+            //update mechanical to data base
+            String mechanicalString = String.valueOf(mechanicalRate);
+            laborRateHelper.updateMechanicalData(mechanicalString);
+
             //set the Rate for Mechanical blue
             rateTextViewMechanical.setTextColor(rateBlue);
             rateTextViewMechanical.setTypeface(boldTypeface);
@@ -266,8 +410,12 @@ public class LaborRatesActivity extends AppCompatActivity {
 
         //if block for internal labor rate
         if (internalInput.isEmpty()){
-            internalRate = 0;
+            internalRate = 0.0;
             laborRates.setInternal(internalRate);
+
+            //update internal to data base
+            String internalString = String.valueOf(internalRate);
+            laborRateHelper.updateInternalData(internalString);
 
             //set the Rate for Internal grey
             rateTextViewInternal.setTextColor(rateGray);
@@ -276,6 +424,10 @@ public class LaborRatesActivity extends AppCompatActivity {
             internalRate = Double.parseDouble(internalInput);
             laborRates.setInternal(internalRate);
 
+            //update internal to data base
+            String internalString = String.valueOf(internalRate);
+            laborRateHelper.updateInternalData(internalString);
+
             //set the Rate for Internal blue
             rateTextViewInternal.setTextColor(rateBlue);
             rateTextViewInternal.setTypeface(boldTypeface);
@@ -283,8 +435,12 @@ public class LaborRatesActivity extends AppCompatActivity {
 
         //if block for warranty labor rate
         if (warrantyInput.isEmpty()){
-            warrantyRate = 0;
+            warrantyRate = 0.0;
             laborRates.setWarranty(warrantyRate);
+
+            //update warranty to data base
+            String warrantyString = String.valueOf(warrantyRate);
+            laborRateHelper.updateWarrantyData(warrantyString);
 
             //set the Rate for Warranty grey
             rateTextViewWarranty.setTextColor(rateGray);
@@ -293,6 +449,10 @@ public class LaborRatesActivity extends AppCompatActivity {
             warrantyRate = Double.parseDouble(warrantyInput);
             laborRates.setWarranty(warrantyRate);
 
+            //update warranty to data base
+            String warrantyString = String.valueOf(warrantyRate);
+            laborRateHelper.updateWarrantyData(warrantyString);
+
             //set the Rate for Warranty blue
             rateTextViewWarranty.setTextColor(rateBlue);
             rateTextViewWarranty.setTypeface(boldTypeface);
@@ -300,8 +460,12 @@ public class LaborRatesActivity extends AppCompatActivity {
 
         //if block for refinish labor rate
         if (refinishInput.isEmpty()){
-            refinishRate = 0;
+            refinishRate = 0.0;
             laborRates.setRefinish(refinishRate);
+
+            //update refinish to data base
+            String refinishString = String.valueOf(refinishRate);
+            laborRateHelper.updateRefinishData(refinishString);
 
             //set the Rate for Refinish grey
             rateTextViewRefinish.setTextColor(rateGray);
@@ -310,6 +474,10 @@ public class LaborRatesActivity extends AppCompatActivity {
             refinishRate = Double.parseDouble(refinishInput);
             laborRates.setRefinish(refinishRate);
 
+            //update refinish to data base
+            String refinishString = String.valueOf(refinishRate);
+            laborRateHelper.updateRefinishData(refinishString);
+
             //set the Rate for Refinish blue
             rateTextViewRefinish.setTextColor(rateBlue);
             rateTextViewRefinish.setTypeface(boldTypeface);
@@ -317,8 +485,12 @@ public class LaborRatesActivity extends AppCompatActivity {
 
         //if block for glass labor rate
         if (glassInput.isEmpty()){
-            glassRate = 0;
+            glassRate = 0.0;
             laborRates.setGlass(glassRate);
+
+            //update glass to data base
+            String glassString = String.valueOf(glassRate);
+            laborRateHelper.updateGlassData(glassString);
 
             //set the Rate for Glass grey
             rateTextViewGlass.setTextColor(rateGray);
@@ -327,6 +499,10 @@ public class LaborRatesActivity extends AppCompatActivity {
             glassRate = Double.parseDouble(glassInput);
             laborRates.setGlass(glassRate);
 
+            //update glass to data base
+            String glassString = String.valueOf(glassRate);
+            laborRateHelper.updateGlassData(glassString);
+
             //set the Rate for Glass blue
             rateTextViewGlass.setTextColor(rateBlue);
             rateTextViewGlass.setTypeface(boldTypeface);
@@ -334,8 +510,12 @@ public class LaborRatesActivity extends AppCompatActivity {
 
         //if block for frame labor rate
         if (frameInput.isEmpty()){
-            frameRate = 0;
+            frameRate = 0.0;
             laborRates.setFrame(frameRate);
+
+            //update frame to data base
+            String frameString = String.valueOf(frameRate);
+            laborRateHelper.updateFrameData(frameString);
 
             //set the Rate for Frame grey
             rateTextViewFrame.setTextColor(rateGray);
@@ -344,6 +524,10 @@ public class LaborRatesActivity extends AppCompatActivity {
             frameRate = Double.parseDouble(frameInput);
             laborRates.setFrame(frameRate);
 
+            //update frame to data base
+            String frameString = String.valueOf(frameRate);
+            laborRateHelper.updateFrameData(frameString);
+
             //set the Rate for Frame blue
             rateTextViewFrame.setTextColor(rateBlue);
             rateTextViewFrame.setTypeface(boldTypeface);
@@ -351,8 +535,12 @@ public class LaborRatesActivity extends AppCompatActivity {
 
         //if block for aluminum labor rate
         if (aluminumInput.isEmpty()){
-            aluminumRate = 0;
+            aluminumRate = 0.0;
             laborRates.setAluminum(aluminumRate);
+
+            //update aluminum to data base
+            String aluminumString = String.valueOf(aluminumRate);
+            laborRateHelper.updateAluminumData(aluminumString);
 
             //set the Rate for Aluminum grey
             rateTextViewAluminum.setTextColor(rateGray);
@@ -361,6 +549,10 @@ public class LaborRatesActivity extends AppCompatActivity {
             aluminumRate = Double.parseDouble(aluminumInput);
             laborRates.setAluminum(aluminumRate);
 
+            //update aluminum to data base
+            String aluminumString = String.valueOf(aluminumRate);
+            laborRateHelper.updateAluminumData(aluminumString);
+
             //set the Rate for Aluminum blue
             rateTextViewAluminum.setTextColor(rateBlue);
             rateTextViewAluminum.setTypeface(boldTypeface);
@@ -368,8 +560,12 @@ public class LaborRatesActivity extends AppCompatActivity {
 
         //if block for other labor rate
         if (otherInput.isEmpty()){
-            otherRate = 0;
+            otherRate = 0.0;
             laborRates.setOther(otherRate);
+
+            //update other to data base
+            String otherString = String.valueOf(otherRate);
+            laborRateHelper.updateOtherData(otherString);
 
             //set the Rate for Other grey
             rateTextViewOther.setTextColor(rateGray);
@@ -377,6 +573,10 @@ public class LaborRatesActivity extends AppCompatActivity {
         } else {
             otherRate = Double.parseDouble(otherInput);
             laborRates.setOther(otherRate);
+
+            //update other to data base
+            String otherString = String.valueOf(otherRate);
+            laborRateHelper.updateOtherData(otherString);
 
             //set the Rate for Other blue
             rateTextViewOther.setTextColor(rateBlue);

@@ -21,6 +21,7 @@ import android.widget.DatePicker;
 import android.widget.Toast;
 
 import com.techtimeapp.techtime.R;
+import com.techtimeapp.techtime.view.view.data.LaborRateHelper;
 import com.techtimeapp.techtime.view.view.logic.AddEditRepairOrderActivity;
 import com.techtimeapp.techtime.view.view.logic.LaborRatesActivity;
 
@@ -127,18 +128,32 @@ public class PayPeriodFragment extends Fragment implements View.OnClickListener 
     //to check if the labor rates have been set.
     public void addRepairOrder(){
 
-        LaborRatesActivity laborRatesActivity = new LaborRatesActivity();
 
-        //holds the values of the labor rates from the LaborRateActivity
-        double bodyRate = laborRatesActivity.bodyRate;
-        double mechanicalRate = laborRatesActivity.mechanicalRate;
-        double internalRate = laborRatesActivity.internalRate;
-        double warrantyRate = laborRatesActivity.warrantyRate;
-        double refinishRate = laborRatesActivity.refinishRate;
-        double glassRate = laborRatesActivity.glassRate;
-        double frameRate = laborRatesActivity.frameRate;
-        double aluminumRate = laborRatesActivity.aluminumRate;
-        double otherRate = laborRatesActivity.otherRate;
+        LaborRateHelper laborRateHelper = new LaborRateHelper(getActivity());
+
+
+        //holds the string values from LaborRateHelper
+        String bodyString = laborRateHelper.getBodyData();
+        String mechanicalString = laborRateHelper.getMechanicalData();
+        String internalString = laborRateHelper.getInternalData();
+        String warrantyString = laborRateHelper.getWarrantyData();
+        String refinishString = laborRateHelper.getRefinishData();
+        String glassString = laborRateHelper.getGlassData();
+        String frameString = laborRateHelper.getFrameData();
+        String aluminumString = laborRateHelper.getAluminumData();
+        String otherString = laborRateHelper.getOtherData();
+
+
+        //holds the values of the labor rates from the LaborRateHelper
+        double bodyRate = Double.valueOf(bodyString);
+        double mechanicalRate = Double.valueOf(mechanicalString);
+        double internalRate = Double.valueOf(internalString);
+        double warrantyRate = Double.valueOf(warrantyString);
+        double refinishRate = Double.valueOf(refinishString);
+        double glassRate = Double.valueOf(glassString);
+        double frameRate = Double.valueOf(frameString);
+        double aluminumRate = Double.valueOf(aluminumString);
+        double otherRate = Double.valueOf(otherString);
 
         //this variable holds the sum of all the labor rates
         double laborRatesSum = bodyRate + mechanicalRate + internalRate + warrantyRate + refinishRate + glassRate + frameRate + aluminumRate + otherRate;
