@@ -29,15 +29,15 @@ public class LaborRateHelper extends SQLiteOpenHelper {
 
 
        db.execSQL("CREATE TABLE " + TABLE_NAME + "(ID INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, " +
-               COL2 + " TEXT, " +
-               COL3 + " TEXT, " +
-               COL4 + " TEXT, " +
-               COL5 + " TEXT, " +
-               COL6 + " TEXT, " +
-               COL7 + " TEXT, " +
-               COL8 + " TEXT, " +
-               COL9 + " TEXT, " +
-               COL10 + " TEXT )");
+                COL2 + " TEXT, " +
+                COL3 + " TEXT, " +
+                COL4 + " TEXT, " +
+                COL5 + " TEXT, " +
+                COL6 + " TEXT, " +
+                COL7 + " TEXT, " +
+                COL8 + " TEXT, " +
+                COL9 + " TEXT, " +
+                COL10 + " TEXT )");
 
 
     }

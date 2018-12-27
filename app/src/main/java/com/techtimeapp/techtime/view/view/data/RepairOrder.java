@@ -72,7 +72,7 @@ public class RepairOrder {
 
     private String mLaborNineSelected;
 
-    private boolean mMatchPayroll;
+    private int mMatchPayroll;
 
     private double mTotalGross;
 
@@ -90,7 +90,9 @@ public class RepairOrder {
 
     private String mLicense;
 
-    public RepairOrder(int mRepairOrderNumber, String mWriter, String mCustomer, String mDate, String mInsuranceCO, int mSpinnerCount, double mHours1, double mHours2, double mHours3, double mHours4, double mHours5, double mHours6, double mHours7, double mHours8, double mHours9, double mGrossOne, double mGrossTwo, double mGrossThree, double mGrossFour, double mGrossFive, double mGrossSix, double mGrossSeven, double mGrossEight, double mGrossNine, String mLaborOneSelected, String mLaborTwoSelected, String mLaborThreeSelected, String mLaborFourSelected, String mLaborFiveSelected, String mLaborSixSelected, String mLaborSevenSelected, String mLaborEightSelected, String mLaborNineSelected, boolean mMatchPayroll, double mTotalGross, String mMake, String mModel, String mYear, int mMileage, String mVIN, String color, String mLicense) {
+    private String mTotalHours;
+
+    public RepairOrder(int mRepairOrderNumber, String mWriter, String mCustomer, String mDate, String mInsuranceCO, int mSpinnerCount, double mHours1, double mHours2, double mHours3, double mHours4, double mHours5, double mHours6, double mHours7, double mHours8, double mHours9, double mGrossOne, double mGrossTwo, double mGrossThree, double mGrossFour, double mGrossFive, double mGrossSix, double mGrossSeven, double mGrossEight, double mGrossNine, String mLaborOneSelected, String mLaborTwoSelected, String mLaborThreeSelected, String mLaborFourSelected, String mLaborFiveSelected, String mLaborSixSelected, String mLaborSevenSelected, String mLaborEightSelected, String mLaborNineSelected, int mMatchPayroll, double mTotalGross, String mMake, String mModel, String mYear, int mMileage, String mVIN, String color, String mLicense, String mTotalHours) {
         this.mRepairOrderNumber = mRepairOrderNumber;
         this.mWriter = mWriter;
         this.mCustomer = mCustomer;
@@ -133,6 +135,7 @@ public class RepairOrder {
         this.mVIN = mVIN;
         this.color = color;
         this.mLicense = mLicense;
+        this.mTotalHours = mTotalHours;
     }
 
     public int getmRepairOrderNumber() {
@@ -399,11 +402,11 @@ public class RepairOrder {
         this.mLaborNineSelected = mLaborNineSelected;
     }
 
-    public boolean ismMatchPayroll() {
+    public int ismMatchPayroll() {
         return mMatchPayroll;
     }
 
-    public void setmMatchPayroll(boolean mMatchPayroll) {
+    public void setmMatchPayroll(int mMatchPayroll) {
         this.mMatchPayroll = mMatchPayroll;
     }
 
@@ -469,5 +472,17 @@ public class RepairOrder {
 
     public void setmLicense(String mLicense) {
         this.mLicense = mLicense;
+    }
+
+    public int getmMatchPayroll() {
+        return mMatchPayroll;
+    }
+
+    public String getmTotalHours() {
+        return mTotalHours;
+    }
+
+    public void setmTotalHours(String mTotalHours) {
+        this.mTotalHours = mTotalHours;
     }
 }
