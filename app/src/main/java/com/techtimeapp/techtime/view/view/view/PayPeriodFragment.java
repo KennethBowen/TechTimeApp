@@ -23,7 +23,6 @@ import android.widget.Toast;
 import com.techtimeapp.techtime.R;
 import com.techtimeapp.techtime.view.view.data.LaborRateHelper;
 import com.techtimeapp.techtime.view.view.logic.AddEditRepairOrderActivity;
-import com.techtimeapp.techtime.view.view.logic.LaborRatesActivity;
 
 
 import java.text.DateFormat;
@@ -160,6 +159,7 @@ public class PayPeriodFragment extends Fragment implements View.OnClickListener 
 
         if(laborRatesSum > 0) {
             Intent intent = new Intent(getActivity(), AddEditRepairOrderActivity.class);
+            intent.putExtra("Source","NEW_REPAIR_ORDER");
             startActivity(intent);
         } else {
             Toast setLabor = Toast.makeText(getActivity(), "Please set your labor rates", Toast.LENGTH_LONG);
@@ -187,7 +187,7 @@ public class PayPeriodFragment extends Fragment implements View.OnClickListener 
         addRepairOrder = rootView.findViewById(R.id.add_repair_order);
         View listView = rootView.findViewById(R.id.listViewPayPeriod);
 
-        //these variables are to grab an instance of the DateFormat and Calender
+        //this variable is to grab an instance of the DateFormat and Calender
         DateFormat format = DateFormat.getDateInstance();
 
         //gets the string values found on the buttons for start and end dates

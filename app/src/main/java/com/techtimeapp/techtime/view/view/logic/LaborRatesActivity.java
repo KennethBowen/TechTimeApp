@@ -1,10 +1,8 @@
 package com.techtimeapp.techtime.view.view.logic;
 
 
-import android.content.ContentValues;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
-import android.database.Cursor;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -62,7 +60,7 @@ public class LaborRatesActivity extends AppCompatActivity {
 
         setFromData();
 
-        //LaborRate object
+        //LaborRate
         laborRates = new LaborRate(bodyRate, mechanicalRate, internalRate, warrantyRate, refinishRate, glassRate, frameRate, aluminumRate, otherRate);
 
         //calls stored laborRates values to display

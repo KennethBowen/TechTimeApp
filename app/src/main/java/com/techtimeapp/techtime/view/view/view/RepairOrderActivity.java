@@ -42,6 +42,7 @@ public class RepairOrderActivity extends AppCompatActivity {
             // Respond to a click on the edit option
             case R.id.action_edit:
                 Intent intentEditRepairOrder = new Intent(RepairOrderActivity.this, AddEditRepairOrderActivity.class);
+                intentEditRepairOrder.putExtra("Source","EDIT_REPAIR_ORDER");
                 startActivity(intentEditRepairOrder);
 
                 return true;

@@ -31,6 +31,9 @@
     <!-- pay period activity button to add repair order [CHAR LIMIT=20] -->
     <string name="add_repair_order">Add Repair Order</string>
 
+    <!-- addEditRepairOrder activity  [CHAR LIMIT=20] -->
+    <string name="edit_repair_order">Edit Repair Order</string>
+
     <!-- label for total hours pay period activity  [CHAR LIMIT=20] -->
     <string name="totalHoursLabel">Total Hours</string>
 
