@@ -87,6 +87,7 @@ public class AddEditRepairOrderActivity extends AppCompatActivity {
     public String mLicense;
     public int mMatchPayRoll;
     public double mTotalGross;
+    public double mTotalHours;
 
 
     //labor choice for labor types
@@ -142,7 +143,7 @@ public class AddEditRepairOrderActivity extends AppCompatActivity {
         intentFrom();
 
         //repair order object
-        repairOrder = new RepairOrder(mRepairOrderNumber, mWriter, mCustomer, mDate, mInsuranceCo, spinCount, laborOneHours, laborTwoHours, laborThreeHours, laborFourHours, laborFiveHours, laborSixHours, laborSevenHours, laborEightHours, laborNineHours, laborOneGross, laborTwoGross, laborThreeGross, laborFourGross, laborFiveGross, laborSixGross, laborSevenGross, laborEightGross, laborNineGross, laborOneSelected, laborTwoSelected, laborThreeSelected, laborFourSelected, laborFiveSelected, laborSixSelected, laborSevenSelected, laborEightSelected, laborNineSelected, mMatchPayRoll, mTotalGross, mMake, mModel, mYear, mMileage, mVIN, mColor, mLicense);
+        repairOrder = new RepairOrder(mRepairOrderNumber, mWriter, mCustomer, mDate, mInsuranceCo, spinCount, laborOneHours, laborTwoHours, laborThreeHours, laborFourHours, laborFiveHours, laborSixHours, laborSevenHours, laborEightHours, laborNineHours, laborOneGross, laborTwoGross, laborThreeGross, laborFourGross, laborFiveGross, laborSixGross, laborSevenGross, laborEightGross, laborNineGross, laborOneSelected, laborTwoSelected, laborThreeSelected, laborFourSelected, laborFiveSelected, laborSixSelected, laborSevenSelected, laborEightSelected, laborNineSelected, mMatchPayRoll, mTotalGross, mMake, mModel, mYear, mMileage, mVIN, mColor, mLicense, mTotalHours);
 
     }
 
