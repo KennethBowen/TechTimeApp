@@ -6,8 +6,10 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 import com.techtimeapp.techtime.R;
+import com.techtimeapp.techtime.view.view.data.RepairOrderHelper;
 import com.techtimeapp.techtime.view.view.logic.AddEditRepairOrderActivity;
 
 
@@ -20,8 +22,33 @@ public class RepairOrderActivity extends AppCompatActivity {
         //allows the activity to remain in portrait only
         this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
+        setRepairOrderContent();
+
     }
 
+
+
+    public void setRepairOrderContent(){
+
+        //DecimalFormat formatter = new DecimalFormat("#,###");
+        //Hours
+        //DecimalFormat position = new DecimalFormat("##.0");
+
+        RepairOrderHelper repairOrderHelper = new RepairOrderHelper(this);
+
+        TextView roNumber = findViewById(R.id.repairOrderNumber);
+        String roString = repairOrderHelper.getROnumber();
+        roNumber.setText(roString);
+
+        TextView writerView = findViewById(R.id.repairOrderWriter);
+        String writer = repairOrderHelper.getWriter();
+        writerView.setText(writer);
+
+        TextView dateView = findViewById(R.id.repairOrderDate);
+        String date = repairOrderHelper.getDate();
+        dateView.setText(date);
+
+    }
 
 
     @Override

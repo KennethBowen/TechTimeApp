@@ -174,7 +174,11 @@ public class RepairOrderHelper extends SQLiteOpenHelper {
         contentValues.put(COL3, writer);
         long result = db.insert(TABLE_NAME, null, contentValues);
 
-        return result != -1;
+        if(result == -1 ){
+            return false;
+        } else {
+            return true;
+        }
     }
 
     public void updateWriter(String writer){

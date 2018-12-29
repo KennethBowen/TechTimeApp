@@ -20,6 +20,7 @@ import android.widget.Toast;
 import com.techtimeapp.techtime.R;
 import com.techtimeapp.techtime.view.view.data.LaborRateHelper;
 import com.techtimeapp.techtime.view.view.data.RepairOrder;
+import com.techtimeapp.techtime.view.view.data.RepairOrderHelper;
 
 import java.text.DateFormat;
 import java.text.DecimalFormat;
@@ -65,6 +66,8 @@ public class AddEditRepairOrderActivity extends AppCompatActivity {
     public EditText laborNineEditTextHours ;
 
     public RepairOrder repairOrder;
+
+    public RepairOrderHelper repairOrderHelper;
 
     //helper variable to tell if this is new a Repair Order
     boolean newRepairOrder;
@@ -143,7 +146,7 @@ public class AddEditRepairOrderActivity extends AppCompatActivity {
         intentFrom();
 
         //repair order object
-        repairOrder = new RepairOrder(mRepairOrderNumber, mWriter, mCustomer, mDate, mInsuranceCo, spinCount, laborOneHours, laborTwoHours, laborThreeHours, laborFourHours, laborFiveHours, laborSixHours, laborSevenHours, laborEightHours, laborNineHours, laborOneGross, laborTwoGross, laborThreeGross, laborFourGross, laborFiveGross, laborSixGross, laborSevenGross, laborEightGross, laborNineGross, laborOneSelected, laborTwoSelected, laborThreeSelected, laborFourSelected, laborFiveSelected, laborSixSelected, laborSevenSelected, laborEightSelected, laborNineSelected, mMatchPayRoll, mTotalGross, mMake, mModel, mYear, mMileage, mVIN, mColor, mLicense, mTotalHours);
+       // repairOrder = new RepairOrder(mRepairOrderNumber, mWriter, mCustomer, mDate, mInsuranceCo, spinCount, laborOneHours, laborTwoHours, laborThreeHours, laborFourHours, laborFiveHours, laborSixHours, laborSevenHours, laborEightHours, laborNineHours, laborOneGross, laborTwoGross, laborThreeGross, laborFourGross, laborFiveGross, laborSixGross, laborSevenGross, laborEightGross, laborNineGross, laborOneSelected, laborTwoSelected, laborThreeSelected, laborFourSelected, laborFiveSelected, laborSixSelected, laborSevenSelected, laborEightSelected, laborNineSelected, mMatchPayRoll, mTotalGross, mMake, mModel, mYear, mMileage, mVIN, mColor, mLicense, mTotalHours);
 
     }
 
@@ -369,6 +372,9 @@ public class AddEditRepairOrderActivity extends AppCompatActivity {
                 //set the current date
                 Calendar calendar = Calendar.getInstance();
                 mDate = DateFormat.getDateInstance(DateFormat.DEFAULT).format(calendar.getTime());
+
+                //mMatchPayRoll is assigned 0
+                mMatchPayRoll = 0;
 
                 //if any Edit text fields are null it will assign a default value
                 adjustForEmptyFields();
@@ -1430,7 +1436,8 @@ public class AddEditRepairOrderActivity extends AppCompatActivity {
         //mTotalGross is given the sum of all the labor gross combined
         mTotalGross = laborOneGross + laborTwoGross + laborThreeGross + laborFourGross + laborFiveGross + laborSixGross + laborSevenGross + laborEightGross + laborNineGross;
 
-
+        //mTotalHours is given the sum of all the labor hours combined
+        mTotalHours = (laborOneHours + laborTwoHours + laborThreeHours + laborFourHours + laborFiveHours + laborSixHours + laborSevenHours + laborEightHours + laborNineHours);
 
 
     }
@@ -1440,37 +1447,60 @@ public class AddEditRepairOrderActivity extends AppCompatActivity {
     //this method is to add and save a new repair oder to the data base
     public void saveNewRepairOrder(){
 
-        //miles
-        DecimalFormat formatter = new DecimalFormat("#,###");
-        //Hours
-        DecimalFormat position = new DecimalFormat("#.#");
 
-        double totalHours = (laborOneHours + laborTwoHours + laborThreeHours + laborFourHours + laborFiveHours + laborSixHours + laborSevenHours + laborEightHours + laborNineHours);
+        repairOrderHelper = new RepairOrderHelper(this);
 
 
-        Toast savedToast = Toast.makeText(this, "Repair Order: "+mRepairOrderNumber +"\n"+
-                "Date: "+mDate +"\n"+
-                "Writer: "+mWriter +"\n"+
-                "Customer: "+mCustomer +"\n"+
-                "Insurance Co: "+mInsuranceCo +"\n"+
-                "Make: "+mMake +"\n"+
-                "Model: "+mModel +"\n"+
-                "Year: "+mYear +"\n"+
-                "Mileage: "+formatter.format(mMileage) +"\n"+
-                "VIN: "+mVIN +"\n"+
-                "Color: "+mColor +"\n"+
-                "License: "+mLicense +"\n"+
-                laborOneSelected+" Hours: "+laborOneHours+" Gross: " + (NumberFormat.getCurrencyInstance().format(laborOneGross))+"\n"+
-                laborTwoSelected+" Hours: "+laborTwoHours+" Gross: " + (NumberFormat.getCurrencyInstance().format(laborTwoGross))+"\n"+
-                laborThreeSelected+" Hours: "+laborThreeHours+" Gross: " + (NumberFormat.getCurrencyInstance().format(laborThreeGross))+"\n"+
-                laborFourSelected+" Hours: "+laborFourHours+" Gross: " + (NumberFormat.getCurrencyInstance().format(laborFourGross))+"\n"+
-                laborFiveSelected+" Hours: "+laborFiveHours+" Gross: " + (NumberFormat.getCurrencyInstance().format(laborFiveGross))+"\n"+
-                laborSixSelected+" Hours: "+laborSixHours+" Gross: " + (NumberFormat.getCurrencyInstance().format(laborSixGross))+"\n"+
-                laborSevenSelected+" Hours: "+laborSevenHours+" Gross: " + (NumberFormat.getCurrencyInstance().format(laborSevenGross))+"\n"+
-                laborEightSelected+" Hours: "+laborEightHours+" Gross: " + (NumberFormat.getCurrencyInstance().format(laborEightGross))+"\n"+
-                laborNineSelected+" Hours: "+laborNineHours+" Gross: " + (NumberFormat.getCurrencyInstance().format(laborNineGross))+"\n"+
-                "Total Hours: " + (position.format(totalHours))+"\n"+
-                "Total Gross: "+ (NumberFormat.getCurrencyInstance().format(mTotalGross)), Toast.LENGTH_LONG);
+
+        repairOrderHelper.addROnumber(String.valueOf(mRepairOrderNumber));
+        repairOrderHelper.addWriter(mWriter);
+        repairOrderHelper.addCustomer(mCustomer);
+        repairOrderHelper.addDate(mDate);
+        repairOrderHelper.addInsuranceCo(mInsuranceCo);
+        repairOrderHelper.addSpinnerCount(String.valueOf(spinCount));
+        repairOrderHelper.addHoursone(String.valueOf(laborOneHours));
+        repairOrderHelper.addHourstwo(String.valueOf(laborTwoHours));
+        repairOrderHelper.addHoursthree(String.valueOf(laborThreeHours));
+        repairOrderHelper.addHoursfour(String.valueOf(laborFourHours));
+        repairOrderHelper.addHoursfive(String.valueOf(laborFiveHours));
+        repairOrderHelper.addHourssix(String.valueOf(laborSixHours));
+        repairOrderHelper.addHoursseven(String.valueOf(laborSevenHours));
+        repairOrderHelper.addHourseight(String.valueOf(laborEightHours));
+        repairOrderHelper.addHoursnine(String.valueOf(laborNineHours));
+        repairOrderHelper.addGrossone(String.valueOf(laborOneGross));
+        repairOrderHelper.addGrosstwo(String.valueOf(laborTwoGross));
+        repairOrderHelper.addGrossthree(String.valueOf(laborThreeGross));
+        repairOrderHelper.addGrossfour(String.valueOf(laborFourGross));
+        repairOrderHelper.addGrossfive(String.valueOf(laborFiveGross));
+        repairOrderHelper.addGrosssix(String.valueOf(laborSixGross));
+        repairOrderHelper.addGrossseven(String.valueOf(laborSevenGross));
+        repairOrderHelper.addGrosseight(String.valueOf(laborEightGross));
+        repairOrderHelper.addGrossnine(String.valueOf(laborNineGross));
+        repairOrderHelper.addLaboroneselected(laborOneSelected);
+        repairOrderHelper.addLabortwoselected(laborTwoSelected);
+        repairOrderHelper.addLaborthreeselected(laborThreeSelected);
+        repairOrderHelper.addLaborfourselected(laborFourSelected);
+        repairOrderHelper.addLaborfiveselected(laborFiveSelected);
+        repairOrderHelper.addLaborsixselected(laborSixSelected);
+        repairOrderHelper.addLaborsevenselected(laborSevenSelected);
+        repairOrderHelper.addLaboreightselected(laborEightSelected);
+        repairOrderHelper.addLabornineselected(laborNineSelected);
+        repairOrderHelper.addPayrollmatch(String.valueOf(mMatchPayRoll));
+        repairOrderHelper.addTotalgross(String.valueOf(mTotalGross));
+        repairOrderHelper.addMake(mMake);
+        repairOrderHelper.addModel(mModel);
+        repairOrderHelper.addYear(mYear);
+        repairOrderHelper.addMileage(String.valueOf(mMileage));
+        repairOrderHelper.addVin(mVIN);
+        repairOrderHelper.addColor(mColor);
+        repairOrderHelper.addLicense(mLicense);
+        repairOrderHelper.addTotalHours(String.valueOf(mTotalHours));
+
+
+
+        Toast savedToast = Toast.makeText(this, "Repair Order: "+repairOrderHelper.getROnumber() +"\n"+
+                "Date: "+repairOrderHelper.getDate() +"\n"+
+                "Writer: "+repairOrderHelper.getWriter(), Toast.LENGTH_LONG);
         savedToast.setGravity(Gravity.BOTTOM, 0, 400);
         savedToast.show();
 
