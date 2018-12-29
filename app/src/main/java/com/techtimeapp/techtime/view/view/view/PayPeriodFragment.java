@@ -16,16 +16,12 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
-import android.widget.ListView;
 import android.widget.Toast;
 
 import com.techtimeapp.techtime.R;
 import com.techtimeapp.techtime.view.view.data.LaborRateHelper;
-import com.techtimeapp.techtime.view.view.data.RepairOrder;
 import com.techtimeapp.techtime.view.view.logic.AddEditRepairOrderActivity;
 import com.techtimeapp.techtime.view.view.logic.LaborRatesActivity;
 
@@ -36,7 +32,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.Objects;
 
-public class PayPeriodFragment extends Fragment implements View.OnClickListener, AdapterView.OnItemClickListener {
+public class PayPeriodFragment extends Fragment implements View.OnClickListener {
 
 
     //start date seen on activity
@@ -57,8 +53,6 @@ public class PayPeriodFragment extends Fragment implements View.OnClickListener,
     //holds the value to if an pay period is not active
     public boolean hasNoActivePayPeriod = true;
 
-    //listview instance
-    ListView listView;
 
 
     public PayPeriodFragment() {
@@ -73,13 +67,6 @@ public class PayPeriodFragment extends Fragment implements View.OnClickListener,
         // Inflate the layout for this fragment
         final View rootView = inflater.inflate(R.layout.activity_pay_period, container, false);
 
-        //generate listview in fragment
-        listView.findViewById(R.id.listViewPayPeriod);
-
-        //ArrayAdapter
-        ArrayAdapter<RepairOrder> arrayAdapter= new ArrayAdapter<RepairOrder>(getActivity(), android.R.layout.simple_list_item_1);
-
-        listView.setAdapter(arrayAdapter);
 
         //add repair order button for the pay period is active
         addRepairOrder = rootView.findViewById(R.id.add_repair_order);
@@ -324,10 +311,6 @@ public class PayPeriodFragment extends Fragment implements View.OnClickListener,
 
     }
 
-    @Override
-    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-
-    }
 
 
     //inner class
