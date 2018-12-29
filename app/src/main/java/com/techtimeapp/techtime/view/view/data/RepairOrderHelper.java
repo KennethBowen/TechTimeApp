@@ -1711,10 +1711,10 @@ public class RepairOrderHelper extends SQLiteOpenHelper {
     }
 
     public boolean addALL(String RoNumber, String writer, String customer, String date, String insuranceCo, String spinnerCount, String hoursone, String hourstwo, String hoursthree,
-                          String hoursfour, String hoursfive, String hourssix, String hoursseven, String hourseight, String hoursnine, String grossone, String grosstwo
+                            String hoursfour, String hoursfive, String hourssix, String hoursseven, String hourseight, String hoursnine, String grossone, String grosstwo
             , String grossthree, String grossfour, String grossfive, String grosssix, String grossseven, String grosseight, String grossnine, String laboroneselected,
-                          String labortwoselected, String laborthreeselected, String laborfourselected, String laborfiveselected, String laborsixselected, String laborsevenselected, String laboreightselected, String labornineselected,
-                          String payrollmatch, String totalgross, String make, String model, String year, String mileage, String vin, String color, String license, String totalHours) {
+                            String labortwoselected, String laborthreeselected, String laborfourselected, String laborfiveselected, String laborsixselected, String laborsevenselected, String laboreightselected, String labornineselected,
+                            String payrollmatch, String totalgross, String make, String model, String year, String mileage, String vin, String color, String license, String totalHours) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(COL2, RoNumber);
