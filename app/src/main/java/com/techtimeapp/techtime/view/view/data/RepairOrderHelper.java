@@ -198,7 +198,7 @@ public class RepairOrderHelper extends SQLiteOpenHelper {
         String returnString = "";
 
         if (result.moveToFirst()) {
-            returnString = result.getString(result.getColumnIndex("body"));
+            returnString = result.getString(result.getColumnIndex("Customer"));
         }
         result.close();
 
@@ -1153,7 +1153,7 @@ public class RepairOrderHelper extends SQLiteOpenHelper {
 
     public String getLaborfiveselected() {
         SQLiteDatabase db = this.getWritableDatabase();
-        String query = "SELECT body FROM " + TABLE_NAME;
+        String query = "SELECT laborfiveselected FROM " + TABLE_NAME;
         Cursor result = db.rawQuery(query, null);
 
         String returnString = "";
@@ -1190,7 +1190,7 @@ public class RepairOrderHelper extends SQLiteOpenHelper {
 
     public String getLaborsixselected() {
         SQLiteDatabase db = this.getWritableDatabase();
-        String query = "SELECT body FROM " + TABLE_NAME;
+        String query = "SELECT laborsixselected FROM " + TABLE_NAME;
         Cursor result = db.rawQuery(query, null);
 
         String returnString = "";

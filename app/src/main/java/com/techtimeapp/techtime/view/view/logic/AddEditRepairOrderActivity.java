@@ -74,7 +74,7 @@ public class AddEditRepairOrderActivity extends AppCompatActivity {
 
     //variables from here down will be used / needed in db and repair order object creation
     //helper variable to prevent setUpSpinner() methods from calling a setUpSpinner a second time
-    private int spinCount = 0;
+    public int spinCount = 0;
 
     public int mRepairOrderNumber;
     public String mWriter;
@@ -201,9 +201,167 @@ public class AddEditRepairOrderActivity extends AppCompatActivity {
             //this variable is used when saving
             newRepairOrder = false;
 
+            setValuesFromDataBase();
 
         }
     }
+
+
+
+    //this method will set the variables with the values stored from the data base
+    public void setValuesFromDataBase(){
+
+        repairOrderHelper = new RepairOrderHelper(this);
+
+
+
+        String spinCountString = repairOrderHelper.getSpinnerCount();
+        spinCount = Integer.parseInt(spinCountString);
+
+        String roString = repairOrderHelper.getROnumber();
+        mRepairOrderNumber = Integer.parseInt(roString);
+        mWriter = repairOrderHelper.getWriter();
+        mCustomer = repairOrderHelper.getCustomer();
+        mInsuranceCo = repairOrderHelper.getInsuranceCo();
+        mMake = repairOrderHelper.getMake();
+        mModel = repairOrderHelper.getModel();
+        mYear = repairOrderHelper.getYear();
+        String mileageString = repairOrderHelper.getMileage();
+        mMileage = Integer.parseInt(mileageString);
+        mVIN = repairOrderHelper.getVin();
+        mColor = repairOrderHelper.getColor();
+        mLicense = repairOrderHelper.getLicense();
+
+        String laborOneHoursString = repairOrderHelper.getHoursone();
+        laborOneHours = Double.valueOf(laborOneHoursString);
+
+        String laborTwoHoursString = repairOrderHelper.getHourstwo();
+        laborTwoHours = Double.valueOf(laborTwoHoursString);
+
+        String laborThreeHoursString = repairOrderHelper.getHoursthree();
+        laborThreeHours = Double.valueOf(laborThreeHoursString);
+
+        String laborFourHoursString = repairOrderHelper.getHoursfour();
+        laborFourHours = Double.valueOf(laborFourHoursString);
+
+
+        //this method will set the edit text fields to the values stored in the variables
+        setEditTextFields(roString, mileageString);
+
+        //set up spinner and the amount of spinners to set up based on results from the data base
+        setUpActiveSpinners(laborOneHoursString, laborTwoHoursString, laborThreeHoursString, laborFourHoursString);
+
+    }
+
+
+    //this method will set the edit text fields to the values stored in the variables
+    public void setEditTextFields(String roString, String mileageString){
+
+        repairOderEditText.setText(roString);
+        writerEditText.setText(mWriter);
+
+        if(!mCustomer.equals("Empty_String")) {
+            customerEditText.setText(mCustomer);
+        }
+
+        if(!mInsuranceCo.equals("Empty_String")) {
+            insuranceEditText.setText(mInsuranceCo);
+        }
+
+        if(!mMake.equals("Empty_String")) {
+            makeEditText.setText(mMake);
+        }
+
+        if(!mModel.equals("Empty_String")) {
+            modelEditText.setText(mModel);
+        }
+
+        if(!mYear.equals("Empty_String")) {
+            yearEditText.setText(mYear);
+        }
+
+        if(mMileage != -1) {
+            mileageEditText.setText(mileageString);
+        }
+
+        if(!mVIN.equals("Empty_String")) {
+            VINEditText.setText(mVIN);
+        }
+
+        if(!mColor.equals("Empty_String")) {
+            colorEditText.setText(mColor);
+        }
+
+        if(!mLicense.equals("Empty_String")) {
+            licenseEditText.setText(mLicense);
+        }
+
+
+    }
+
+
+    //set up spinner and the amount of spinners to set up based on results from the data base
+    public void setUpActiveSpinners(String laborOneHoursString, String laborTwoHoursString, String laborThreeHoursString, String laborFourHoursString){
+
+
+        String laborTypeOne = repairOrderHelper.getLaboroneselected();
+        String laborTypeTwo = repairOrderHelper.getLabortwoselected();
+        String laborTypeThree = repairOrderHelper.getLaborthreeselected();
+        String laborTypeFour = repairOrderHelper.getLaborfourselected();
+
+
+
+
+        if(!laborTypeOne.equals("Add Labor")) {
+
+
+
+            setupSpinnerOne();
+
+            int spinnerOnePosition = laborSpinnerAdapter.getPosition(laborTypeOne);
+            mLaborSpinnerOne.setSelection(spinnerOnePosition);
+            laborOneEditTextHours.setText(laborOneHoursString);
+
+            setupSpinnerTwo();
+
+        }
+
+        if(!laborTypeTwo.equals("Add Labor")){
+
+            int spinnerTwoPosition =  laborSpinnerAdapter.getPosition(laborTypeTwo);
+            mLaborSpinnerTwo.setSelection(spinnerTwoPosition);
+            laborTwoEditTextHours.setText(laborTwoHoursString);
+
+
+            setupSpinnerThree();
+
+        }
+
+        if(!laborTypeThree.equals("Add Labor")){
+
+            int spinnerThreePosition = laborSpinnerAdapter.getPosition(laborTypeThree);
+            mLaborSpinnerThree.setSelection(spinnerThreePosition);
+            laborThreeEditTextHours.setText(laborThreeHoursString);
+
+            setupSpinnerFour();
+
+        }
+
+        if(!laborTypeFour.equals("Add Labor")){
+
+            int spinnerFourPosition = laborSpinnerAdapter.getPosition(laborTypeFour);
+            mLaborSpinnerFour.setSelection(spinnerFourPosition);
+            laborFourEditTextHours.setText(laborFourHoursString);
+
+            setupSpinnerFive();
+
+        }
+
+
+    }
+
+
+
 
 
 
@@ -387,6 +545,7 @@ public class AddEditRepairOrderActivity extends AppCompatActivity {
 
                 saveNewRepairOrder();
             }
+
 
             // Exit activity
             finish();
@@ -1451,58 +1610,33 @@ public class AddEditRepairOrderActivity extends AppCompatActivity {
         repairOrderHelper = new RepairOrderHelper(this);
 
 
-
-        repairOrderHelper.addROnumber(String.valueOf(mRepairOrderNumber));
-        repairOrderHelper.addWriter(mWriter);
-        repairOrderHelper.addCustomer(mCustomer);
-        repairOrderHelper.addDate(mDate);
-        repairOrderHelper.addInsuranceCo(mInsuranceCo);
-        repairOrderHelper.addSpinnerCount(String.valueOf(spinCount));
-        repairOrderHelper.addHoursone(String.valueOf(laborOneHours));
-        repairOrderHelper.addHourstwo(String.valueOf(laborTwoHours));
-        repairOrderHelper.addHoursthree(String.valueOf(laborThreeHours));
-        repairOrderHelper.addHoursfour(String.valueOf(laborFourHours));
-        repairOrderHelper.addHoursfive(String.valueOf(laborFiveHours));
-        repairOrderHelper.addHourssix(String.valueOf(laborSixHours));
-        repairOrderHelper.addHoursseven(String.valueOf(laborSevenHours));
-        repairOrderHelper.addHourseight(String.valueOf(laborEightHours));
-        repairOrderHelper.addHoursnine(String.valueOf(laborNineHours));
-        repairOrderHelper.addGrossone(String.valueOf(laborOneGross));
-        repairOrderHelper.addGrosstwo(String.valueOf(laborTwoGross));
-        repairOrderHelper.addGrossthree(String.valueOf(laborThreeGross));
-        repairOrderHelper.addGrossfour(String.valueOf(laborFourGross));
-        repairOrderHelper.addGrossfive(String.valueOf(laborFiveGross));
-        repairOrderHelper.addGrosssix(String.valueOf(laborSixGross));
-        repairOrderHelper.addGrossseven(String.valueOf(laborSevenGross));
-        repairOrderHelper.addGrosseight(String.valueOf(laborEightGross));
-        repairOrderHelper.addGrossnine(String.valueOf(laborNineGross));
-        repairOrderHelper.addLaboroneselected(laborOneSelected);
-        repairOrderHelper.addLabortwoselected(laborTwoSelected);
-        repairOrderHelper.addLaborthreeselected(laborThreeSelected);
-        repairOrderHelper.addLaborfourselected(laborFourSelected);
-        repairOrderHelper.addLaborfiveselected(laborFiveSelected);
-        repairOrderHelper.addLaborsixselected(laborSixSelected);
-        repairOrderHelper.addLaborsevenselected(laborSevenSelected);
-        repairOrderHelper.addLaboreightselected(laborEightSelected);
-        repairOrderHelper.addLabornineselected(laborNineSelected);
-        repairOrderHelper.addPayrollmatch(String.valueOf(mMatchPayRoll));
-        repairOrderHelper.addTotalgross(String.valueOf(mTotalGross));
-        repairOrderHelper.addMake(mMake);
-        repairOrderHelper.addModel(mModel);
-        repairOrderHelper.addYear(mYear);
-        repairOrderHelper.addMileage(String.valueOf(mMileage));
-        repairOrderHelper.addVin(mVIN);
-        repairOrderHelper.addColor(mColor);
-        repairOrderHelper.addLicense(mLicense);
-        repairOrderHelper.addTotalHours(String.valueOf(mTotalHours));
+        String RO = String.valueOf(mRepairOrderNumber);
+        String spin = (String.valueOf(spinCount));
+        String hours1 = (String.valueOf(laborOneHours));
+        String hours2 = (String.valueOf(laborTwoHours));
+        String hours3 = (String.valueOf(laborThreeHours));
+        String hours4 = (String.valueOf(laborFourHours));
+        String hours5 = (String.valueOf(laborFiveHours));
+        String hours6 = (String.valueOf(laborSixHours));
+        String hours7 = (String.valueOf(laborSevenHours));
+        String hours8 = (String.valueOf(laborEightHours));
+        String hours9 = (String.valueOf(laborNineHours));
+        String gross1 = (String.valueOf(laborOneGross));
+        String gross2 = (String.valueOf(laborTwoGross));
+        String gross3 = (String.valueOf(laborThreeGross));
+        String gross4 = (String.valueOf(laborFourGross));
+        String gross5 = (String.valueOf(laborFiveGross));
+        String gross6 = (String.valueOf(laborSixGross));
+        String gross7 = (String.valueOf(laborSevenGross));
+        String gross8 = (String.valueOf(laborEightGross));
+        String gross9 = (String.valueOf(laborNineGross));
+        String matchPayString = (String.valueOf(mMatchPayRoll));
+        String totalGrossString = (String.valueOf(mTotalGross));
+        String mileString = (String.valueOf(mMileage));
+        String totalHoursString = (String.valueOf(mTotalHours));
 
 
-
-        Toast savedToast = Toast.makeText(this, "Repair Order: "+repairOrderHelper.getROnumber() +"\n"+
-                "Date: "+repairOrderHelper.getDate() +"\n"+
-                "Writer: "+repairOrderHelper.getWriter(), Toast.LENGTH_LONG);
-        savedToast.setGravity(Gravity.BOTTOM, 0, 400);
-        savedToast.show();
+        repairOrderHelper.addALL(RO, mWriter, mCustomer, mDate, mInsuranceCo, spin, hours1, hours2, hours3, hours4, hours5, hours6, hours7, hours8, hours9, gross1, gross2, gross3, gross4, gross5, gross6, gross7, gross8, gross9, laborOneSelected, laborTwoSelected, laborThreeSelected, laborFourSelected, laborFiveSelected, laborSixSelected, laborSevenSelected, laborEightSelected, laborNineSelected, matchPayString, totalGrossString, mMake, mModel, mYear, mileString, mVIN, mColor, mLicense, totalHoursString);
 
 
     }
@@ -1553,7 +1687,7 @@ public class AddEditRepairOrderActivity extends AppCompatActivity {
                 // holds the String value of the position selected from the spinner
                 String selection = (String) parent.getItemAtPosition(position);
 
-                if(position > 0) {
+                if(position > 0 ) {
                     if (spinCount == 0) {
                         // passes the string values of labor type selected to setLaborHiddenOne
                         setLaborHiddenOne(selection);
@@ -1593,6 +1727,14 @@ public class AddEditRepairOrderActivity extends AppCompatActivity {
         TextView mTextHoursOne = findViewById(R.id.textViewHours_one);
         int accentBlue = getResources().getColor(R.color.colorAccent);
 
+
+        if (laborOneSelected !=null){
+            laborType.add(laborOneSelected);
+            laborOneSelected = selection;
+            laborType.remove(selection);
+        }
+
+
         if(laborOneSelected == null){
             // assigns the string value to the laborOneSelected
             laborOneSelected = selection;
@@ -1600,11 +1742,11 @@ public class AddEditRepairOrderActivity extends AppCompatActivity {
             laborType.remove(selection);
             //sets the hours text to blue
             mTextHoursOne.setTextColor(accentBlue);
-        } if (laborOneSelected !=null){
-                laborType.add(laborOneSelected);
-                laborOneSelected = selection;
-                laborType.remove(selection);
         }
+
+
+
+
 
     }
 
@@ -1683,14 +1825,16 @@ public class AddEditRepairOrderActivity extends AppCompatActivity {
         TextView mTextHoursTwo = findViewById(R.id.textViewHours_two);
         int accentBlue = getResources().getColor(R.color.colorAccent);
 
+        if (laborTwoSelected !=null){
+            laborType.add(laborTwoSelected);
+            laborTwoSelected = selection;
+            laborType.remove(selection);
+        }
+
         if(laborTwoSelected == null){
             laborTwoSelected = selection;
             laborType.remove(selection);
             mTextHoursTwo.setTextColor(accentBlue);
-        } if (laborTwoSelected !=null){
-            laborType.add(laborTwoSelected);
-            laborTwoSelected = selection;
-            laborType.remove(selection);
         }
 
     }
@@ -2236,6 +2380,7 @@ public class AddEditRepairOrderActivity extends AppCompatActivity {
                 if(position > 0) {
 
                         setLaborHiddenNine(selection);
+                        spinCount++;
 
                 } else if (laborNineSelected != null){
                     laborType.add(laborNineSelected);
@@ -2299,9 +2444,12 @@ public class AddEditRepairOrderActivity extends AppCompatActivity {
         switch (item.getItemId()) {
             // Respond to a click on the check mark option
             case R.id.action_save:
-
                 //check required fields and then is saved
                 checkVacancy();
+
+                Toast toast1 = Toast.makeText(this, "Spin Count : " + spinCount, Toast.LENGTH_LONG);
+                toast1.setGravity(Gravity.BOTTOM, 0,400);
+                toast1.show();
 
                 return true;
 

@@ -127,45 +127,57 @@ public class PayPeriodFragment extends Fragment implements View.OnClickListener 
     //to check if the labor rates have been set.
     public void addRepairOrder(){
 
+        double laborRatesSum = 0;
 
-        LaborRateHelper laborRateHelper = new LaborRateHelper(getActivity());
+        try {
 
-
-        //holds the string values from LaborRateHelper
-        String bodyString = laborRateHelper.getBodyData();
-        String mechanicalString = laborRateHelper.getMechanicalData();
-        String internalString = laborRateHelper.getInternalData();
-        String warrantyString = laborRateHelper.getWarrantyData();
-        String refinishString = laborRateHelper.getRefinishData();
-        String glassString = laborRateHelper.getGlassData();
-        String frameString = laborRateHelper.getFrameData();
-        String aluminumString = laborRateHelper.getAluminumData();
-        String otherString = laborRateHelper.getOtherData();
+            LaborRateHelper laborRateHelper = new LaborRateHelper(getActivity());
 
 
-        //holds the values of the labor rates from the LaborRateHelper
-        double bodyRate = Double.valueOf(bodyString);
-        double mechanicalRate = Double.valueOf(mechanicalString);
-        double internalRate = Double.valueOf(internalString);
-        double warrantyRate = Double.valueOf(warrantyString);
-        double refinishRate = Double.valueOf(refinishString);
-        double glassRate = Double.valueOf(glassString);
-        double frameRate = Double.valueOf(frameString);
-        double aluminumRate = Double.valueOf(aluminumString);
-        double otherRate = Double.valueOf(otherString);
+            //holds the string values from LaborRateHelper
+            String bodyString = laborRateHelper.getBodyData();
+            String mechanicalString = laborRateHelper.getMechanicalData();
+            String internalString = laborRateHelper.getInternalData();
+            String warrantyString = laborRateHelper.getWarrantyData();
+            String refinishString = laborRateHelper.getRefinishData();
+            String glassString = laborRateHelper.getGlassData();
+            String frameString = laborRateHelper.getFrameData();
+            String aluminumString = laborRateHelper.getAluminumData();
+            String otherString = laborRateHelper.getOtherData();
 
-        //this variable holds the sum of all the labor rates
-        double laborRatesSum = bodyRate + mechanicalRate + internalRate + warrantyRate + refinishRate + glassRate + frameRate + aluminumRate + otherRate;
+
+            //holds the values of the labor rates from the LaborRateHelper
+            double bodyRate = Double.valueOf(bodyString);
+            double mechanicalRate = Double.valueOf(mechanicalString);
+            double internalRate = Double.valueOf(internalString);
+            double warrantyRate = Double.valueOf(warrantyString);
+            double refinishRate = Double.valueOf(refinishString);
+            double glassRate = Double.valueOf(glassString);
+            double frameRate = Double.valueOf(frameString);
+            double aluminumRate = Double.valueOf(aluminumString);
+            double otherRate = Double.valueOf(otherString);
+
+            //this variable holds the sum of all the labor rates
+            laborRatesSum = bodyRate + mechanicalRate + internalRate + warrantyRate + refinishRate + glassRate + frameRate + aluminumRate + otherRate;
+
+        } catch (Exception e) {
+            e.printStackTrace();
+
+            Toast setLabor = Toast.makeText(getActivity(), "Please set your labor rates", Toast.LENGTH_LONG);
+            setLabor.setGravity(Gravity.BOTTOM, 0,400);
+            setLabor.show();
+
+        }
+
+
 
         if(laborRatesSum > 0) {
             Intent intent = new Intent(getActivity(), AddEditRepairOrderActivity.class);
             intent.putExtra("Source","NEW_REPAIR_ORDER");
             startActivity(intent);
-        } else {
-            Toast setLabor = Toast.makeText(getActivity(), "Please set your labor rates", Toast.LENGTH_LONG);
-            setLabor.setGravity(Gravity.BOTTOM, 0,400);
-            setLabor.show();
         }
+
+
     }
 
 
