@@ -16,17 +16,22 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
+import android.widget.ListView;
 import android.widget.Toast;
 
 import com.techtimeapp.techtime.R;
 import com.techtimeapp.techtime.view.view.data.LaborRateHelper;
+import com.techtimeapp.techtime.view.view.data.RepairOrder;
+import com.techtimeapp.techtime.view.view.data.RepairOrderHelper;
 import com.techtimeapp.techtime.view.view.logic.AddEditRepairOrderActivity;
 
 
 import java.text.DateFormat;
 import java.text.ParseException;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Objects;
@@ -119,7 +124,103 @@ public class PayPeriodFragment extends Fragment implements View.OnClickListener 
             }
         });
 
+        newRoObject(rootView);
+
         return rootView;
+    }
+
+
+
+
+
+
+    public void newRoObject(View rootView){
+        ArrayList roArrayList = new ArrayList();
+
+        RepairOrderHelper mRepairOrderHelper = new RepairOrderHelper(getActivity());
+
+
+
+        String Ronum = mRepairOrderHelper.getROnumber();
+        int RONumber = Integer.parseInt(Ronum);
+        String writer = mRepairOrderHelper.getWriter();
+        String customer = mRepairOrderHelper.getCustomer();
+        String date = mRepairOrderHelper.getDate();
+        String insurance = mRepairOrderHelper.getInsuranceCo();
+        String spinnerCount = mRepairOrderHelper.getSpinnerCount();
+        int spinnerNumber = Integer.parseInt(spinnerCount);
+        String hoursOne = mRepairOrderHelper.getHoursone();
+        double hours1 = Double.parseDouble(hoursOne);
+        String hoursTwo = mRepairOrderHelper.getHourstwo();
+        double hours2 = Double.parseDouble(hoursTwo);
+        String hoursThree = mRepairOrderHelper.getHoursthree();
+        double hours3 = Double.parseDouble(hoursThree);
+        String hoursFour = mRepairOrderHelper.getHoursfour();
+        double hours4 = Double.parseDouble(hoursFour);
+        String hoursFive = mRepairOrderHelper.getHoursfive();
+        double hours5 = Double.parseDouble(hoursFive);
+        String hoursSix = mRepairOrderHelper.getHourssix();
+        double hours6 = Double.parseDouble(hoursSix);
+        String hoursSeven = mRepairOrderHelper.getHoursseven();
+        double hours7 = Double.parseDouble(hoursSeven);
+        String hoursEight = mRepairOrderHelper.getHourseight();
+        double hours8 = Double.parseDouble(hoursEight);
+        String hoursNine = mRepairOrderHelper.getHoursnine();
+        double hours9 = Double.parseDouble(hoursNine);
+        String grossOne = mRepairOrderHelper.getGrossone();
+        double gross1 = Double.parseDouble(grossOne);
+        String grossTwo = mRepairOrderHelper.getGrosstwo();
+        double gross2 = Double.parseDouble(grossTwo);
+        String grossThree = mRepairOrderHelper.getGrossthree();
+        double gross3 = Double.parseDouble(grossThree);
+        String grossFour = mRepairOrderHelper.getGrossfour();
+        double gross4 = Double.parseDouble(grossFour);
+        String grossFive = mRepairOrderHelper.getGrossfive();
+        double gross5 = Double.parseDouble(grossFive);
+        String grossSix = mRepairOrderHelper.getGrosssix();
+        double gross6 = Double.parseDouble(grossSix);
+        String grossSeven = mRepairOrderHelper.getGrossseven();
+        double gross7 = Double.parseDouble(grossSeven);
+        String grossEight = mRepairOrderHelper.getGrosseight();
+        double gross8 = Double.parseDouble(grossEight);
+        String grossNine = mRepairOrderHelper.getGrossnine();
+        double gross9 = Double.parseDouble(grossNine);
+        String laborOne = mRepairOrderHelper.getLaboroneselected();
+        String laborTwo = mRepairOrderHelper.getLabortwoselected();
+        String laborThree = mRepairOrderHelper.getLaborthreeselected();
+        String laborFour = mRepairOrderHelper.getLaborfourselected();
+        String laborFive = mRepairOrderHelper.getLaborfiveselected();
+        String laborSix = mRepairOrderHelper.getLaborsixselected();
+        String laborSeven = mRepairOrderHelper.getLaborsevenselected();
+        String laborEight = mRepairOrderHelper.getLaboreightselected();
+        String laborNine = mRepairOrderHelper.getLabornineselected();
+        String payrollMatch = mRepairOrderHelper.getPayrollmatch();
+        int payroll = Integer.parseInt(payrollMatch);
+        String totalGross = mRepairOrderHelper.getTotalgross();
+        double Gross = Double.parseDouble(totalGross);
+        String make = mRepairOrderHelper.getMake();
+        String model = mRepairOrderHelper.getModel();
+        String year = mRepairOrderHelper.getYear();
+        String mileage = mRepairOrderHelper.getMileage();
+        int mileageInt = Integer.parseInt(mileage);
+        String vin = mRepairOrderHelper.getVin();
+        String color = mRepairOrderHelper.getColor();
+        String license = mRepairOrderHelper.getLicense();
+        String totalHours = mRepairOrderHelper.getTotalHours();
+        double hours = Double.parseDouble(totalHours);
+
+        RepairOrder repairOrder = new RepairOrder(RONumber, writer, customer, date, insurance, spinnerNumber, hours1, hours2, hours3, hours4, hours5, hours6, hours7, hours8, hours9,
+                gross1, gross2, gross3, gross4, gross5, gross6, gross7, gross8, gross9, laborOne, laborTwo, laborThree, laborFour, laborFive, laborSix, laborSeven, laborEight, laborNine,
+                payroll, Gross, make, model, year, mileageInt, vin, color, license, hours);
+
+        roArrayList.add(writer);
+
+
+
+        ArrayAdapter<RepairOrder> adapter = new ArrayAdapter<RepairOrder>(getActivity(), android.R.layout.simple_list_item_1, roArrayList);
+        ListView listView = rootView.findViewById(R.id.listViewPayPeriod);
+        listView.setAdapter(adapter);
+
     }
 
 
