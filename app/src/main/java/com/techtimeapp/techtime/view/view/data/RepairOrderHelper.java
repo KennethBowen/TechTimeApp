@@ -1768,6 +1768,72 @@ public class RepairOrderHelper extends SQLiteOpenHelper {
             return true;
         }
 
+    }
+
+
+
+    public void updateRepairOrder(String RoNumber, String writer, String customer, String insuranceCo, String spinnerCount, String hoursone, String hourstwo, String hoursthree,
+                          String hoursfour, String hoursfive, String hourssix, String hoursseven, String hourseight, String hoursnine, String grossone, String grosstwo
+            , String grossthree, String grossfour, String grossfive, String grosssix, String grossseven, String grosseight, String grossnine, String laboroneselected,
+                          String labortwoselected, String laborthreeselected, String laborfourselected, String laborfiveselected, String laborsixselected, String laborsevenselected, String laboreightselected, String labornineselected,
+                           String totalgross, String make, String model, String year, String mileage, String vin, String color, String license, String totalHours) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(COL2, RoNumber);
+        contentValues.put(COL3, writer);
+        contentValues.put(COL4, customer);
+        contentValues.put(COL6, insuranceCo);
+        contentValues.put(COL7, spinnerCount);
+        contentValues.put(COL8, hoursone);
+        contentValues.put(COL9, hourstwo);
+        contentValues.put(COL10, hoursthree);
+        contentValues.put(COL11, hoursfour);
+        contentValues.put(COL12, hoursfive);
+        contentValues.put(COL13, hourssix);
+        contentValues.put(COL14, hoursseven);
+        contentValues.put(COL15, hourseight);
+        contentValues.put(COL16, hoursnine);
+        contentValues.put(COL17, grossone);
+        contentValues.put(COL18, grosstwo);
+        contentValues.put(COL19, grossthree);
+        contentValues.put(COL20, grossfour);
+        contentValues.put(COL21, grossfive);
+        contentValues.put(COL22, grosssix);
+        contentValues.put(COL23, grossseven);
+        contentValues.put(COL24, grosseight);
+        contentValues.put(COL25, grossnine);
+        contentValues.put(COL26, laboroneselected);
+        contentValues.put(COL27, labortwoselected);
+        contentValues.put(COL28, laborthreeselected);
+        contentValues.put(COL29, laborfourselected);
+        contentValues.put(COL30, laborfiveselected);
+        contentValues.put(COL31, laborsixselected);
+        contentValues.put(COL32, laborsevenselected);
+        contentValues.put(COL33, laboreightselected);
+        contentValues.put(COL34, labornineselected);
+        contentValues.put(COL36, totalgross);
+        contentValues.put(COL37, make);
+        contentValues.put(COL38, model);
+        contentValues.put(COL39, year);
+        contentValues.put(COL40, mileage);
+        contentValues.put(COL41, vin);
+        contentValues.put(COL42, color);
+        contentValues.put(COL43, license);
+        contentValues.put(COL44, totalHours);
+        db.update(TABLE_NAME, contentValues, null, null);
+
 
     }
+
+
+
+    public void deleteRepairOrder() {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);
+        onCreate(db);
+    }
+
+
+
+
 }

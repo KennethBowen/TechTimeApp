@@ -3,6 +3,7 @@ package com.techtimeapp.techtime.view.view.logic;
 
 
 
+import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -21,6 +22,8 @@ import com.techtimeapp.techtime.R;
 import com.techtimeapp.techtime.view.view.data.LaborRateHelper;
 import com.techtimeapp.techtime.view.view.data.RepairOrder;
 import com.techtimeapp.techtime.view.view.data.RepairOrderHelper;
+import com.techtimeapp.techtime.view.view.view.MainActivity;
+import com.techtimeapp.techtime.view.view.view.RepairOrderActivity;
 
 import java.text.DateFormat;
 import java.text.DecimalFormat;
@@ -71,6 +74,17 @@ public class AddEditRepairOrderActivity extends AppCompatActivity {
 
     //helper variable to tell if this is new a Repair Order
     boolean newRepairOrder;
+
+    //helper variables to store position that is held in used spinners
+    int positionOne ;
+    int positionTwo ;
+    int positionThree ;
+    int positionFour ;
+    int positionFive ;
+    int positionSix ;
+    int positionSeven ;
+    int positionEight ;
+    int positionNine ;
 
     //variables from here down will be used / needed in db and repair order object creation
     //helper variable to prevent setUpSpinner() methods from calling a setUpSpinner a second time
@@ -125,7 +139,6 @@ public class AddEditRepairOrderActivity extends AppCompatActivity {
     public double laborSevenGross ;
     public double laborEightGross ;
     public double laborNineGross ;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -220,6 +233,7 @@ public class AddEditRepairOrderActivity extends AppCompatActivity {
 
         String roString = repairOrderHelper.getROnumber();
         mRepairOrderNumber = Integer.parseInt(roString);
+
         mWriter = repairOrderHelper.getWriter();
         mCustomer = repairOrderHelper.getCustomer();
         mInsuranceCo = repairOrderHelper.getInsuranceCo();
@@ -244,12 +258,27 @@ public class AddEditRepairOrderActivity extends AppCompatActivity {
         String laborFourHoursString = repairOrderHelper.getHoursfour();
         laborFourHours = Double.valueOf(laborFourHoursString);
 
+        String laborFiveHoursString = repairOrderHelper.getHoursfive();
+        laborFiveHours = Double.valueOf(laborFiveHoursString);
+
+        String laborSixHoursString = repairOrderHelper.getHourssix();
+        laborSixHours = Double.valueOf(laborSixHoursString);
+
+        String laborSevenHoursString = repairOrderHelper.getHoursseven();
+        laborSevenHours = Double.valueOf(laborSevenHoursString);
+
+        String laborEightHoursString = repairOrderHelper.getHourseight();
+        laborEightHours = Double.valueOf(laborEightHoursString);
+
+        String laborNineHoursString = repairOrderHelper.getHoursnine();
+        laborNineHours = Double.valueOf(laborNineHoursString);
+
 
         //this method will set the edit text fields to the values stored in the variables
         setEditTextFields(roString, mileageString);
 
         //set up spinner and the amount of spinners to set up based on results from the data base
-        setUpActiveSpinners(laborOneHoursString, laborTwoHoursString, laborThreeHoursString, laborFourHoursString);
+        setUpActiveSpinners(laborOneHoursString, laborTwoHoursString, laborThreeHoursString, laborFourHoursString, laborFiveHoursString, laborSixHoursString, laborSevenHoursString, laborEightHoursString, laborNineHoursString);
 
     }
 
@@ -301,13 +330,18 @@ public class AddEditRepairOrderActivity extends AppCompatActivity {
 
 
     //set up spinner and the amount of spinners to set up based on results from the data base
-    public void setUpActiveSpinners(String laborOneHoursString, String laborTwoHoursString, String laborThreeHoursString, String laborFourHoursString){
+    public void setUpActiveSpinners(String laborOneHoursString, String laborTwoHoursString, String laborThreeHoursString, String laborFourHoursString, String laborFiveHoursString, String laborSixHoursString, String laborSevenHoursString, String laborEightHoursString, String laborNineHoursString){
 
 
         String laborTypeOne = repairOrderHelper.getLaboroneselected();
         String laborTypeTwo = repairOrderHelper.getLabortwoselected();
         String laborTypeThree = repairOrderHelper.getLaborthreeselected();
         String laborTypeFour = repairOrderHelper.getLaborfourselected();
+        String laborTypeFive = repairOrderHelper.getLaborfiveselected();
+        String laborTypeSix = repairOrderHelper.getLaborsixselected();
+        String laborTypeSeven = repairOrderHelper.getLaborsevenselected();
+        String laborTypeEight = repairOrderHelper.getLaboreightselected();
+        String laborTypeNine = repairOrderHelper.getLabornineselected();
 
 
 
@@ -354,6 +388,55 @@ public class AddEditRepairOrderActivity extends AppCompatActivity {
             laborFourEditTextHours.setText(laborFourHoursString);
 
             setupSpinnerFive();
+
+        }
+
+        if(!laborTypeFive.equals("Add Labor")){
+
+            int spinnerFivePosition = laborSpinnerAdapter.getPosition(laborTypeFive);
+            mLaborSpinnerFive.setSelection(spinnerFivePosition);
+            laborFiveEditTextHours.setText(laborFiveHoursString);
+
+            setupSpinnerSix();
+
+        }
+
+        if(!laborTypeSix.equals("Add Labor")){
+
+            int spinnerSixPosition = laborSpinnerAdapter.getPosition(laborTypeSix);
+            mLaborSpinnerSix.setSelection(spinnerSixPosition);
+            laborSixEditTextHours.setText(laborSixHoursString);
+
+            setupSpinnerSeven();
+
+        }
+
+        if(!laborTypeSeven.equals("Add Labor")){
+
+            int spinnerSevenPosition = laborSpinnerAdapter.getPosition(laborTypeSeven);
+            mLaborSpinnerSeven.setSelection(spinnerSevenPosition);
+            laborSevenEditTextHours.setText(laborSevenHoursString);
+
+            setupSpinnerEight();
+
+        }
+
+        if(!laborTypeEight.equals("Add Labor")){
+
+            int spinnerEightPosition = laborSpinnerAdapter.getPosition(laborTypeEight);
+            mLaborSpinnerEight.setSelection(spinnerEightPosition);
+            laborEightEditTextHours.setText(laborEightHoursString);
+
+            setupSpinnerNine();
+
+        }
+
+        if(!laborTypeNine.equals("Add Labor")){
+
+            int spinnerNinePosition = laborSpinnerAdapter.getPosition(laborTypeNine);
+            mLaborSpinnerNine.setSelection(spinnerNinePosition);
+            laborNineEditTextHours.setText(laborNineHoursString);
+
 
         }
 
@@ -544,11 +627,31 @@ public class AddEditRepairOrderActivity extends AppCompatActivity {
                 sumRepairLaborAndTotalGross();
 
                 saveNewRepairOrder();
+
+                finish();
+            }else {
+
+                //if any Edit text fields are null it will assign a default value
+                adjustForEmptyFields();
+
+                //if any Edit text fields are null it will assign a default value and also for null labor selections
+                prepForSum();
+
+                //sum for all labor and hours and then multiples for total gross
+                sumRepairLaborAndTotalGross();
+
+                upDateRepairOrder();
+
+                // Exit activity
+                Intent intent = new Intent(this, RepairOrderActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
+
             }
 
 
-            // Exit activity
-            finish();
+
+
         }
 
     }
@@ -1639,6 +1742,50 @@ public class AddEditRepairOrderActivity extends AppCompatActivity {
         repairOrderHelper.addALL(RO, mWriter, mCustomer, mDate, mInsuranceCo, spin, hours1, hours2, hours3, hours4, hours5, hours6, hours7, hours8, hours9, gross1, gross2, gross3, gross4, gross5, gross6, gross7, gross8, gross9, laborOneSelected, laborTwoSelected, laborThreeSelected, laborFourSelected, laborFiveSelected, laborSixSelected, laborSevenSelected, laborEightSelected, laborNineSelected, matchPayString, totalGrossString, mMake, mModel, mYear, mileString, mVIN, mColor, mLicense, totalHoursString);
 
 
+        Toast toast = Toast.makeText(this, "Repair Order " + mRepairOrderNumber + " Created", Toast.LENGTH_LONG);
+        toast.setGravity(Gravity.BOTTOM, 0,400);
+        toast.show();
+
+    }
+
+
+
+
+    //this method is to update and save an existing repair oder to the data base
+    public void upDateRepairOrder(){
+
+
+        repairOrderHelper = new RepairOrderHelper(this);
+
+
+        String RO = String.valueOf(mRepairOrderNumber);
+        String spin = (String.valueOf(spinCount));
+        String hours1 = (String.valueOf(laborOneHours));
+        String hours2 = (String.valueOf(laborTwoHours));
+        String hours3 = (String.valueOf(laborThreeHours));
+        String hours4 = (String.valueOf(laborFourHours));
+        String hours5 = (String.valueOf(laborFiveHours));
+        String hours6 = (String.valueOf(laborSixHours));
+        String hours7 = (String.valueOf(laborSevenHours));
+        String hours8 = (String.valueOf(laborEightHours));
+        String hours9 = (String.valueOf(laborNineHours));
+        String gross1 = (String.valueOf(laborOneGross));
+        String gross2 = (String.valueOf(laborTwoGross));
+        String gross3 = (String.valueOf(laborThreeGross));
+        String gross4 = (String.valueOf(laborFourGross));
+        String gross5 = (String.valueOf(laborFiveGross));
+        String gross6 = (String.valueOf(laborSixGross));
+        String gross7 = (String.valueOf(laborSevenGross));
+        String gross8 = (String.valueOf(laborEightGross));
+        String gross9 = (String.valueOf(laborNineGross));
+        String totalGrossString = (String.valueOf(mTotalGross));
+        String mileString = (String.valueOf(mMileage));
+        String totalHoursString = (String.valueOf(mTotalHours));
+
+
+        repairOrderHelper.updateRepairOrder(RO, mWriter, mCustomer, mInsuranceCo, spin, hours1, hours2, hours3, hours4, hours5, hours6, hours7, hours8, hours9, gross1, gross2, gross3, gross4, gross5, gross6, gross7, gross8, gross9, laborOneSelected, laborTwoSelected, laborThreeSelected, laborFourSelected, laborFiveSelected, laborSixSelected, laborSevenSelected, laborEightSelected, laborNineSelected, totalGrossString, mMake, mModel, mYear, mileString, mVIN, mColor, mLicense, totalHoursString);
+
+
     }
 
 
@@ -1690,16 +1837,45 @@ public class AddEditRepairOrderActivity extends AppCompatActivity {
                 if(position > 0 ) {
                     if (spinCount == 0) {
                         // passes the string values of labor type selected to setLaborHiddenOne
-                        setLaborHiddenOne(selection);
+                        setLaborHiddenOne(selection, position);
                         setupSpinnerTwo();
                         spinCount++;
                     } else {
-                        // passes the string values of labor type selected to setLaborHiddenOne
-                        setLaborHiddenOne(selection);
+
+                        if(!selection.equals("")) {
+                            // passes the string values of labor type selected to setLaborHiddenOne
+                            setLaborHiddenOne(selection, position);
+                        }else{
+                           mLaborSpinnerOne.setSelection(positionOne);
+                            laborType.remove(positionOne);
+                            laborType.add(positionOne, laborOneSelected);
+                            laborOneSelected = null;
+
+                            //sets the hours text back to grey
+                            mTextHoursOne.setTextColor(getResources().getColor(android.R.color.tab_indicator_text));
+                            if(laborOneSelected == null && laborTwoSelected == null){
+                                mLaborSpinnerTwo.setVisibility(View.GONE);
+                                mEditHoursTwo.setVisibility(View.GONE);
+                                mTextHoursTwo.setVisibility(View.GONE);
+                                mColonTwo.setVisibility(View.GONE);
+                                spinCount --;
+                            }
+
+                        }
+
                     }
                 } else if (laborOneSelected != null){
-                    laborType.add(laborOneSelected);
-                    laborOneSelected = null;
+
+                    if(laborType.get(positionOne).equals("")){
+                        laborType.remove(positionOne);
+                        laborType.add(positionOne, laborOneSelected);
+                        laborOneSelected = null;
+                    }else {
+                        laborType.add(laborOneSelected);
+                        laborOneSelected = null;
+                    }
+
+
                     //sets the hours text back to grey
                     mTextHoursOne.setTextColor(getResources().getColor(android.R.color.tab_indicator_text));
                     if(laborOneSelected == null && laborTwoSelected == null){
@@ -1721,32 +1897,36 @@ public class AddEditRepairOrderActivity extends AppCompatActivity {
         });
     }
 
+
+
+
     // will hide selected labor types that are in use
-    private void setLaborHiddenOne(String selection){
+    private void setLaborHiddenOne(String selection, int position){
         //so the hours text view will be able to be set blue
         TextView mTextHoursOne = findViewById(R.id.textViewHours_one);
         int accentBlue = getResources().getColor(R.color.colorAccent);
 
 
         if (laborOneSelected !=null){
-            laborType.add(laborOneSelected);
+            laborType.remove(positionOne);
+            laborType.add(positionOne, laborOneSelected);
             laborOneSelected = selection;
             laborType.remove(selection);
-        }
-
-
-        if(laborOneSelected == null){
+            laborType.add(position, "");
+            positionOne = position;
+        }else{
             // assigns the string value to the laborOneSelected
             laborOneSelected = selection;
             //removes the string value from the list of set up labor types that can be used
             laborType.remove(selection);
+            laborType.add(position, "");
+            positionOne = position;
             //sets the hours text to blue
             mTextHoursOne.setTextColor(accentBlue);
         }
 
-
-
-
+        laborOneEditTextHours.setFocusableInTouchMode(true);
+        laborOneEditTextHours.requestFocus();
 
     }
 
@@ -1782,17 +1962,55 @@ public class AddEditRepairOrderActivity extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 String selection = (String) parent.getItemAtPosition(position);
-                if(position > 0) {
+                if(position > 0 ) {
                     if (spinCount == 1) {
-                        setLaborHiddenTwo(selection);
-                        setupSpinnerThree();
-                        spinCount++;
+                        if(!selection.equals("")) {
+                            setLaborHiddenTwo(selection, position);
+                            setupSpinnerThree();
+                            spinCount++;
+                        }else {
+                            mLaborSpinnerTwo.setSelection(0);
+                        }
+
                     } else {
-                        setLaborHiddenTwo(selection);
+                        if(!selection.equals("")) {
+                            setLaborHiddenTwo(selection, position);
+                        }else{
+                            mLaborSpinnerTwo.setSelection(positionTwo);
+                            laborType.remove(positionTwo);
+                            laborType.add(positionTwo, laborTwoSelected);
+                            laborTwoSelected = null;
+
+                            mTextHoursTwo.setTextColor(getResources().getColor(android.R.color.tab_indicator_text));
+                            if(laborTwoSelected == null && laborThreeSelected == null){
+                                mLaborSpinnerThree.setVisibility(View.GONE);
+                                mEditHoursThree.setVisibility(View.GONE);
+                                mTextHoursThree.setVisibility(View.GONE);
+                                mColonThree.setVisibility(View.GONE);
+                                spinCount --;
+                                if(laborOneSelected == null){
+                                    mLaborSpinnerTwo.setVisibility(View.GONE);
+                                    mEditHoursTwo.setVisibility(View.GONE);
+                                    mTextHoursTwo.setVisibility(View.GONE);
+                                    mColonTwo.setVisibility(View.GONE);
+                                    spinCount --;
+                                }
+                            }
+
+                        }
                     }
                 } else if (laborTwoSelected != null){
-                    laborType.add(laborTwoSelected);
-                    laborTwoSelected = null;
+
+                    if(laborType.get(positionTwo).equals("")){
+                        laborType.remove(positionTwo);
+                        laborType.add(positionTwo, laborTwoSelected);
+                        laborTwoSelected = null;
+                    }else {
+                        laborType.add(laborTwoSelected);
+                        laborTwoSelected = null;
+                    }
+
+
                     mTextHoursTwo.setTextColor(getResources().getColor(android.R.color.tab_indicator_text));
                     if(laborTwoSelected == null && laborThreeSelected == null){
                         mLaborSpinnerThree.setVisibility(View.GONE);
@@ -1820,22 +2038,33 @@ public class AddEditRepairOrderActivity extends AppCompatActivity {
         });
     }
 
+
     // will hide selected labor types that are in use
-    private void setLaborHiddenTwo(String selection){
+    private void setLaborHiddenTwo(String selection, int position){
         TextView mTextHoursTwo = findViewById(R.id.textViewHours_two);
         int accentBlue = getResources().getColor(R.color.colorAccent);
 
         if (laborTwoSelected !=null){
-            laborType.add(laborTwoSelected);
+            laborType.remove(positionTwo);
+            laborType.add(positionTwo, laborTwoSelected);
             laborTwoSelected = selection;
             laborType.remove(selection);
-        }
+            laborType.add(position, "");
+            positionTwo = position;
 
-        if(laborTwoSelected == null){
+        }else{
+            // assigns the string value to the laborOneSelected
             laborTwoSelected = selection;
+            //removes the string value from the list of set up labor types that can be used
             laborType.remove(selection);
+            laborType.add(position, "");
+            positionTwo = position;
+            //sets the hours text to blue
             mTextHoursTwo.setTextColor(accentBlue);
         }
+
+        laborTwoEditTextHours.setFocusableInTouchMode(true);
+        laborTwoEditTextHours.requestFocus();
 
     }
 
@@ -1871,15 +2100,52 @@ public class AddEditRepairOrderActivity extends AppCompatActivity {
                 String selection = (String) parent.getItemAtPosition(position);
                 if(position > 0) {
                     if (spinCount == 2) {
-                        setLaborHiddenThree(selection);
-                        setupSpinnerFour();
-                        spinCount++;
+                        if(!selection.equals("")) {
+                            setLaborHiddenThree(selection, position);
+                            setupSpinnerFour();
+                            spinCount++;
+                        }else {
+                            mLaborSpinnerThree.setSelection(0);
+                        }
                     } else  {
-                        setLaborHiddenThree(selection);
+                        if(!selection.equals("")) {
+                            setLaborHiddenThree(selection, position);
+                        }else{
+                            mLaborSpinnerThree.setSelection(positionThree);
+                            laborType.remove(positionThree);
+                            laborType.add(positionThree, laborThreeSelected);
+                            laborThreeSelected = null;
+
+                            mTextHoursThree.setTextColor(getResources().getColor(android.R.color.tab_indicator_text));
+                            if(laborThreeSelected == null && laborFourSelected == null){
+                                mLaborSpinnerFour.setVisibility(View.GONE);
+                                mEditHoursFour.setVisibility(View.GONE);
+                                mTextHoursFour.setVisibility(View.GONE);
+                                mColonFour.setVisibility(View.GONE);
+                                spinCount --;
+                                if(laborTwoSelected == null){
+                                    mLaborSpinnerThree.setVisibility(View.GONE);
+                                    mEditHoursThree.setVisibility(View.GONE);
+                                    mTextHoursThree.setVisibility(View.GONE);
+                                    mColonThree.setVisibility(View.GONE);
+                                    spinCount --;
+                                }
+                            }
+
+                        }
                     }
+
                 } else if (laborThreeSelected != null){
-                    laborType.add(laborThreeSelected);
-                    laborThreeSelected = null;
+
+                    if(laborType.get(positionThree).equals("")){
+                        laborType.remove(positionThree);
+                        laborType.add(positionThree, laborThreeSelected);
+                        laborThreeSelected = null;
+                    }else {
+                        laborType.add(laborThreeSelected);
+                        laborThreeSelected = null;
+                    }
+
                     mTextHoursThree.setTextColor(getResources().getColor(android.R.color.tab_indicator_text));
                     if(laborThreeSelected == null && laborFourSelected == null){
                         mLaborSpinnerFour.setVisibility(View.GONE);
@@ -1908,19 +2174,29 @@ public class AddEditRepairOrderActivity extends AppCompatActivity {
     }
 
     // will hide selected labor types that are in use
-    private void setLaborHiddenThree(String selection){
+    private void setLaborHiddenThree(String selection, int position){
         TextView mTextHoursThree = findViewById(R.id.textViewHours_three);
         int accentBlue = getResources().getColor(R.color.colorAccent);
 
-        if(laborThreeSelected == null){
+        if (laborThreeSelected !=null){
+            laborType.remove(positionThree);
+            laborType.add(positionThree, laborThreeSelected);
             laborThreeSelected = selection;
             laborType.remove(selection);
+            laborType.add(position, "");
+            positionThree = position;
+        }else{
+            laborThreeSelected = selection;
+            //removes the string value from the list of set up labor types that can be used
+            laborType.remove(selection);
+            laborType.add(position, "");
+            positionThree = position;
+            //sets the hours text to blue
             mTextHoursThree.setTextColor(accentBlue);
-        } if (laborThreeSelected !=null){
-            laborType.add(laborThreeSelected);
-            laborThreeSelected = selection;
-            laborType.remove(selection);
         }
+
+        laborThreeEditTextHours.setFocusableInTouchMode(true);
+        laborThreeEditTextHours.requestFocus();
 
     }
 
@@ -1955,15 +2231,53 @@ public class AddEditRepairOrderActivity extends AppCompatActivity {
                 String selection = (String) parent.getItemAtPosition(position);
                 if(position > 0) {
                     if (spinCount == 3) {
-                        setLaborHiddenFour(selection);
-                        setupSpinnerFive();
-                        spinCount++;
+                        if(!selection.equals("")) {
+                            setLaborHiddenFour(selection, position);
+                            setupSpinnerFive();
+                            spinCount++;
+                        }else {
+                            mLaborSpinnerFour.setSelection(0);
+                        }
                     } else  {
-                        setLaborHiddenFour(selection);
+                        if(!selection.equals("")) {
+
+                            setLaborHiddenFour(selection, position);
+                        }else{
+                            mLaborSpinnerFour.setSelection(positionFour);
+                            laborType.remove(positionFour);
+                            laborType.add(positionFour, laborFourSelected);
+                            laborFourSelected = null;
+
+                            mTextHoursFour.setTextColor(getResources().getColor(android.R.color.tab_indicator_text));
+                            if(laborFourSelected == null && laborFiveSelected == null){
+                                mLaborSpinnerFive.setVisibility(View.GONE);
+                                mEditHoursFive.setVisibility(View.GONE);
+                                mTextHoursFive.setVisibility(View.GONE);
+                                mColonFive.setVisibility(View.GONE);
+                                spinCount --;
+                                if(laborThreeSelected == null){
+                                    mLaborSpinnerFour.setVisibility(View.GONE);
+                                    mEditHoursFour.setVisibility(View.GONE);
+                                    mTextHoursFour.setVisibility(View.GONE);
+                                    mColonFour.setVisibility(View.GONE);
+                                    spinCount --;
+                                }
+                            }
+
+                        }
                     }
+
                 } else if (laborFourSelected != null){
-                    laborType.add(laborFourSelected);
-                    laborFourSelected = null;
+
+                    if(laborType.get(positionFour).equals("")){
+                        laborType.remove(positionFour);
+                        laborType.add(positionFour, laborFourSelected);
+                        laborFourSelected = null;
+                    }else {
+                        laborType.add(laborFourSelected);
+                        laborFourSelected = null;
+                    }
+
                     mTextHoursFour.setTextColor(getResources().getColor(android.R.color.tab_indicator_text));
                     if(laborFourSelected == null && laborFiveSelected == null){
                         mLaborSpinnerFive.setVisibility(View.GONE);
@@ -1993,19 +2307,30 @@ public class AddEditRepairOrderActivity extends AppCompatActivity {
 
 
     // will hide selected labor types that are in use
-    private void setLaborHiddenFour(String selection){
+    private void setLaborHiddenFour(String selection, int position){
         TextView mTextHoursFour = findViewById(R.id.textViewHours_four);
         int accentBlue = getResources().getColor(R.color.colorAccent);
 
-        if(laborFourSelected == null){
+        if (laborFourSelected !=null){
+            laborType.remove(positionFour);
+            laborType.add(positionFour, laborFourSelected);
             laborFourSelected = selection;
             laborType.remove(selection);
+            laborType.add(position, "");
+            positionFour = position;
+        }else{
+
+            laborFourSelected = selection;
+            //removes the string value from the list of set up labor types that can be used
+            laborType.remove(selection);
+            laborType.add(position, "");
+            positionFour = position;
+            //sets the hours text to blue
             mTextHoursFour.setTextColor(accentBlue);
-        } if (laborFourSelected !=null){
-            laborType.add(laborFourSelected);
-            laborFourSelected = selection;
-            laborType.remove(selection);
         }
+
+        laborFourEditTextHours.setFocusableInTouchMode(true);
+        laborFourEditTextHours.requestFocus();
 
     }
 
@@ -2041,15 +2366,53 @@ public class AddEditRepairOrderActivity extends AppCompatActivity {
                 String selection = (String) parent.getItemAtPosition(position);
                 if(position > 0) {
                     if (spinCount == 4) {
-                        setLaborHiddenFive(selection);
-                        setupSpinnerSix();
-                        spinCount++;
-                    } else  {
-                        setLaborHiddenFive(selection);
+                        if(!selection.equals("")) {
+                            setLaborHiddenFive(selection, position);
+                            setupSpinnerSix();
+                            spinCount++;
+                        }else {
+                            mLaborSpinnerFive.setSelection(0);
+                        }
+                    } else {
+                        if(!selection.equals("")) {
+                            setLaborHiddenFive(selection, position);
+                        }else{
+                            mLaborSpinnerFive.setSelection(positionFive);
+                            laborType.remove(positionFive);
+                            laborType.add(positionFive, laborFiveSelected);
+                            laborFiveSelected = null;
+
+                            mTextHoursFive.setTextColor(getResources().getColor(android.R.color.tab_indicator_text));
+                            if(laborFiveSelected == null && laborSixSelected == null){
+                                mLaborSpinnerSix.setVisibility(View.GONE);
+                                mEditHoursSix.setVisibility(View.GONE);
+                                mTextHoursSix.setVisibility(View.GONE);
+                                mColonSix.setVisibility(View.GONE);
+                                spinCount --;
+                                if(laborFourSelected == null){
+                                    mLaborSpinnerFive.setVisibility(View.GONE);
+                                    mEditHoursFive.setVisibility(View.GONE);
+                                    mTextHoursFive.setVisibility(View.GONE);
+                                    mColonFive.setVisibility(View.GONE);
+                                    spinCount --;
+                                }
+                            }
+
+                        }
                     }
+
+
                 } else if (laborFiveSelected != null){
-                    laborType.add(laborFiveSelected);
-                    laborFiveSelected = null;
+
+                    if(laborType.get(positionFive).equals("")){
+                        laborType.remove(positionFive);
+                        laborType.add(positionFive, laborFiveSelected);
+                        laborFiveSelected = null;
+                    }else {
+                        laborType.add(laborFiveSelected);
+                        laborFiveSelected = null;
+                    }
+
                     mTextHoursFive.setTextColor(getResources().getColor(android.R.color.tab_indicator_text));
                     if(laborFiveSelected == null && laborSixSelected == null){
                         mLaborSpinnerSix.setVisibility(View.GONE);
@@ -2079,19 +2442,30 @@ public class AddEditRepairOrderActivity extends AppCompatActivity {
 
 
     // will hide selected labor types that are in use
-    private void setLaborHiddenFive(String selection){
+    private void setLaborHiddenFive(String selection, int position){
         TextView mTextHoursFive = findViewById(R.id.textViewHours_five);
         int accentBlue = getResources().getColor(R.color.colorAccent);
 
-        if(laborFiveSelected == null){
+        if (laborFiveSelected !=null){
+            laborType.remove(positionFive);
+            laborType.add(positionFive, laborFiveSelected);
             laborFiveSelected = selection;
             laborType.remove(selection);
+            laborType.add(position, "");
+            positionFive = position;
+        }else{
+
+            laborFiveSelected = selection;
+            //removes the string value from the list of set up labor types that can be used
+            laborType.remove(selection);
+            laborType.add(position, "");
+            positionFive = position;
+            //sets the hours text to blue
             mTextHoursFive.setTextColor(accentBlue);
-        } if (laborFiveSelected !=null){
-            laborType.add(laborFiveSelected);
-            laborFiveSelected = selection;
-            laborType.remove(selection);
         }
+
+        laborFiveEditTextHours.setFocusableInTouchMode(true);
+        laborFiveEditTextHours.requestFocus();
 
     }
 
@@ -2126,15 +2500,52 @@ public class AddEditRepairOrderActivity extends AppCompatActivity {
                 String selection = (String) parent.getItemAtPosition(position);
                 if(position > 0) {
                     if (spinCount == 5) {
-                        setLaborHiddenSix(selection);
-                        setupSpinnerSeven();
-                        spinCount++;
+                        if(!selection.equals("")) {
+                            setLaborHiddenSix(selection, position);
+                            setupSpinnerSeven();
+                            spinCount++;
+                        }else {
+                            mLaborSpinnerSix.setSelection(0);
+                        }
                     } else  {
-                        setLaborHiddenSix(selection);
+                        if(!selection.equals("")) {
+                            setLaborHiddenSix(selection, position);
+                        }else{
+                            mLaborSpinnerSix.setSelection(positionSix);
+                            laborType.remove(positionSix);
+                            laborType.add(positionSix, laborSixSelected);
+                            laborSixSelected = null;
+
+                            mTextHoursSix.setTextColor(getResources().getColor(android.R.color.tab_indicator_text));
+                            if(laborSixSelected == null && laborSevenSelected == null){
+                                mLaborSpinnerSeven.setVisibility(View.GONE);
+                                mEditHoursSeven.setVisibility(View.GONE);
+                                mTextHoursSeven.setVisibility(View.GONE);
+                                mColonSeven.setVisibility(View.GONE);
+                                spinCount --;
+                                if(laborFiveSelected == null){
+                                    mLaborSpinnerSix.setVisibility(View.GONE);
+                                    mEditHoursSix.setVisibility(View.GONE);
+                                    mTextHoursSix.setVisibility(View.GONE);
+                                    mColonSix.setVisibility(View.GONE);
+                                    spinCount --;
+                                }
+                            }
+
+                        }
                     }
+
                 } else if (laborSixSelected != null){
-                    laborType.add(laborSixSelected);
-                    laborSixSelected = null;
+
+                    if(laborType.get(positionSix).equals("")){
+                        laborType.remove(positionSix);
+                        laborType.add(positionSix, laborSixSelected);
+                        laborSixSelected = null;
+                    }else {
+                        laborType.add(laborSixSelected);
+                        laborSixSelected = null;
+                    }
+
                     mTextHoursSix.setTextColor(getResources().getColor(android.R.color.tab_indicator_text));
                     if(laborSixSelected == null && laborSevenSelected == null){
                         mLaborSpinnerSeven.setVisibility(View.GONE);
@@ -2164,19 +2575,30 @@ public class AddEditRepairOrderActivity extends AppCompatActivity {
 
 
     // will hide selected labor types that are in use
-    private void setLaborHiddenSix(String selection){
+    private void setLaborHiddenSix(String selection, int position){
         TextView mTextHoursSix = findViewById(R.id.textViewHours_six);
         int accentBlue = getResources().getColor(R.color.colorAccent);
 
-        if(laborSixSelected == null){
+        if (laborSixSelected !=null){
+            laborType.remove(positionSix);
+            laborType.add(positionSix, laborSixSelected);
             laborSixSelected = selection;
             laborType.remove(selection);
+            laborType.add(position, "");
+            positionSix = position;
+        }else{
+
+            laborSixSelected = selection;
+            //removes the string value from the list of set up labor types that can be used
+            laborType.remove(selection);
+            laborType.add(position, "");
+            positionSix = position;
+            //sets the hours text to blue
             mTextHoursSix.setTextColor(accentBlue);
-        } if (laborSixSelected !=null){
-            laborType.add(laborSixSelected);
-            laborSixSelected = selection;
-            laborType.remove(selection);
         }
+
+        laborSixEditTextHours.setFocusableInTouchMode(true);
+        laborSixEditTextHours.requestFocus();
 
     }
 
@@ -2212,15 +2634,53 @@ public class AddEditRepairOrderActivity extends AppCompatActivity {
                 String selection = (String) parent.getItemAtPosition(position);
                 if(position > 0) {
                     if (spinCount == 6) {
-                        setLaborHiddenSeven(selection);
-                        setupSpinnerEight();
-                        spinCount++;
+                        if(!selection.equals("")) {
+                            setLaborHiddenSeven(selection, position);
+                            setupSpinnerEight();
+                            spinCount++;
+                        }else {
+                            mLaborSpinnerSeven.setSelection(0);
+                        }
                     } else  {
-                        setLaborHiddenSeven(selection);
+                        if(!selection.equals("")) {
+
+                            setLaborHiddenSeven(selection, position);
+                        }else{
+                            mLaborSpinnerSeven.setSelection(positionSeven);
+                            laborType.remove(positionSeven);
+                            laborType.add(positionSeven, laborSevenSelected);
+                            laborSevenSelected = null;
+
+                            mTextHoursSeven.setTextColor(getResources().getColor(android.R.color.tab_indicator_text));
+                            if(laborSevenSelected == null && laborEightSelected == null){
+                                mLaborSpinnerEight.setVisibility(View.GONE);
+                                mEditHoursEight.setVisibility(View.GONE);
+                                mTextHoursEight.setVisibility(View.GONE);
+                                mColonEight.setVisibility(View.GONE);
+                                spinCount --;
+                                if(laborSixSelected == null){
+                                    mLaborSpinnerSeven.setVisibility(View.GONE);
+                                    mEditHoursSeven.setVisibility(View.GONE);
+                                    mTextHoursSeven.setVisibility(View.GONE);
+                                    mColonSeven.setVisibility(View.GONE);
+                                    spinCount --;
+                                }
+                            }
+
+                        }
                     }
+
                 } else if (laborSevenSelected != null){
-                    laborType.add(laborSevenSelected);
-                    laborSevenSelected = null;
+
+                    if(laborType.get(positionSeven).equals("")){
+                        laborType.remove(positionSeven);
+                        laborType.add(positionSeven, laborSevenSelected);
+                        laborSevenSelected = null;
+                    }else {
+                        laborType.add(laborSevenSelected);
+                        laborSevenSelected = null;
+                    }
+
                     mTextHoursSeven.setTextColor(getResources().getColor(android.R.color.tab_indicator_text));
                     if(laborSevenSelected == null && laborEightSelected == null){
                         mLaborSpinnerEight.setVisibility(View.GONE);
@@ -2250,19 +2710,30 @@ public class AddEditRepairOrderActivity extends AppCompatActivity {
 
 
     // will hide selected labor types that are in use
-    private void setLaborHiddenSeven(String selection){
+    private void setLaborHiddenSeven(String selection, int position){
         TextView mTextHoursSeven = findViewById(R.id.textViewHours_seven);
         int accentBlue = getResources().getColor(R.color.colorAccent);
 
-        if(laborSevenSelected == null){
+        if (laborSevenSelected !=null){
+            laborType.remove(positionSeven);
+            laborType.add(positionSeven, laborSevenSelected);
             laborSevenSelected = selection;
             laborType.remove(selection);
+            laborType.add(position, "");
+            positionSeven = position;
+        }else{
+
+            laborSevenSelected = selection;
+            //removes the string value from the list of set up labor types that can be used
+            laborType.remove(selection);
+            laborType.add(position, "");
+            positionSeven = position;
+            //sets the hours text to blue
             mTextHoursSeven.setTextColor(accentBlue);
-        } if (laborSevenSelected !=null){
-            laborType.add(laborSevenSelected);
-            laborSevenSelected = selection;
-            laborType.remove(selection);
         }
+
+        laborSevenEditTextHours.setFocusableInTouchMode(true);
+        laborSevenEditTextHours.requestFocus();
 
     }
 
@@ -2298,15 +2769,53 @@ public class AddEditRepairOrderActivity extends AppCompatActivity {
                 String selection = (String) parent.getItemAtPosition(position);
                 if(position > 0) {
                     if (spinCount == 7) {
-                        setLaborHiddenEight(selection);
-                        setupSpinnerNine();
-                        spinCount++;
+                        if(!selection.equals("")) {
+                            setLaborHiddenEight(selection, position);
+                            setupSpinnerNine();
+                            spinCount++;
+                        }else {
+                            mLaborSpinnerEight.setSelection(0);
+                        }
                     } else  {
-                        setLaborHiddenEight(selection);
+                        if(!selection.equals("")) {
+
+                            setLaborHiddenEight(selection, position);
+                        }else{
+                            mLaborSpinnerEight.setSelection(positionEight);
+                            laborType.remove(positionEight);
+                            laborType.add(positionEight, laborEightSelected);
+                            laborEightSelected = null;
+
+                            mTextHoursEight.setTextColor(getResources().getColor(android.R.color.tab_indicator_text));
+                            if(laborEightSelected == null && laborNineSelected == null){
+                                mLaborSpinnerNine.setVisibility(View.GONE);
+                                mEditHoursNine.setVisibility(View.GONE);
+                                mTextHoursNine.setVisibility(View.GONE);
+                                mColonNine.setVisibility(View.GONE);
+                                spinCount --;
+                                if(laborSevenSelected == null){
+                                    mLaborSpinnerEight.setVisibility(View.GONE);
+                                    mEditHoursEight.setVisibility(View.GONE);
+                                    mTextHoursEight.setVisibility(View.GONE);
+                                    mColonEight.setVisibility(View.GONE);
+                                    spinCount --;
+                                }
+                            }
+
+                        }
                     }
+
                 } else if (laborEightSelected != null){
-                    laborType.add(laborEightSelected);
-                    laborEightSelected = null;
+
+                    if(laborType.get(positionEight).equals("")){
+                        laborType.remove(positionEight);
+                        laborType.add(positionEight, laborEightSelected);
+                        laborEightSelected = null;
+                    }else {
+                        laborType.add(laborEightSelected);
+                        laborEightSelected = null;
+                    }
+
                     mTextHoursEight.setTextColor(getResources().getColor(android.R.color.tab_indicator_text));
                     if(laborEightSelected == null && laborNineSelected == null){
                         mLaborSpinnerNine.setVisibility(View.GONE);
@@ -2336,19 +2845,30 @@ public class AddEditRepairOrderActivity extends AppCompatActivity {
 
 
     // will hide selected labor types that are in use
-    private void setLaborHiddenEight(String selection){
+    private void setLaborHiddenEight(String selection, int position){
         TextView mTextHoursEight = findViewById(R.id.textViewHours_eight);
         int accentBlue = getResources().getColor(R.color.colorAccent);
 
-        if(laborEightSelected == null){
+        if (laborEightSelected !=null){
+            laborType.remove(positionEight);
+            laborType.add(positionEight, laborEightSelected);
             laborEightSelected = selection;
             laborType.remove(selection);
+            laborType.add(position, "");
+            positionEight = position;
+        }else{
+
+            laborEightSelected = selection;
+            //removes the string value from the list of set up labor types that can be used
+            laborType.remove(selection);
+            laborType.add(position, "");
+            positionEight = position;
+            //sets the hours text to blue
             mTextHoursEight.setTextColor(accentBlue);
-        } if (laborEightSelected !=null){
-            laborType.add(laborEightSelected);
-            laborEightSelected = selection;
-            laborType.remove(selection);
         }
+
+        laborEightEditTextHours.setFocusableInTouchMode(true);
+        laborEightEditTextHours.requestFocus();
 
     }
 
@@ -2379,12 +2899,43 @@ public class AddEditRepairOrderActivity extends AppCompatActivity {
                 String selection = (String) parent.getItemAtPosition(position);
                 if(position > 0) {
 
-                        setLaborHiddenNine(selection);
-                        spinCount++;
+                    if(!selection.equals("")) {
+
+                        if(!selection.equals("")) {
+                            setLaborHiddenNine(selection, position);
+                            spinCount++;
+                        }else {
+                            mLaborSpinnerNine.setSelection(0);
+                        }
+                    }else  {
+                            mLaborSpinnerNine.setSelection(positionNine);
+                            laborType.remove(positionNine);
+                            laborType.add(positionNine, laborNineSelected);
+                            laborNineSelected = null;
+
+                        mTextHoursNine.setTextColor(getResources().getColor(android.R.color.tab_indicator_text));
+                        if(laborEightSelected == null && laborNineSelected == null){
+                            mLaborSpinnerNine.setVisibility(View.GONE);
+                            mEditHoursNine.setVisibility(View.GONE);
+                            mTextHoursNine.setVisibility(View.GONE);
+                            mColonNine.setVisibility(View.GONE);
+                            spinCount --;
+                        }
+
+
+                    }
 
                 } else if (laborNineSelected != null){
-                    laborType.add(laborNineSelected);
-                    laborNineSelected = null;
+
+                    if(laborType.get(positionNine).equals("")){
+                        laborType.remove(positionNine);
+                        laborType.add(positionNine, laborNineSelected);
+                        laborNineSelected = null;
+                    }else {
+                        laborType.add(laborNineSelected);
+                        laborNineSelected = null;
+                    }
+
                     mTextHoursNine.setTextColor(getResources().getColor(android.R.color.tab_indicator_text));
                 }if(laborEightSelected == null && laborNineSelected == null){
                     mLaborSpinnerNine.setVisibility(View.GONE);
@@ -2406,19 +2957,30 @@ public class AddEditRepairOrderActivity extends AppCompatActivity {
 
 
     // will hide selected labor types that are in use
-    private void setLaborHiddenNine(String selection){
+    private void setLaborHiddenNine(String selection, int position){
         TextView mTextHoursNine = findViewById(R.id.textViewHours_nine);
         int accentBlue = getResources().getColor(R.color.colorAccent);
 
-        if(laborNineSelected == null){
+        if (laborNineSelected !=null){
+            laborType.remove(positionNine);
+            laborType.add(positionNine, laborNineSelected);
             laborNineSelected = selection;
             laborType.remove(selection);
+            laborType.add(position, "");
+            positionNine = position;
+        }else{
+
+            laborNineSelected = selection;
+            //removes the string value from the list of set up labor types that can be used
+            laborType.remove(selection);
+            laborType.add(position, "");
+            positionNine = position;
+            //sets the hours text to blue
             mTextHoursNine.setTextColor(accentBlue);
-        } if (laborNineSelected !=null){
-            laborType.add(laborNineSelected);
-            laborNineSelected = selection;
-            laborType.remove(selection);
         }
+
+        laborNineEditTextHours.setFocusableInTouchMode(true);
+        laborNineEditTextHours.requestFocus();
 
     }
 
@@ -2447,9 +3009,6 @@ public class AddEditRepairOrderActivity extends AppCompatActivity {
                 //check required fields and then is saved
                 checkVacancy();
 
-                Toast toast1 = Toast.makeText(this, "Spin Count : " + spinCount, Toast.LENGTH_LONG);
-                toast1.setGravity(Gravity.BOTTOM, 0,400);
-                toast1.show();
 
                 return true;
 
