@@ -6,6 +6,8 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import java.util.ArrayList;
+
 public class RepairOrderHelper extends SQLiteOpenHelper {
 
     public static final String DATABASE_NAME = "RepairOrder.db";
@@ -116,9 +118,82 @@ public class RepairOrderHelper extends SQLiteOpenHelper {
     }
 
 
+    public Cursor getListContents(){
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor data = db.rawQuery("SELECT * FROM " + TABLE_NAME, null);
+        return data;
+    }
+
+    public ArrayList<RepairOrder> getAllData(){
+
+        ArrayList<RepairOrder> arrayList = new ArrayList<>();
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT * FROM " + TABLE_NAME , null);
+
+        while(cursor.moveToNext()){
+
+            int RONumber = cursor.getInt(1);
+            String writer = cursor.getString(2);
+            String customer = cursor.getString(3);
+            String date = cursor.getString(4);
+            String insurance = cursor.getString(5);
+            int spinnerNumber = cursor.getInt(6);
+            double hours1 = cursor.getDouble(7);
+            double hours2 = cursor.getDouble(8);
+            double hours3 = cursor.getDouble(9);
+            double hours4 = cursor.getDouble(10);
+            double hours5 = cursor.getDouble(11);
+            double hours6 = cursor.getDouble(12);
+            double hours7 = cursor.getDouble(13);
+            double hours8 = cursor.getDouble(14);
+            double hours9 = cursor.getDouble(15);
+            double gross1 = cursor.getDouble(16);
+            double gross2 = cursor.getDouble(17);
+            double gross3 = cursor.getDouble(18);
+            double gross4 = cursor.getDouble(19);
+            double gross5 = cursor.getDouble(20);
+            double gross6 = cursor.getDouble(21);
+            double gross7 = cursor.getDouble(22);
+            double gross8 = cursor.getDouble(23);
+            double gross9 = cursor.getDouble(24);
+            String laborOne = cursor.getString(25);
+            String laborTwo = cursor.getString(26);
+            String laborThree = cursor.getString(27);
+            String laborFour = cursor.getString(28);
+            String laborFive = cursor.getString(29);
+            String laborSix = cursor.getString(30);
+            String laborSeven = cursor.getString(31);
+            String laborEight = cursor.getString(32);
+            String laborNine = cursor.getString(33);
+            int payroll = cursor.getInt(34);
+            double Gross = cursor.getDouble(35);
+            String make = cursor.getString(36);
+            String model = cursor.getString(37);
+            String year = cursor.getString(38);
+            int mileageInt = cursor.getInt(39);
+            String vin = cursor.getString(40);
+            String color = cursor.getString(41);
+            String license = cursor.getString(42);
+            double hours = cursor.getDouble(43);
+
+
+            RepairOrder repairOrder = new RepairOrder(RONumber, writer, customer, date, insurance, spinnerNumber, hours1, hours2, hours3, hours4, hours5, hours6, hours7, hours8, hours9,
+                    gross1, gross2, gross3, gross4, gross5, gross6, gross7, gross8, gross9, laborOne, laborTwo, laborThree, laborFour, laborFive, laborSix, laborSeven, laborEight, laborNine,
+                    payroll, Gross, make, model, year, mileageInt, vin, color, license, hours);
+
+            arrayList.add(repairOrder);
+
+
+        }
+
+        return arrayList;
+    }
+
+
+
     public String getROnumber() {
         SQLiteDatabase db = this.getWritableDatabase();
-        String query = "SELECT repairordernumber FROM " + TABLE_NAME;
+        String query = "SELECT repairordernumber FROM " + TABLE_NAME ;
         Cursor result = db.rawQuery(query, null);
 
         String returnString = "";

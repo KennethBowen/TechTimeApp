@@ -628,7 +628,10 @@ public class AddEditRepairOrderActivity extends AppCompatActivity {
 
                 saveNewRepairOrder();
 
-                finish();
+                // Exit activity
+                Intent intent = new Intent(this, MainActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
             }else {
 
                 //if any Edit text fields are null it will assign a default value
